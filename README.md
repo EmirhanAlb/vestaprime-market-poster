@@ -1,4 +1,16 @@
-# Vestaprime Market Poster → Slack Otomasyonu
+# Vestaprime Slack Otomasyonları
+
+Bu repo iki bağımsız otomasyon barındırır. İkisi de aynı Slack app'ini (`Vestaprime Market Poster`)
+ve aynı bot token'ını kullanır, ancak ayrı workflow'lar olarak çalışır.
+
+| Otomasyon | Ne yapar | Sıklık | Kanal secret'ı |
+|---|---|---|---|
+| **Market Poster** | Canlı piyasa posterini yakalar, PNG olarak gönderir | Saat başı | `SLACK_CHANNEL_ID` |
+| **Son Dakika** | Önemli global finansal haberleri filtreleyip gönderir | 30 dakikada bir | `NEWS_CHANNEL_ID` |
+
+---
+
+# 1) Market Poster → Slack
 
 [vestaprimes.com/en/market-poster](https://vestaprimes.com/en/market-poster) sayfasındaki canlı piyasa posterini
 otomatik olarak yakalayıp Slack kanalına gönderir. Elle "Download PNG" tıklamaya gerek kalmaz.
@@ -141,3 +153,93 @@ Poster canlı fiyatlara geçemeden yakalanırsa iş yine de tamamlanır, ancak S
 | Actions çalışmıyor | Repo 60 gün hareketsiz kalırsa GitHub zamanlanmış işleri durdurur → repoya bir commit at veya Actions'tan yeniden etkinleştir |
 
 Hata durumunda workflow, ürettiği PNG'yi 3 gün boyunca **Artifacts** altında saklar — çalıştırma sayfasından indirip bakabilirsin.
+
+---
+
+# 2) Son Dakika Finansal Haber → Slack
+
+Türkçe yayın yapan finansal RSS kaynaklarını tarar, önem skoruna göre filtreler ve geçenleri
+**SON DAKİKA** başlığıyla Slack'e gönderir. 30 dakikada bir çalışır.
+
+## Kaynaklar
+
+Canlı test sonucu seçilenler — hepsi Türkçe, global finansal gelişmeleri dakikalık tazelikte veriyor:
+
+| Kaynak | Kategori |
+|---|---|
+| `tr.investing.com/rss/news_14.rss` | Ekonomi (merkez bankaları, makro veri) |
+| `tr.investing.com/rss/news_11.rss` | Emtia (petrol, altın, tahıl) |
+| `tr.investing.com/rss/news_1.rss` | Döviz |
+| `tr.investing.com/rss/news_285.rss` | Kripto |
+| `tr.investing.com/rss/news_25.rss` | Borsa (düşük ağırlık — tekil hisse gürültüsü yoğun) |
+| `aa.com.tr` ekonomi | Ekonomi |
+
+**Elenenler ve sebepleri:** `bloomberght.com/rss` (feed günlerdir güncellenmiyor),
+`investing.com/central_banks` (son içerik 2022), `dunya.com` / `ekonomim.com` / `trthaber` (ağırlıkla
+yerel gündem gürültüsü), `financialjuice` (her ekonomik verinin ham akışı — Slack için fazla).
+
+## Filtre nasıl çalışıyor?
+
+"SON DAKİKA" etiketinin güvenilir kalması için sistem bilerek muhafazakâr: emin olmadığını göndermez.
+
+1. **Veto** — tekil hisse açıklamaları (*"X hissesi bugün neden yükseldi?"*), analist notları,
+   eğitim/promosyon içerikleri ve konu dışı yerel gündem doğrudan elenir.
+2. **Konu puanı** — merkez bankası/para politikası (6), makro veri (5), jeopolitik (5), kriz (5),
+   ana varlıklar (3), genel piyasa (2).
+3. **Olay sinyali** — *konunun önemli olması yetmez, ortada gerçekleşmiş bir olay olmalı.*
+   "açıkladı", "istifa etti", "beklentileri aştı", "%6 düştü" gibi kalıplar aranır. Olay sinyali
+   yoksa puan 0.45 ile çarpılır. Bu olmadan günlük piyasa köşeleri (*"Altın Fed odağında ilerliyor"*)
+   sırf "Fed" geçtiği için eşiği geçiyordu.
+4. **Rutin cezası** — *"Sterlin bugün:"*, *"... öncesi düştü"*, *"gölgesinde"*, *"haftalık görünüm"*
+   gibi köşe yazısı dili puan düşürür.
+5. **Eşik** — kaynak ağırlığıyla çarpılan puan `NEWS_MIN_SCORE`'u (varsayılan 8) geçmeli.
+
+Filtreyi canlı veriyle görmek ve ayarlamak için:
+
+```bash
+npm run news:tune        # varsayılan eşikle
+npm run news:tune 6      # daha gevşek eşik dene
+```
+
+Bu komut hiçbir şey göndermez; her haberin puanını, hangi kuraldan kaç puan aldığını ve
+eşiği geçip geçmediğini listeler.
+
+## Tekrar gönderim koruması
+
+İki katman:
+
+- **Kimlik** — her haberin linkinden üretilen hash `state/seen-news.json` içinde tutulur.
+- **Benzerlik** — aynı olayın farklı kaynaklardaki versiyonları elenir. Karşılaştırma **4-gram
+  Jaccard** ile yapılır; Türkçe sondan eklemeli olduğu için kelime bazlı karşılaştırma
+  ("gerilimi" / "geriliminin" / "gerilimin") aynı haberin iki versiyonunu yakalayamıyor.
+  Karşılaştırma sadece aynı tur içinde değil, son 24 saatte gönderilmiş başlıklara karşı da yapılır.
+
+Geçmiş dosyası her çalıştırmada repoya commit'lenir (`[skip ci]` ile, sonsuz döngü olmaz).
+Actions cache yerine commit tercih edildi: cache silinebilir, commit denetlenebilir.
+
+## Ayarlar
+
+`.env` veya workflow `env:` üzerinden:
+
+| Değişken | Varsayılan | Ne yapar |
+|---|---|---|
+| `NEWS_CHANNEL_ID` | — | Hedef kanal(lar). Virgülle çoklu kanal verilebilir. |
+| `NEWS_MIN_SCORE` | `8` | Gönderim eşiği. Düşürmek daha çok haber gönderir. |
+| `NEWS_MAX_AGE_HOURS` | `3` | Bundan eski haber "son dakika" sayılmaz. |
+| `NEWS_MAX_PER_RUN` | `3` | Tek turda gönderilecek azami haber (ani akında kanalı boğmaz). |
+
+Sıklık: [.github/workflows/breaking-news.yml](.github/workflows/breaking-news.yml) içindeki `cron: '*/30 * * * *'`.
+
+## Elle test
+
+Actions → **Son Dakika -> Slack** → **Run workflow**. İki parametre sunar:
+
+- `max_age_hours` — geniş pencereyle test etmek için (örn. `48`)
+- `dry_run` — işaretlenirse Slack'e hiçbir şey gönderilmez, sadece ne gideceği loglanır
+
+Lokalde:
+
+```bash
+npm run news:dry    # sadece göster
+npm run news        # gerçekten gönder
+```
