@@ -49,10 +49,69 @@ export const SOURCES = [
     weight: 0.85,
   },
   {
+    id: 'inv-gosterge',
+    name: 'Investing.com',
+    category: 'Ekonomi',
+    // Ekonomi gostergeleri: perakende satislar, ECB/BoE verileri, istihdam.
+    // ABD seansinda makro veri akisinin ana kaynagi.
+    url: 'https://tr.investing.com/rss/news_95.rss',
+    weight: 1.15,
+  },
+  {
     id: 'aa-ekonomi',
     name: 'Anadolu Ajansı',
     category: 'Ekonomi',
     url: 'https://www.aa.com.tr/tr/rss/default?cat=ekonomi',
     weight: 0.9,
+  },
+  {
+    id: 'cnnturk-ekonomi',
+    name: 'CNN Türk',
+    category: 'Ekonomi',
+    url: 'https://www.cnnturk.com/feed/rss/ekonomi/news',
+    weight: 0.9,
+  },
+  {
+    id: 'haberturk-ekonomi',
+    name: 'Habertürk',
+    category: 'Ekonomi',
+    url: 'https://www.haberturk.com/rss/ekonomi.xml',
+    weight: 0.85,
+  },
+  {
+    id: 'milliyet-ekonomi',
+    name: 'Milliyet',
+    category: 'Ekonomi',
+    url: 'https://www.milliyet.com.tr/rss/rssnew/ekonomirss.xml',
+    weight: 0.85,
+  },
+  {
+    id: 'sozcu-ekonomi',
+    name: 'Sözcü',
+    category: 'Ekonomi',
+    url: 'https://www.sozcu.com.tr/feeds-rss-category-ekonomi',
+    weight: 0.8,
+  },
+  {
+    id: 'ekonomim',
+    name: 'Ekonomim',
+    category: 'Ekonomi',
+    url: 'https://www.ekonomim.com/rss',
+    weight: 0.8,
+  },
+  {
+    id: 'cointurk',
+    name: 'CoinTurk',
+    category: 'Kripto',
+    // Kripto 7/24 aktif; ABD seansi disindaki saatlerde akisi canli tutuyor.
+    url: 'https://coin-turk.com/feed',
+    weight: 0.85,
+  },
+  {
+    id: 'uzmancoin',
+    name: 'UzmanCoin',
+    category: 'Kripto',
+    url: 'https://uzmancoin.com/feed',
+    weight: 0.8,
   },
 ];

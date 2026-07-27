@@ -40,13 +40,30 @@ export function haberAnahtari({ link, baslik }) {
   return crypto.createHash('sha1').update(temel).digest('hex').slice(0, 16);
 }
 
+/** Kaynak basina sert ust sinir. */
+const KAYNAK_ZAMAN_ASIMI_MS = 15_000;
+
+/**
+ * rss-parser'in kendi timeout'u bazi sunucularda (yavas govde akitanlar)
+ * devreye girmiyor ve surec kilitleniyor. Cron'da calistigimiz icin toplam
+ * sure mutlaka sinirli olmali; bu yuzden ikinci bir sert zaman asimi.
+ */
+function zamanAsimiyla(vaat, ms, etiket) {
+  return Promise.race([
+    vaat,
+    new Promise((_, reddet) => setTimeout(() => reddet(new Error(`${ms}ms zaman asimi`)), ms).unref()),
+  ]).catch((e) => {
+    throw new Error(`${etiket}: ${e.message}`);
+  });
+}
+
 /**
  * Tek bir kaynagi okur. Hata durumunda bos dizi doner ve uyarir; bir kaynagin
- * cokmesi tum calistirmayi durdurmamali.
+ * cokmesi veya takilmasi tum calistirmayi durdurmamali.
  */
 async function kaynakOku(kaynak) {
   try {
-    const feed = await parser.parseURL(kaynak.url);
+    const feed = await zamanAsimiyla(parser.parseURL(kaynak.url), KAYNAK_ZAMAN_ASIMI_MS, kaynak.id);
     return (feed.items || []).map((item) => {
       const baslik = (item.title || '').replace(/\s+/g, ' ').trim();
       const link = (item.link || '').trim();

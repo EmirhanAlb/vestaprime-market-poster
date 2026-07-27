@@ -30,6 +30,9 @@ const VETO = [
   /(çilek|domates|balık|balığı|hasat|sera|tarla|köy|kırsal\s+kalkınma)/,
   /(hava\s+durumu|deprem\s+tatbikat|trafik\s+kazası|yangın\s+söndürme)/,
   /(dizi|film|konser|festival|müzik|sanat)/,
+  // Gunluk otomatik fiyat sayfalari: "BRENT PETROL FİYATI 27 TEMMUZ: ..."
+  /(fiyatı|fiyatları|kuru|ne\s+kadar)\s+\d{1,2}\s+(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)/,
+  /(bugün|son\s+dakika)\s+(altın|dolar|euro|çeyrek)\s+(fiyatları|kuru)/,
 ];
 
 // --- 2) PUAN GRUPLARI ---------------------------------------------------------
@@ -180,7 +183,7 @@ function normalize(metin) {
 // --- 5) ANA FONKSIYON ---------------------------------------------------------
 
 /** Esigi gecen haberler gonderilir. Ortam degiskeniyle ayarlanabilir. */
-export const MIN_SKOR = Number(process.env.NEWS_MIN_SCORE || 8);
+export const MIN_SKOR = Number(process.env.NEWS_MIN_SCORE || 6);
 
 /** Olay sinyali tasimayan haberlerin puani bu carpanla kirilir. */
 const OLAYSIZ_CARPAN = 0.45;
@@ -245,6 +248,17 @@ export function skorla(baslik, kaynak) {
     detaylar.push('olaysiz');
   } else {
     etiketler.push('olay');
+    // Aciklanmis makro veri veya merkez bankasi karari, tanimi geregi son
+    // dakikadir: "Japonya'da TÜFE beklendigi gibi yukseldi", "TCMB faizi sabit
+    // tuttu". Bunlar ABD seansinda en cok ihtiyac duyilan haber tipi.
+    //
+    // Rutin dili tasiyan basliklar bu bonusu ALMAZ; aksi halde "Kanada dolari
+    // Fed karari oncesi dustu" gibi gunluk kur ozetleri, rutin cezasini bonusla
+    // telafi edip esigi geciyordu.
+    if (rutin === 0 && (etiketler.includes('makro-veri') || etiketler.includes('merkez-bankasi'))) {
+      ham += 2;
+      detaylar.push('veri-olayi+2');
+    }
   }
 
   const skor = Math.max(0, Math.round(ham * (kaynak?.weight ?? 1) * 10) / 10);

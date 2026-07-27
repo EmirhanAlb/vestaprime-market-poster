@@ -36,3 +36,7 @@ console.log(`\n########## SIFIR PUAN / VETO (${elenen.length}) ##########`);
 for (const h of elenen.slice(0, 25)) {
   console.log(`  ${h.detay === 'veto' ? 'VETO' : 'KONU'} | ${h.baslik.slice(0, 92)}`);
 }
+
+// Zaman asimina ugrayan feed soketleri acik kalip event loop'u mesgul
+// tutabiliyor; is bittiginde acikca cikiyoruz.
+process.exit(0);

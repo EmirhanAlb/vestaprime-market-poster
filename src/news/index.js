@@ -103,7 +103,13 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error('HATA:', err?.message || err);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Zaman asimina ugrayan feed soketleri acik kalabiliyor ve Node cikmiyor.
+    // Cron'da calistigimiz icin isi bitirince acikca cikiyoruz.
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error('HATA:', err?.message || err);
+    process.exit(1);
+  });
