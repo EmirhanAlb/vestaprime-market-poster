@@ -19,9 +19,10 @@ Poster sunucuda duran hazır bir dosya değil — sayfa açıldığında tarayı
 4. PNG, Slack Web API ile kanala dosya olarak yüklenir.
 
 ```
-src/capture.js   → Playwright ile poster yakalama
-src/slack.js     → Slack'e dosya yükleme
-src/index.js     → akışı yöneten giriş noktası
+src/capture.js       → Playwright ile poster yakalama
+src/slack.js         → Slack'e dosya yükleme (kanal başına ayrı yükleme)
+src/index.js         → akışı yöneten giriş noktası
+scripts/make-icons.mjs → Slack app ikonu varyantlarını üretir (assets/ altına)
 .github/workflows/market-poster.yml → saatlik zamanlama
 ```
 
@@ -71,6 +72,11 @@ GitHub repo sayfasında **Settings → Secrets and variables → Actions → New
 | `SLACK_BOT_TOKEN` | 1. adımdaki `xoxb-...` token |
 | `SLACK_CHANNEL_ID` | 1. adımdaki `C...` kanal ID'si |
 
+**Birden fazla kanal:** `SLACK_CHANNEL_ID` değerini virgülle ayırarak birden çok kanal verebilirsin —
+`C08AJ51934P,C09UFHLSWRW` gibi. Poster her kanala ayrı ayrı yüklenir ve **bot her kanala `/invite`
+ile davet edilmiş olmalıdır**; edilmemişse o kanal için `not_in_channel` hatası alınır (diğer kanallara
+gönderim yine de yapılır, ancak çalıştırma hatalı olarak işaretlenir).
+
 ### 4. Test et
 
 Repo → **Actions** sekmesi → **Market Poster -> Slack** → **Run workflow**.
@@ -114,6 +120,7 @@ npm start
 
 `.env` veya workflow `env:` bloğu üzerinden:
 
+- `SLACK_CHANNEL_ID` — tek kanal (`C123...`) veya virgülle ayrılmış birden çok kanal (`C123...,C456...`)
 - `POSTER_URL` — farklı bir dil/sayfa kullanmak için (varsayılan `https://vestaprimes.com/en/market-poster`)
 - `TZ_NAME` — saat damgası ve dosya adı için zaman dilimi (varsayılan `Europe/Istanbul`)
 - `LIVE_TIMEOUT_MS` — fiyatların gelmesi için beklenecek süre (varsayılan 60000)
