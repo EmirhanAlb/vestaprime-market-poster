@@ -6,7 +6,7 @@ ve aynı bot token'ını kullanır, ancak ayrı workflow'lar olarak çalışır.
 | Otomasyon | Ne yapar | Sıklık | Kanal secret'ı |
 |---|---|---|---|
 | **Market Poster** | Canlı piyasa posterini yakalar, PNG olarak gönderir | Saat başı | `SLACK_CHANNEL_ID` |
-| **Son Dakika** | Önemli global finansal haberleri filtreleyip gönderir | 30 dakikada bir | `NEWS_CHANNEL_ID` |
+| **Son Dakika** | Önemli global finansal haberleri filtreleyip gönderir | 10 dk (ABD seansı) / 30 dk | `NEWS_CHANNEL_ID` |
 
 ---
 
@@ -168,18 +168,30 @@ diğer tüm saatlerde 30 dakikada bir.
 
 Canlı test sonucu seçilenler — hepsi Türkçe, global finansal gelişmeleri dakikalık tazelikte veriyor:
 
-| Kaynak | Kategori |
-|---|---|
-| `tr.investing.com/rss/news_14.rss` | Ekonomi (merkez bankaları, makro veri) |
-| `tr.investing.com/rss/news_11.rss` | Emtia (petrol, altın, tahıl) |
-| `tr.investing.com/rss/news_1.rss` | Döviz |
-| `tr.investing.com/rss/news_285.rss` | Kripto |
-| `tr.investing.com/rss/news_25.rss` | Borsa (düşük ağırlık — tekil hisse gürültüsü yoğun) |
-| `aa.com.tr` ekonomi | Ekonomi |
+14 kaynak, ~260 benzersiz haber/tur. Tam liste ve ağırlıklar: [src/news/sources.js](src/news/sources.js)
 
-**Elenenler ve sebepleri:** `bloomberght.com/rss` (feed günlerdir güncellenmiyor),
-`investing.com/central_banks` (son içerik 2022), `dunya.com` / `ekonomim.com` / `trthaber` (ağırlıkla
-yerel gündem gürültüsü), `financialjuice` (her ekonomik verinin ham akışı — Slack için fazla).
+| Kaynak | Kategori | Not |
+|---|---|---|
+| `investing.com` news_14 | Ekonomi | Merkez bankaları, makro |
+| `investing.com` news_95 | Ekonomi | Ekonomi göstergeleri — ABD seansının ana damarı |
+| `investing.com` news_11 | Emtia | Petrol, altın, tahıl |
+| `investing.com` news_1 | Döviz | |
+| `investing.com` news_285 | Kripto | |
+| `investing.com` news_25 | Borsa | Düşük ağırlık — tekil hisse gürültüsü yoğun |
+| Anadolu Ajansı | Ekonomi | |
+| CNN Türk | Ekonomi | |
+| Habertürk | Ekonomi | |
+| Milliyet | Ekonomi | |
+| Sözcü | Ekonomi | Düşük ağırlık |
+| Ekonomim | Ekonomi | Düşük ağırlık |
+| CoinTurk | Kripto | 7/24 akış — gece saatlerini besler |
+| UzmanCoin | Kripto | |
+
+**Elenenler ve sebepleri (canlı test edildi):** `bloomberght.com` (feed günlerdir güncellenmiyor),
+`investing.com/central_banks` (son içerik 2022), `gazeteduvar` (1.4 yıldır güncellenmiyor),
+`paraanaliz` / `bigpara` / `ntv` (feed ölü veya boş), `cumhuriyet` (ekonomi feed'i genel gündem
+döndürüyor), `cointelegraph.tr` (410 Gone), `dunya.com` (ağırlıkla yerel gündem),
+`financialjuice` (her ekonomik verinin ham akışı — Slack için fazla).
 
 ## Filtre nasıl çalışıyor?
 
