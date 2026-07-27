@@ -21,5 +21,15 @@ export async function uploadPosterToSlack({ token, channel, filePath, title, com
   });
 
   if (!res.ok) throw new Error(`Slack yukleme basarisiz: ${JSON.stringify(res)}`);
+
+  // Dogrulama icin: yuklenen dosyanin kalici linki ve hangi kanalda paylasildigi.
+  const uploaded = res.files?.[0]?.files?.[0];
+  if (uploaded) {
+    const shares = uploaded.shares || {};
+    const sharedIn = [...Object.keys(shares.public || {}), ...Object.keys(shares.private || {})];
+    console.log(`Dosya: ${uploaded.permalink || uploaded.id}`);
+    console.log(`Paylasildigi kanallar: ${sharedIn.length ? sharedIn.join(', ') : 'YOK (kanala dusmemis olabilir)'}`);
+  }
+
   return res;
 }
