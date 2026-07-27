@@ -1,0 +1,17 @@
+display_information:
+  name: Vestaprime Market Poster
+  description: Canli piyasa posterini otomatik olarak kanala gonderir.
+  background_color: "#0b0d11"
+features:
+  bot_user:
+    display_name: Vestaprime Market Poster
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - files:write
+      - chat:write
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

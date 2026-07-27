@@ -1,0 +1,17 @@
+{
+  "name": "vestaprime-market-poster-slack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "vestaprimes.com/en/market-poster sayfasindaki canli piyasa posterini yakalayip Slack kanalina gonderir.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "capture": "node src/index.js --dry-run",
+    "postinstall-browser": "playwright install chromium"
+  },
+  "dependencies": {
+    "@slack/web-api": "^7.9.1",
+    "playwright": "^1.56.0"
+  }
+}

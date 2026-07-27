@@ -1,0 +1,50 @@
+name: Market Poster -> Slack
+
+on:
+  schedule:
+    # Her saat basi (UTC). GitHub cron'u yogunlukta 5-20 dk gecikebilir.
+    # Sadece belirli saatlerde isterseniz ornek: '0 6-20 * * 1-5' (TR 09:00-23:00, hafta ici)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Actions sekmesinden elle tetikleme
+
+concurrency:
+  group: market-poster
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Bagimliliklari kur
+        run: npm ci
+
+      - name: Fontlari kur (poster tipografisi icin)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-liberation fonts-noto-core fonts-noto-color-emoji
+
+      - name: Chromium'u kur
+        run: npx playwright install --with-deps chromium
+
+      - name: Poster'i yakala ve Slack'e gonder
+        run: npm start
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+
+      - name: Hata durumunda ciktiyi sakla
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: poster-debug
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 3
