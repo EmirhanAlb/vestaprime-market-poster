@@ -22,14 +22,11 @@ export async function uploadPosterToSlack({ token, channel, filePath, title, com
 
   if (!res.ok) throw new Error(`Slack yukleme basarisiz: ${JSON.stringify(res)}`);
 
-  // Dogrulama icin: yuklenen dosyanin kalici linki ve hangi kanalda paylasildigi.
+  // Dogrulama icin yuklenen dosyanin kalici linkini logla.
+  // Not: Slack'in completeUploadExternal yanitinda "shares" alani gelmez,
+  // paylasimin gerceklestigini bu yanittan teyit etmeye calismayin.
   const uploaded = res.files?.[0]?.files?.[0];
-  if (uploaded) {
-    const shares = uploaded.shares || {};
-    const sharedIn = [...Object.keys(shares.public || {}), ...Object.keys(shares.private || {})];
-    console.log(`Dosya: ${uploaded.permalink || uploaded.id}`);
-    console.log(`Paylasildigi kanallar: ${sharedIn.length ? sharedIn.join(', ') : 'YOK (kanala dusmemis olabilir)'}`);
-  }
+  if (uploaded) console.log(`Dosya: ${uploaded.permalink || uploaded.id}`);
 
   return res;
 }
