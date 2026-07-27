@@ -85,7 +85,7 @@ GitHub repo sayfasında **Settings → Secrets and variables → Actions → New
 | `SLACK_CHANNEL_ID` | 1. adımdaki `C...` kanal ID'si |
 
 **Birden fazla kanal:** `SLACK_CHANNEL_ID` değerini virgülle ayırarak birden çok kanal verebilirsin —
-`C08AJ51934P,C09UFHLSWRW` gibi. Poster her kanala ayrı ayrı yüklenir ve **bot her kanala `/invite`
+`C0AAAAAAAAA,C0BBBBBBBBB` gibi. Poster her kanala ayrı ayrı yüklenir ve **bot her kanala `/invite`
 ile davet edilmiş olmalıdır**; edilmemişse o kanal için `not_in_channel` hatası alınır (diğer kanallara
 gönderim yine de yapılır, ancak çalıştırma hatalı olarak işaretlenir).
 
@@ -159,7 +159,10 @@ Hata durumunda workflow, ürettiği PNG'yi 3 gün boyunca **Artifacts** altında
 # 2) Son Dakika Finansal Haber → Slack
 
 Türkçe yayın yapan finansal RSS kaynaklarını tarar, önem skoruna göre filtreler ve geçenleri
-**SON DAKİKA** başlığıyla Slack'e gönderir. 30 dakikada bir çalışır.
+**SON DAKİKA** başlığıyla Slack'e gönderir.
+
+**Tarama sıklığı:** ABD piyasası açıkken (hafta içi TR 16:00–24:00) 10 dakikada bir,
+diğer tüm saatlerde 30 dakikada bir.
 
 ## Kaynaklar
 
@@ -192,7 +195,7 @@ yerel gündem gürültüsü), `financialjuice` (her ekonomik verinin ham akış�
    sırf "Fed" geçtiği için eşiği geçiyordu.
 4. **Rutin cezası** — *"Sterlin bugün:"*, *"... öncesi düştü"*, *"gölgesinde"*, *"haftalık görünüm"*
    gibi köşe yazısı dili puan düşürür.
-5. **Eşik** — kaynak ağırlığıyla çarpılan puan `NEWS_MIN_SCORE`'u (varsayılan 8) geçmeli.
+5. **Eşik** — kaynak ağırlığıyla çarpılan puan `NEWS_MIN_SCORE`'u (varsayılan 6) geçmeli.
 
 Filtreyi canlı veriyle görmek ve ayarlamak için:
 
@@ -224,11 +227,12 @@ Actions cache yerine commit tercih edildi: cache silinebilir, commit denetlenebi
 | Değişken | Varsayılan | Ne yapar |
 |---|---|---|
 | `NEWS_CHANNEL_ID` | — | Hedef kanal(lar). Virgülle çoklu kanal verilebilir. |
-| `NEWS_MIN_SCORE` | `8` | Gönderim eşiği. Düşürmek daha çok haber gönderir. |
+| `NEWS_MIN_SCORE` | `6` | Gönderim eşiği. Düşürmek daha çok haber gönderir. |
 | `NEWS_MAX_AGE_HOURS` | `3` | Bundan eski haber "son dakika" sayılmaz. |
 | `NEWS_MAX_PER_RUN` | `3` | Tek turda gönderilecek azami haber (ani akında kanalı boğmaz). |
 
-Sıklık: [.github/workflows/breaking-news.yml](.github/workflows/breaking-news.yml) içindeki `cron: '*/30 * * * *'`.
+Sıklık: [.github/workflows/breaking-news.yml](.github/workflows/breaking-news.yml) içindeki `cron` satırları.
+Üç ayrı zamanlama var: ABD seansı (yoğun), hafta içi diğer saatler, hafta sonu.
 
 ## Elle test
 

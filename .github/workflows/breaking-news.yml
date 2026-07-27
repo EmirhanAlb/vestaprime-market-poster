@@ -2,8 +2,13 @@ name: Son Dakika -> Slack
 
 on:
   schedule:
-    # 30 dakikada bir (UTC). GitHub cron'u yogunlukta gecikebilir.
-    - cron: '*/30 * * * *'
+    # Saatler UTC. Turkiye UTC+3.
+    # ABD piyasasi acikken (TR 16:00-24:00, hafta ici) 10 dakikada bir:
+    - cron: '*/10 13-20 * * 1-5'
+    # Hafta ici diger saatlerde 30 dakikada bir:
+    - cron: '*/30 0-12,21-23 * * 1-5'
+    # Hafta sonu (kripto 7/24 aktif) 30 dakikada bir:
+    - cron: '*/30 * * * 0,6'
   workflow_dispatch:
     inputs:
       max_age_hours:
