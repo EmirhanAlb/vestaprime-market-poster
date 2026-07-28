@@ -1,6 +1,6 @@
 # Vestaprime Slack Otomasyonları
 
-Bu repo iki bağımsız otomasyon barındırır. İkisi de aynı Slack app'ini (`Vestaprime Market Poster`)
+Bu repo üç bağımsız otomasyon barındırır. Üçü de aynı Slack app'ini (`Vestaprime Son Dakika`)
 ve aynı bot token'ını kullanır, ancak ayrı workflow'lar olarak çalışır.
 
 | Otomasyon | Ne yapar | Sıklık | Kanal secret'ı |
