@@ -7,6 +7,7 @@ ve aynı bot token'ını kullanır, ancak ayrı workflow'lar olarak çalışır.
 |---|---|---|---|
 | **Market Poster** | Canlı piyasa posterini yakalar, PNG olarak gönderir | Saat başı | `SLACK_CHANNEL_ID` |
 | **Son Dakika** | Önemli global finansal haberleri filtreleyip gönderir | 10 dk (ABD seansı) / 30 dk | `NEWS_CHANNEL_ID` |
+| **FinancialJuice** | Telegram ham piyasa akışını Türkçeye çevirip aktarır | 5 dakikada bir | `TELEGRAM_CHANNEL_ID` |
 
 ---
 
@@ -259,3 +260,85 @@ Lokalde:
 npm run news:dry    # sadece göster
 npm run news        # gerçekten gönder
 ```
+
+---
+
+# 3) FinancialJuice (Telegram) → Slack
+
+[t.me/Financial_Juice_News](https://t.me/Financial_Juice_News) kanalındaki ham piyasa akışını
+Türkçeye çevirip Slack'e aktarır. Filtre yoktur — kanaldaki her başlık gider.
+
+**Hacim:** ölçüldü, günde **~1.300 başlık**. Bu, dakikada yaklaşık bir mesaj demektir.
+
+## Nasıl okunuyor?
+
+Telegram Bot API bir kanalı ancak bot orada admin ise okuyabiliyor; bu kanal bize ait olmadığı için
+herkese açık web önizlemesi (`t.me/s/<kanal>`) ayrıştırılıyor. Kimlik doğrulama gerekmiyor.
+
+**Kritik ayrıntı:** önizleme ardışık mesajları **tek blokta birleştiriyor**. Bir blok `<br>` ile
+ayrılmış ortalama **3,3 bağımsız başlık** taşıyor:
+
+```
+EU plans to sanction record 1,600 firms for helping Russia
+Effective Fed Funds Rate 3.63% July 27 vs 3.63% July 24
+US CASESHILLER 20 YOY ACTUAL 1.63% (FORECAST 1.3%, PREVIOUS 1.1%)
+```
+
+Bunlar tek Slack mesajında birleşik görünmesin diye bloklar satırlarına ayrılıp her başlık ayrı
+mesaj yapılıyor. Blok sayısını başlık sayısı sanmak hacmi 3,5 kat düşük tahmin etmeye yol açar.
+
+## Çeviri — ücretsiz
+
+Varsayılan olarak **API anahtarı ve maliyet gerektirmez**. Canlı test edilen sağlayıcılar:
+
+| Sağlayıcı | Durum | Hız | Rol |
+|---|---|---|---|
+| Google (gtx) | ✅ | 70-300ms | Birincil |
+| MyMemory | ✅ | 350-700ms | Yedek |
+| Lingva | ❌ HTTP 500 | | Kullanılmıyor |
+| LibreTranslate | ❌ Anahtar istiyor | | Kullanılmıyor |
+
+Google resmi bir API değil ve datacenter IP'lerinden hız sınırına takılabilir — bu yüzden MyMemory
+yedeği opsiyonel değil, zorunlu. İkisi de başarısız olursa başlık İngilizce gider ve mesaja
+"_çeviri yapılamadı_" notu düşer.
+
+Çeviri sonrası iki düzeltme uygulanır: kaynaktaki `$MACRO` gibi semboller geri konur (çevirmen
+`$ MAKRO` yapıyordu) ve veri açıklama kalıpları finans diline oturtulur (`ACTUAL` → `GERÇEKLEŞEN`).
+
+**Claude'a geçmek istersen:** repo → Settings → Variables → `TRANSLATOR` = `claude`, ayrıca
+`ANTHROPIC_API_KEY` secret'ı. Tahmini maliyet: Haiku 4.5 ile ~$16/ay, Opus 5 ile ~$80/ay.
+
+## Tekrar koruması — iki katman
+
+1. **İçerik hash'i** — harf ve rakam dışındaki her şey atılarak hesaplanır. Kanal aynı başlığı sık
+   sık bir `🔴` önekiyle tekrar atıyor; ham hash bunu yakalayamıyordu.
+2. **Benzerlik** — kanal aynı hikâyeyi farklı kelimelerle tekrarlıyor. Ölçülen bir örnekte tek bir
+   Moonshot/Nvidia haberi **5 varyantla** gelmişti. 4-gram Jaccard eşiği gerçek veriyle belirlendi:
+   aynı hikâye varyantları 0,33-0,93, bağımsız başlıklar ≤0,02 — eşik **0,30**.
+
+Geçmiş repoya commit'lenmez, **Actions cache**'te tutulur: 5 dakikalık iş günde ~288 commit demek olurdu.
+
+## Ayarlar
+
+| Değişken | Varsayılan | Ne yapar |
+|---|---|---|
+| `TELEGRAM_CHANNEL_ID` | — | Hedef kanal(lar), virgülle çoklu |
+| `TRANSLATOR` | `free` | `claude` seçilirse `ANTHROPIC_API_KEY` gerekir |
+| `TELEGRAM_MAX_PER_RUN` | `15` | Tek turda azami başlık |
+| `TELEGRAM_FIRST_RUN` | `3` | İlk çalıştırmada alınacak başlık |
+| `TELEGRAM_SIMILARITY` | `0.3` | Tekrar eleme eşiği |
+| `TELEGRAM_CHANNEL` | `Financial_Juice_News` | Kaynak Telegram kanalı |
+
+## Bilinen sınırlama
+
+Ücretsiz çevirmen bazı finans kısaltmalarını yanlış çeviriyor (`MOC IMBALANCE` → `MOO DENGESİZLİK`).
+Her mesajda kaynak linki olduğu için doğrulanabilir. Rahatsız ederse `TRANSLATOR=claude` bunu çözer.
+
+## Elle test
+
+```bash
+npm run juice:dry    # sadece göster
+npm run juice        # gerçekten gönder
+```
+
+Actions → **FinancialJuice -> Slack** → **Run workflow** (varsayılan `dry_run: true`).
