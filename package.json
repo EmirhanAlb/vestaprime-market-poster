@@ -11,9 +11,12 @@
     "news": "node src/news/index.js",
     "news:dry": "node src/news/index.js --dry-run",
     "news:tune": "node scripts/tune-filter.mjs",
-    "postinstall-browser": "playwright install chromium"
+    "postinstall-browser": "playwright install chromium",
+    "juice": "node src/telegram/index.js",
+    "juice:dry": "node src/telegram/index.js --dry-run"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "@slack/web-api": "^7.9.1",
     "playwright": "^1.56.0",
     "rss-parser": "^3.13.0"

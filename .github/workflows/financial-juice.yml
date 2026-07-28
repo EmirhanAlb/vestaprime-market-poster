@@ -1,0 +1,57 @@
+name: FinancialJuice -> Slack
+
+on:
+  # ZAMANLAMA HENUZ KAPALI.
+  # ANTHROPIC_API_KEY secret'i eklendikten ve hedef kanal netlestikten sonra
+  # asagidaki iki satirin yorumu kaldirilarak akis baslatilir.
+  # schedule:
+  #   - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Slack e gonderme, sadece ne gidecegini yazdir'
+        type: boolean
+        required: false
+        default: true
+      max_per_run:
+        description: 'Bu turda gonderilecek azami baslik'
+        required: false
+        default: '15'
+
+concurrency:
+  group: financial-juice
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Gecmis dosyasi repoya commit'lenmiyor: bu akis 5 dakikada bir
+      # calistigi icin gunde ~288 commit demek olurdu. Bunun yerine Actions
+      # cache kullaniliyor; her calistirma yeni bir anahtarla kaydeder,
+      # restore-keys en son kaydi geri yukler.
+      - name: Gonderim gecmisini geri yukle
+        uses: actions/cache@v4
+        with:
+          path: state/seen-telegram.json
+          key: financial-juice-state-${{ github.run_id }}
+          restore-keys: financial-juice-state-
+
+      - name: Bagimliliklari kur
+        run: npm ci
+
+      - name: Telegram akisini Slack e aktar
+        run: node src/telegram/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_MAX_PER_RUN: ${{ inputs.max_per_run || '15' }}
