@@ -1,11 +1,10 @@
 name: FinancialJuice -> Slack
 
 on:
-  # ZAMANLAMA HENUZ KAPALI.
-  # ANTHROPIC_API_KEY secret'i eklendikten ve hedef kanal netlestikten sonra
-  # asagidaki iki satirin yorumu kaldirilarak akis baslatilir.
-  # schedule:
-  #   - cron: '*/5 * * * *'
+  schedule:
+    # 5 dakikada bir. Kanal ortalama dakikada ~1 baslik uretiyor, bu tempo
+    # ~5 baslik biriktirip tek turda gonderiyor.
+    - cron: '*/5 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -53,5 +52,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          # Ceviri varsayilan olarak ucretsiz servislerle yapiliyor.
+          # Claude'a gecmek icin: TRANSLATOR=claude + ANTHROPIC_API_KEY secret'i
+          TRANSLATOR: ${{ vars.TRANSLATOR || 'free' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_MAX_PER_RUN: ${{ inputs.max_per_run || '15' }}

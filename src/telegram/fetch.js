@@ -37,9 +37,19 @@ function htmlCoz(metin) {
     .trim();
 }
 
-/** Baslik kimligi: ayni metnin tekrar gonderilmesini engeller. */
+/**
+ * Baslik kimligi: ayni metnin tekrar gonderilmesini engeller.
+ *
+ * Kanal ayni basligi sik sik iki kez atiyor; tek fark bir "🔴" oneki veya
+ * noktalama oluyor. Bu yuzden anahtar hesaplanirken harf ve rakam disindaki
+ * her sey atiliyor, aksi halde ayni haber iki kez gonderiliyordu.
+ */
 function anahtarla(metin) {
-  return createHash('sha1').update(metin.toLowerCase().replace(/\s+/g, ' ').trim()).digest('hex').slice(0, 16);
+  const sade = metin
+    .toLocaleLowerCase('tr-TR')
+    .replace(/[^\p{L}\p{N}]+/gu, '')
+    .trim();
+  return createHash('sha1').update(sade).digest('hex').slice(0, 16);
 }
 
 /**

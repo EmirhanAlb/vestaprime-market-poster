@@ -3,7 +3,15 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WebClient } from '@slack/web-api';
 import { mesajlariCek } from './fetch.js';
-import { cevir, MODEL } from './translate.js';
+import { benzerleriEle } from '../news/state.js';
+
+/**
+ * Ceviri motoru. Varsayilan "free": API anahtari ve maliyet gerektirmez.
+ * "claude" secilirse ANTHROPIC_API_KEY zorunlu olur.
+ */
+const MOTOR = (process.env.TRANSLATOR || 'free').toLowerCase();
+const { cevir, MODEL } =
+  MOTOR === 'claude' ? await import('./translate.js') : await import('./translate-free.js');
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const envFile = path.join(rootDir, '.env');
@@ -21,6 +29,15 @@ const ILK_TUR_ADET = Number(process.env.TELEGRAM_FIRST_RUN || 3);
 /** Gecmiste tutulacak azami baslik anahtari. Sayfa 20 blok (~66 baslik)
  *  gosterdigi icin birkac yuz anahtar fazlasiyla yeterli. */
 const GECMIS_SINIRI = 600;
+/** Benzerlik karsilastirmasi icin saklanacak son baslik metni sayisi. */
+const METIN_SINIRI = 200;
+/**
+ * Ayni haberi farkli kelimelerle sayan tekrarlari eleme esigi.
+ * Gercek veriyle olculdu: kanalin ayni hikayeyi 5 kez atan varyantlari
+ * 0.33-0.93 arasinda, birbirinden bagimsiz basliklar <=0.02. Aradaki bosluk
+ * genis oldugu icin 0.30 guvenli.
+ */
+const BENZERLIK_ESIGI = Number(process.env.TELEGRAM_SIMILARITY || 0.3);
 
 /**
  * Gecmis, blok ID imleci yerine baslik icerik anahtarlariyla tutuluyor:
@@ -31,18 +48,26 @@ const GECMIS_SINIRI = 600;
 function durumOku() {
   try {
     const d = JSON.parse(fs.readFileSync(DURUM_DOSYASI, 'utf8'));
-    return Array.isArray(d?.gorulen) ? d.gorulen : null;
+    if (!Array.isArray(d?.gorulen)) return null;
+    return { gorulen: d.gorulen, sonMetinler: Array.isArray(d.sonMetinler) ? d.sonMetinler : [] };
   } catch {
     return null;
   }
 }
 
-function durumYaz(gorulen) {
+function durumYaz(gorulen, sonMetinler) {
   fs.mkdirSync(path.dirname(DURUM_DOSYASI), { recursive: true });
-  const kirpilmis = gorulen.slice(-GECMIS_SINIRI);
   fs.writeFileSync(
     DURUM_DOSYASI,
-    `${JSON.stringify({ gorulen: kirpilmis, guncelleme: new Date().toISOString() }, null, 2)}\n`,
+    `${JSON.stringify(
+      {
+        gorulen: gorulen.slice(-GECMIS_SINIRI),
+        sonMetinler: sonMetinler.slice(-METIN_SINIRI),
+        guncelleme: new Date().toISOString(),
+      },
+      null,
+      2,
+    )}\n`,
   );
 }
 
@@ -97,10 +122,11 @@ async function main() {
   const hepsi = await mesajlariCek();
   const blokSayisi = new Set(hepsi.map((m) => m.blokId)).size;
   console.log(
-    `Telegram'dan ${blokSayisi} blok icinde ${hepsi.length} baslik okundu (gecmis: ${gecmis ? `${gecmis.length} anahtar` : 'yok'})`,
+    `Telegram'dan ${blokSayisi} blok icinde ${hepsi.length} baslik okundu (gecmis: ${gecmis ? `${gecmis.gorulen.length} anahtar` : 'yok'})`,
   );
 
-  const gorulen = new Set(gecmis || []);
+  const gorulen = new Set(gecmis?.gorulen || []);
+  const sonMetinler = [...(gecmis?.sonMetinler || [])];
   let yeniler;
 
   if (gecmis === null) {
@@ -108,6 +134,7 @@ async function main() {
     // say, sadece en yeni birkac basligi gonder.
     yeniler = hepsi.slice(-ILK_TUR_ADET);
     for (const m of hepsi) gorulen.add(m.anahtar);
+    sonMetinler.push(...hepsi.slice(0, -ILK_TUR_ADET).map((m) => m.metin));
     console.log(`Ilk calistirma: en yeni ${yeniler.length} baslikla baslaniyor, kalani gorulmus sayildi.`);
   } else {
     yeniler = hepsi.filter((m) => !gorulen.has(m.anahtar));
@@ -116,6 +143,19 @@ async function main() {
   if (yeniler.length === 0) {
     console.log('Yeni baslik yok.');
     return;
+  }
+
+  // Kanal ayni hikayeyi farkli kelimelerle tekrar tekrar atiyor (olculen bir
+  // ornekte 5 varyant). Hash bunlari yakalayamaz; benzerlik ele.
+  const oncesi = yeniler.length;
+  // benzerleriEle haber modulunden geliyor ve `baslik` alanina bakiyor.
+  yeniler = benzerleriEle(
+    yeniler.map((m) => ({ ...m, baslik: m.metin })),
+    sonMetinler,
+    BENZERLIK_ESIGI,
+  ).map(({ baslik, ...m }) => m);
+  if (oncesi > yeniler.length) {
+    console.log(`  ${oncesi - yeniler.length} baslik ayni haberin tekrari oldugu icin elendi`);
   }
 
   let atlananlar = [];
@@ -129,16 +169,8 @@ async function main() {
     yeniler = yeniler.slice(-MAX_GONDERIM);
   }
 
-  let cevrilmis;
-  if (dryRun && !process.env.ANTHROPIC_API_KEY) {
-    // Anahtar olmadan da boru hattinin geri kalani (okuma, gecmis, bicim)
-    // dogrulanabilsin diye ceviri atlanir. Gercek gonderimde anahtar sarttir.
-    console.warn('Uyari: ANTHROPIC_API_KEY yok, --dry-run oldugu icin ceviri atlaniyor.');
-    cevrilmis = yeniler.map((m) => ({ ...m, turkce: m.metin, cevrildi: false }));
-  } else {
-    console.log(`${yeniler.length} yeni mesaj ${MODEL} ile Turkce'ye cevriliyor...`);
-    cevrilmis = await cevir(yeniler, process.env.ANTHROPIC_API_KEY);
-  }
+  console.log(`${yeniler.length} yeni baslik ceviriliyor - motor: ${MODEL}`);
+  const cevrilmis = await cevir(yeniler, process.env.ANTHROPIC_API_KEY);
 
   for (const m of cevrilmis) {
     console.log(`  [${m.blokId}] ${m.cevrildi ? '' : '(CEVIRISIZ) '}${m.turkce.slice(0, 90)}`);
@@ -164,7 +196,10 @@ async function main() {
 
   // Atlananlar gonderilmedi ama gorulmus sayilir; yoksa her turda yeniden
   // kuyruga girip tavani doldururlar.
-  for (const m of atlananlar) gorulen.add(m.anahtar);
+  for (const m of atlananlar) {
+    gorulen.add(m.anahtar);
+    sonMetinler.push(m.metin);
+  }
 
   let gonderilen = 0;
   for (const mesaj of cevrilmis) {
@@ -175,12 +210,13 @@ async function main() {
       break;
     }
     gorulen.add(mesaj.anahtar);
+    sonMetinler.push(mesaj.metin);
     gonderilen += 1;
     // Slack mesaj hizi sinirina takilmamak icin kisa aralik.
     await new Promise((r) => setTimeout(r, 250));
   }
 
-  durumYaz([...gorulen]);
+  durumYaz([...gorulen], sonMetinler);
   console.log(`Tamamlandi. ${gonderilen}/${cevrilmis.length} baslik gonderildi, gecmis ${gorulen.size} anahtar.`);
 }
 
