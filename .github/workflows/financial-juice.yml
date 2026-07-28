@@ -1,30 +1,46 @@
 name: FinancialJuice -> Slack
 
+# NEDEN CRON DEGIL DE UZUN CALISAN IS?
+#
+# GitHub'in zamanlayicisi sik cron'lari guvenilir calistirmiyor. Bu repoda
+# olculen davranis: '5 dakikada bir' ayari 86 dakikada SIFIR calistirma
+# uretti; saatlik ve 10 dakikalik ayarlar ise ~2.5 saatte bire dustu. Repo
+# public oldugu icin dakika kotasi degil, planlayici onceliklendirmesi.
+#
+# Cozum: tek bir uzun is icinde 5 dakikada bir yoklamak ve is bitiminde
+# workflow'un kendini yeniden tetiklemesi. workflow_dispatch, GITHUB_TOKEN
+# ile tetiklendiginde yeni calistirma uretebilen iki olaydan biri.
+
 on:
   schedule:
-    # 5 dakikada bir. Kanal ortalama dakikada ~1 baslik uretiyor, bu tempo
-    # ~5 baslik biriktirip tek turda gonderiyor.
-    - cron: '*/5 * * * *'
+    # Yalnizca guvenlik agi: zincir bir sekilde kopmussa yeniden baslatir.
+    - cron: '0 */2 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
         description: 'Slack e gonderme, sadece ne gidecegini yazdir'
         type: boolean
         required: false
-        default: true
-      max_per_run:
-        description: 'Bu turda gonderilecek azami baslik'
+        default: false
+      loop_minutes:
+        description: 'Dongunun surecegi dakika (0 = tek tur)'
         required: false
-        default: '15'
+        default: '300'
 
+# Ayni anda tek is calisir. Zamanlanmis tetikleme uzun is surerken gelirse
+# beklemede kalir ve is bitince zinciri devralir; ikinci bir zincir olusmaz.
 concurrency:
   group: financial-juice
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  actions: write # is bitiminde kendini yeniden tetiklemek icin
+
 jobs:
   relay:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v5
 
@@ -33,10 +49,8 @@ jobs:
           node-version: '22'
           cache: npm
 
-      # Gecmis dosyasi repoya commit'lenmiyor: bu akis 5 dakikada bir
-      # calistigi icin gunde ~288 commit demek olurdu. Bunun yerine Actions
-      # cache kullaniliyor; her calistirma yeni bir anahtarla kaydeder,
-      # restore-keys en son kaydi geri yukler.
+      # Gecmis repoya commit'lenmiyor (5 dakikalik is gunde ~288 commit
+      # demek olurdu); Actions cache kullaniliyor.
       - name: Gonderim gecmisini geri yukle
         uses: actions/cache@v4
         with:
@@ -47,13 +61,21 @@ jobs:
       - name: Bagimliliklari kur
         run: npm ci
 
-      - name: Telegram akisini Slack e aktar
-        run: node src/telegram/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: Telegram akisini aktar (dongu)
+        run: node src/telegram/index.js --loop ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-          # Ceviri varsayilan olarak ucretsiz servislerle yapiliyor.
-          # Claude'a gecmek icin: TRANSLATOR=claude + ANTHROPIC_API_KEY secret'i
           TRANSLATOR: ${{ vars.TRANSLATOR || 'free' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TELEGRAM_MAX_PER_RUN: ${{ inputs.max_per_run || '15' }}
+          LOOP_SECONDS: ${{ vars.LOOP_SECONDS || '300' }}
+          LOOP_MINUTES: ${{ inputs.loop_minutes || '300' }}
+          TELEGRAM_MAX_PER_RUN: '15'
+
+      # Is basarisiz bitse bile zincir devam etmeli; aksi halde tek bir
+      # gecici hata akisi kalici olarak durdururdu.
+      - name: Zinciri devam ettir
+        if: ${{ always() && !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "FinancialJuice -> Slack" --ref "${{ github.ref_name }}"

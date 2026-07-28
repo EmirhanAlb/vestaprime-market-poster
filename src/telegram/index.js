@@ -117,7 +117,7 @@ async function slackeGonder(client, channels, mesaj) {
   return sonuclar;
 }
 
-async function main() {
+async function birTur() {
   const gecmis = durumOku();
   const hepsi = await mesajlariCek();
   const blokSayisi = new Set(hepsi.map((m) => m.blokId)).size;
@@ -220,7 +220,46 @@ async function main() {
   console.log(`Tamamlandi. ${gonderilen}/${cevrilmis.length} baslik gonderildi, gecmis ${gorulen.size} anahtar.`);
 }
 
-main()
+/**
+ * Dongu modu.
+ *
+ * GitHub'in zamanlayicisi sik cron'lari (5 dakikalik) guvenilir sekilde calistirmiyor:
+ * olculen davranis, ayarlanan araliktan bagimsiz olarak ~2.5 saatte bir
+ * calistirma ve cogu tetiklemenin tamamen dusurulmesi. Bu yuzden tek bir uzun
+ * is icinde kendimiz yokluyoruz; is bitince workflow kendini yeniden tetikliyor.
+ */
+const ARALIK_SN = Number(process.env.LOOP_SECONDS || 300);
+const SURE_DK = Number(process.env.LOOP_MINUTES || 330);
+
+async function dongu() {
+  const bitis = Date.now() + SURE_DK * 60_000;
+  let tur = 0;
+  console.log(`Dongu modu: her ${ARALIK_SN} sn, ${SURE_DK} dk boyunca.\n`);
+
+  while (Date.now() < bitis) {
+    tur += 1;
+    const basla = Date.now();
+    console.log(`--- tur ${tur} | ${new Date().toISOString().slice(11, 19)} UTC ---`);
+    try {
+      await birTur();
+    } catch (err) {
+      // Tek bir turun hatasi donguyu bitirmemeli: kaynak gecici olarak
+      // erisilemez olabilir, bir sonraki turda kendine gelir.
+      console.error('  tur hatasi:', err?.message || err);
+    }
+    const kalan = ARALIK_SN * 1000 - (Date.now() - basla);
+    if (kalan > 0 && Date.now() + kalan < bitis) {
+      await new Promise((r) => setTimeout(r, kalan));
+    } else if (Date.now() + kalan >= bitis) {
+      break;
+    }
+  }
+  console.log(`\nDongu tamamlandi: ${tur} tur.`);
+}
+
+const calistir = process.argv.includes('--loop') ? dongu : birTur;
+
+calistir()
   .then(() => process.exit(0))
   .catch((err) => {
     console.error('HATA:', err?.message || err);
