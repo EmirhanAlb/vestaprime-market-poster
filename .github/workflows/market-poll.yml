@@ -1,0 +1,75 @@
+name: Gunun Tahmini (oylama) -> Slack
+
+# Tek is, tum gunu yonetir: oylamayi paylasir, ABD acilisinda fiyati yakalar,
+# bir saat sonra sonucu aciklar. Ayri cron'lara bolunmedi cunku GitHub'in
+# zamanlayicisi saatleri tutturmuyor (olculen sapma ~2.5 saat) - oysa acilis
+# fiyatinin tam 16:30'da alinmasi gerekiyor. Is erken baslar, hedef saatleri
+# kendi bekler.
+
+on:
+  schedule:
+    # Hafta ici 09:00 UTC (12:00 TR). Gec ateslerse script yine de yetisir:
+    # oylama 14:00 TR, acilis 16:30 TR.
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Slack e gonderme, sadece fiyat ve saatleri yazdir'
+        type: boolean
+        required: false
+        default: true
+      post_tr:
+        description: 'Oylamanin paylasilacagi saat (TR, HH:MM)'
+        required: false
+        default: '14:00'
+      settle_minutes:
+        description: 'Acilistan kac dakika sonra sonuc aciklansin'
+        required: false
+        default: '60'
+
+concurrency:
+  group: market-poll
+  cancel-in-progress: false
+
+permissions:
+  contents: write # oylama gecmisini repoya yazmak icin
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    # Is 09:00'da baslayip 14:30 UTC'de bitebilir: 5.5 saat + pay.
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Bagimliliklari kur
+        run: npm ci
+
+      - name: Oylamayi yonet
+        run: node src/poll/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          POLL_CHANNEL_ID: ${{ secrets.POLL_CHANNEL_ID }}
+          POLL_POST_TR: ${{ inputs.post_tr || '14:00' }}
+          POLL_SETTLE_MINUTES: ${{ inputs.settle_minutes || '60' }}
+          POLL_FLAT_BAND: ${{ vars.POLL_FLAT_BAND || '0.15' }}
+          POLL_SHARP_BAND: ${{ vars.POLL_SHARP_BAND || '0.5' }}
+
+      - name: Oylama gecmisini kaydet
+        if: ${{ always() && !inputs.dry_run }}
+        run: |
+          if [ -z "$(git status --porcelain state/)" ]; then
+            echo "Gecmiste degisiklik yok."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/
+          git commit -m "chore: gunun tahmini sonucunu kaydet [skip ci]"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
