@@ -10,7 +10,39 @@ const envFile = path.join(rootDir, '.env');
 if (fs.existsSync(envFile)) process.loadEnvFile(envFile);
 
 const KAYIT_DOSYASI = path.join(rootDir, 'state', 'poll-history.json');
+const AKTIF_DOSYASI = path.join(rootDir, 'state', 'poll-active.json');
 const dryRun = process.argv.includes('--dry-run');
+/**
+ * Sonuclandirma modu: daha once paylasilmis bir oylamayi simdi sonuclandirir.
+ * Hem testi kolaylastirir hem de is ortasinda coktuyse kurtarma saglar.
+ */
+const settleMode = process.argv.includes('--settle');
+
+function arg(ad) {
+  const i = process.argv.indexOf(ad);
+  return i >= 0 ? process.argv[i + 1] : undefined;
+}
+
+function aktifOku() {
+  try {
+    return JSON.parse(fs.readFileSync(AKTIF_DOSYASI, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function aktifYaz(veri) {
+  fs.mkdirSync(path.dirname(AKTIF_DOSYASI), { recursive: true });
+  fs.writeFileSync(AKTIF_DOSYASI, `${JSON.stringify(veri, null, 2)}\n`);
+}
+
+function aktifSil() {
+  try {
+    fs.unlinkSync(AKTIF_DOSYASI);
+  } catch {
+    /* yoksa sorun degil */
+  }
+}
 
 /** Oylama mesajinin paylasilacagi saat (Turkiye). */
 const [PAYLAS_S, PAYLAS_D] = saatCoz(process.env.POLL_POST_TR, [14, 0]);
@@ -218,6 +250,39 @@ async function sonucPaylas(client, kanal, ts, veri) {
 
 // --- ANA AKIS --------------------------------------------------------------
 
+/** Bir oylamayi sonuclandirir: oylari okur, sonucu paylasir, gecmise yazar. */
+async function sonuclandir(client, botKullanici, mesajlar, acilisFiyat, kapanisFiyat) {
+  const degisim = ((kapanisFiyat - acilisFiyat) / acilisFiyat) * 100;
+  const yon = yonBelirle(degisim);
+  console.log(
+    `Acilis $${fiyatYaz(acilisFiyat)} -> kapanis $${fiyatYaz(kapanisFiyat)} | ` +
+      `degisim ${degisim.toFixed(2)}% -> ${yon}`,
+  );
+
+  for (const { kanal, ts } of mesajlar) {
+    try {
+      const { gecerli, gecersiz } = await oylariOku(client, kanal, ts, botKullanici);
+      await sonucPaylas(client, kanal, ts, { acilisFiyat, kapanisFiyat, degisim, yon, gecerli, gecersiz });
+      kayitEkle({
+        tarih: trTarih(new Date()),
+        kanal,
+        ts,
+        acilisFiyat,
+        kapanisFiyat,
+        degisim: Number(degisim.toFixed(3)),
+        yon,
+        oySayisi: gecerli.size,
+        gecersiz: gecersiz.length,
+        kazananlar: [...gecerli.entries()].filter(([, y]) => y === yon).map(([k]) => k),
+      });
+    } catch (err) {
+      console.error(`  ${kanal}: sonuc paylasilamadi -> ${err?.data?.error || err.message}`);
+      throw err;
+    }
+  }
+  aktifSil();
+}
+
 async function main() {
   const token = process.env.SLACK_BOT_TOKEN;
   const hedefler = kanallar();
@@ -226,6 +291,21 @@ async function main() {
   const client = new WebClient(token);
   const kimlik = await client.auth.test();
   const botKullanici = kimlik.user_id;
+
+  // --settle: onceden paylasilmis bir oylamayi simdi sonuclandir.
+  if (settleMode) {
+    const aktif = aktifOku();
+    const ts = arg('--ts') || aktif?.mesajlar?.[0]?.ts;
+    const kanal = arg('--kanal') || aktif?.mesajlar?.[0]?.kanal || hedefler[0];
+    const acilisFiyat = Number(arg('--acilis') || aktif?.acilisFiyat || aktif?.baslangicFiyat);
+
+    if (!ts) throw new Error('Sonuclandirilacak oylama yok. --ts <zaman damgasi> verin.');
+    if (!Number.isFinite(acilisFiyat)) throw new Error('Acilis fiyati bilinmiyor. --acilis <fiyat> verin.');
+
+    const { fiyat: kapanisFiyat } = await altinFiyati();
+    await sonuclandir(client, botKullanici, [{ kanal, ts }], acilisFiyat, kapanisFiyat);
+    return;
+  }
 
   const paylasAni = bugunSaat(PAYLAS_S, PAYLAS_D, 'Europe/Istanbul');
   const acilisAni = bugunSaat(ACILIS_S, ACILIS_D, 'America/New_York');
@@ -268,38 +348,20 @@ async function main() {
   }
   if (mesajlar.length === 0) throw new Error('Hicbir kanala oylama paylasilamadi.');
 
+  // Durumu diske yaz: is bu noktadan sonra coker veya kesilirse oylama
+  // "--settle" ile sonradan sonuclandirilabilsin.
+  aktifYaz({ mesajlar, baslangicFiyat, paylasildi: new Date().toISOString() });
+
   // 2) Acilis fiyatini yakala
   await bekle(acilisAni, 'ABD acilisi');
   const { fiyat: acilisFiyat } = await altinFiyati();
   console.log(`Acilis fiyati: $${fiyatYaz(acilisFiyat)}`);
+  aktifYaz({ mesajlar, baslangicFiyat, acilisFiyat, paylasildi: new Date().toISOString() });
 
   // 3) Bir saat sonra sonucu hesapla ve acikla
   await bekle(sonucAni, 'Sonuc saati');
   const { fiyat: kapanisFiyat } = await altinFiyati();
-  const degisim = ((kapanisFiyat - acilisFiyat) / acilisFiyat) * 100;
-  const yon = yonBelirle(degisim);
-  console.log(`Kapanis fiyati: $${fiyatYaz(kapanisFiyat)} | degisim ${degisim.toFixed(2)}% -> ${yon}`);
-
-  for (const { kanal, ts } of mesajlar) {
-    try {
-      const { gecerli, gecersiz } = await oylariOku(client, kanal, ts, botKullanici);
-      await sonucPaylas(client, kanal, ts, { acilisFiyat, kapanisFiyat, degisim, yon, gecerli, gecersiz });
-      kayitEkle({
-        tarih: trTarih(new Date()),
-        kanal,
-        ts,
-        acilisFiyat,
-        kapanisFiyat,
-        degisim: Number(degisim.toFixed(3)),
-        yon,
-        oySayisi: gecerli.size,
-        gecersiz: gecersiz.length,
-        kazananlar: [...gecerli.entries()].filter(([, y]) => y === yon).map(([k]) => k),
-      });
-    } catch (err) {
-      console.error(`  ${kanal}: sonuc paylasilamadi -> ${err?.data?.error || err.message}`);
-    }
-  }
+  await sonuclandir(client, botKullanici, mesajlar, acilisFiyat, kapanisFiyat);
 }
 
 main()
