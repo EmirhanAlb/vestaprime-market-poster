@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1aa011279eeb7c2e",
+      "ts": 1785784161185,
+      "baslik": "Venezuela’nın petrol ihracatı Temmuz’da Hindistan talebinin düşmesiyle %25 azaldı"
+    },
+    {
       "anahtar": "e2cf9fb998cff799",
       "ts": 1785771874319,
       "baslik": "Meksika analistleri 2026 enflasyon tahminini düşürdü"
@@ -239,11 +244,6 @@
       "anahtar": "198181ab61c66aa5",
       "ts": 1785207416770,
       "baslik": "Yapay zeka çöküşü KOSPI ve Nikkei’yi vururken Asya hisseleri sert düştü"
-    },
-    {
-      "anahtar": "991a2be4aa8abc0d",
-      "ts": 1785172764887,
-      "baslik": "İran’da ateşkes sonrası petrol düştü, tahvil faizleri geriledi"
     }
   ]
 }
