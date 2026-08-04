@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "cafaab8d0e089474",
+      "ts": 1785869898525,
+      "baslik": "TCMB: Enflasyonun ana eğilimi Temmuz'da geriledi, enerji ve hizmet fiyatları öne çıktı"
+    },
+    {
       "anahtar": "3a10fbc1b248f466",
       "ts": 1785857096464,
       "baslik": "ABD ekonomisinde kritik veriler: Ticaret açığı arttı, enflasyon yavaşlıyor"
@@ -209,11 +214,6 @@
       "anahtar": "f18610d6d2477669",
       "ts": 1785294947051,
       "baslik": "Petrol, İran saldırısı ve stok düşüşüyle %4’ten fazla yükseldi"
-    },
-    {
-      "anahtar": "81430bb932c5cf13",
-      "ts": 1785262881501,
-      "baslik": "Orta Doğu'da gerilim azaldı: Brent petrol, yüzde 5'ten fazla düştü"
     }
   ]
 }
