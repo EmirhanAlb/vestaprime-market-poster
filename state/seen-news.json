@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "66056810d6c5e6a2",
+      "ts": 1785853730200,
+      "baslik": "Brezilya’da sanayi üretimi yüksek faizler nedeniyle Haziran’da %1,8 düştü"
+    },
+    {
+      "anahtar": "f52b842eda161f97",
+      "ts": 1785853730200,
+      "baslik": "Mevsim etkilerinden arındırılmış özel kapsamlı TÜFE temmuzda aylık yüzde 1,93 arttı"
+    },
+    {
+      "anahtar": "49c4e05b24beb102",
+      "ts": 1785853730200,
+      "baslik": "ABD'nin dış ticaret açığı haziranda azaldı"
+    },
+    {
       "anahtar": "1aa011279eeb7c2e",
       "ts": 1785784161185,
       "baslik": "Venezuela’nın petrol ihracatı Temmuz’da Hindistan talebinin düşmesiyle %25 azaldı"
@@ -194,56 +209,6 @@
       "anahtar": "81430bb932c5cf13",
       "ts": 1785262881501,
       "baslik": "Orta Doğu'da gerilim azaldı: Brent petrol, yüzde 5'ten fazla düştü"
-    },
-    {
-      "anahtar": "0a01e0b5efabe99b",
-      "ts": 1785244333181,
-      "baslik": "BofA, Temmuz Fed faiz artışının neden \"emsalsiz\" olacağını açıkladı"
-    },
-    {
-      "anahtar": "bc4401ebca92b00a",
-      "ts": 1785244333181,
-      "baslik": "Altın, gümüş, platin ve paladyuma Fed freni: Commerzbank beklentiyi düşürdü"
-    },
-    {
-      "anahtar": "8b809cd7b862ac9e",
-      "ts": 1785244333181,
-      "baslik": "Fed faiz beklentisi kripto paralarda satış baskısını artırdı"
-    },
-    {
-      "anahtar": "e78e6381428facc2",
-      "ts": 1785237813606,
-      "baslik": "UBS, Fed ve MAS nedeniyle USD/SGD hedefini yükseltti"
-    },
-    {
-      "anahtar": "016f81df74b20346",
-      "ts": 1785228264227,
-      "baslik": "Fed öncesi metallerde değer kaybı: Bakır ve alüminyum fiyatları talep endişesiyle geriledi"
-    },
-    {
-      "anahtar": "f81843524c32ce0f",
-      "ts": 1785218077479,
-      "baslik": "Altın fiyatları düştü, güçlü dolar baskı yaptı; Fed kararı bekleniyor"
-    },
-    {
-      "anahtar": "71791f01e48e79c5",
-      "ts": 1785218077479,
-      "baslik": "Balinaların Bitcoin yatırımı haziranda %44 azaldı, gözler FED toplantısına çevrildi"
-    },
-    {
-      "anahtar": "d02af006eb5ebc48",
-      "ts": 1785218077479,
-      "baslik": "Dolar yükseldi, altın geriledi: Piyasalar Fed kararına kilitlendi"
-    },
-    {
-      "anahtar": "9f3697c3b1d1838d",
-      "ts": 1785207416770,
-      "baslik": "Wall St vadeli işlemleri yapay zeka endişeleriyle geriledi; Fed ve megacap kazançları bekleniyor"
-    },
-    {
-      "anahtar": "198181ab61c66aa5",
-      "ts": 1785207416770,
-      "baslik": "Yapay zeka çöküşü KOSPI ve Nikkei’yi vururken Asya hisseleri sert düştü"
     }
   ]
 }
