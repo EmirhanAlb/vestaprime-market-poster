@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "3f24ad83b55a7054",
+      "ts": 1785965531045,
+      "baslik": "OR Royalties, altın fiyatlarıyla 2026 2Ç’de gelirini %62 artırdı"
+    },
+    {
       "anahtar": "dfa6bae56b3340f6",
       "ts": 1785954164758,
       "baslik": "Hollanda ve İngiltere gaz fiyatları ABD-İran görüşmeleriyle %5 düştü"
@@ -179,16 +184,6 @@
       "anahtar": "dabce2e7bec0fd39",
       "ts": 1785390460908,
       "baslik": "BOJ Temmuz önizlemesi: Faizler sabit ama yen zayıflığı ve enflasyon sert duruşa işaret ediyor"
-    },
-    {
-      "anahtar": "a89453fb2451f2c0",
-      "ts": 1785352707391,
-      "baslik": "Fed faiz oranlarını beşinci kez üst üste sabit tuttu"
-    },
-    {
-      "anahtar": "65d93a41a38f94d8",
-      "ts": 1785352707391,
-      "baslik": "Son dakika... Fed faiz kararını açıkladı"
     }
   ]
 }
