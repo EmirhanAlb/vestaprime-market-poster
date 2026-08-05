@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "579abb85ede3d243",
+      "ts": 1785909144053,
+      "baslik": "RBI faiz oranlarını sabit tuttu, enflasyon görünümünde netlik bekliyor"
+    },
+    {
       "anahtar": "cafaab8d0e089474",
       "ts": 1785869898525,
       "baslik": "TCMB: Enflasyonun ana eğilimi Temmuz'da geriledi, enerji ve hizmet fiyatları öne çıktı"
@@ -209,11 +214,6 @@
       "anahtar": "774083295cdcfb42",
       "ts": 1785305699539,
       "baslik": "KOSPI yüzde 8 düşerken Asya borsaları geriledi; yapay zeka endişeleri ve İran saldırıları teknolojiyi vurdu"
-    },
-    {
-      "anahtar": "f18610d6d2477669",
-      "ts": 1785294947051,
-      "baslik": "Petrol, İran saldırısı ve stok düşüşüyle %4’ten fazla yükseldi"
     }
   ]
 }
