@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8ecee097b7355594",
+      "ts": 1785919480417,
+      "baslik": "Piyasalarda Hürmüz Boğazı iyimserliği: Petrol çakıldı, borsalar rekora koştu!"
+    },
+    {
+      "anahtar": "48313f8a3c36df9c",
+      "ts": 1785919480417,
+      "baslik": "Düşen petrol fiyatları enflasyon baskısını hafifletti, Alman tahvil getirileri 3 haftanın en düşüğüne geriledi"
+    },
+    {
+      "anahtar": "912bea2f6f75acb8",
+      "ts": 1785919480417,
+      "baslik": "Karahan: Temmuz enflasyonu %31,8, sıkı para politikası sürecek"
+    },
+    {
       "anahtar": "579abb85ede3d243",
       "ts": 1785909144053,
       "baslik": "RBI faiz oranlarını sabit tuttu, enflasyon görünümünde netlik bekliyor"
@@ -204,16 +219,6 @@
       "anahtar": "d501928b227feb6e",
       "ts": 1785317026679,
       "baslik": "Merkez Bankası duyurdu: e-Devlet’e yeni özellik eklendi"
-    },
-    {
-      "anahtar": "c4d5540d8ab1ddc8",
-      "ts": 1785305699539,
-      "baslik": "Altın Fed kararı öncesi sakin; petrol toparlandı, enflasyon endişeleri arttı"
-    },
-    {
-      "anahtar": "774083295cdcfb42",
-      "ts": 1785305699539,
-      "baslik": "KOSPI yüzde 8 düşerken Asya borsaları geriledi; yapay zeka endişeleri ve İran saldırıları teknolojiyi vurdu"
     }
   ]
 }
