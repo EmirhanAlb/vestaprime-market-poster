@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "081c8b9441bab88a",
+      "ts": 1785942865753,
+      "baslik": "Hürmüz Boğazı'ndaki kriz LNG taşımacılığını vurdu: Gemi kiraları 235 bin dolara çıktı"
+    },
+    {
       "anahtar": "8ecee097b7355594",
       "ts": 1785919480417,
       "baslik": "Piyasalarda Hürmüz Boğazı iyimserliği: Petrol çakıldı, borsalar rekora koştu!"
@@ -194,31 +199,6 @@
       "anahtar": "08d4ce57d5189f93",
       "ts": 1785343126597,
       "baslik": "Mozambik merkez bankası enflasyon ortamında faizi %9,25’te tuttu"
-    },
-    {
-      "anahtar": "0046f46058666664",
-      "ts": 1785334952045,
-      "baslik": "Özbekistan’ın doğal gaz üretimi ilk yarıda %18 düştü"
-    },
-    {
-      "anahtar": "e23a5a7dabe76d4d",
-      "ts": 1785325270036,
-      "baslik": "S&P 500 bugünkü FOMC’ye nasıl tepki verecek? JPM senaryoları açıkladı"
-    },
-    {
-      "anahtar": "e164d96395808c20",
-      "ts": 1785325270036,
-      "baslik": "Bernstein, güçlü 2Ç büyüme verisiyle e-ticaret tahminlerini yükseltti"
-    },
-    {
-      "anahtar": "f2b68297fc6137e1",
-      "ts": 1785317026679,
-      "baslik": "Güçlü bilançolar Fed faiz artışı endişelerini gölgede bıraktı, Avrupa hisseleri yükseldi"
-    },
-    {
-      "anahtar": "d501928b227feb6e",
-      "ts": 1785317026679,
-      "baslik": "Merkez Bankası duyurdu: e-Devlet’e yeni özellik eklendi"
     }
   ]
 }
