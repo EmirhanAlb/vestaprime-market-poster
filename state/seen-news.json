@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "211e36983039d14f",
+      "ts": 1786008216654,
+      "baslik": "Brezilya merkez bankası faiz indirdi ancak döngünün sonuna işaret etti"
+    },
+    {
+      "anahtar": "7901a043ababe561",
+      "ts": 1786008216654,
+      "baslik": "Avro banknotları değişiyor! ECB yeni tasarımlar için süreci başlattı"
+    },
+    {
       "anahtar": "3f24ad83b55a7054",
       "ts": 1785965531045,
       "baslik": "OR Royalties, altın fiyatlarıyla 2026 2Ç’de gelirini %62 artırdı"
@@ -169,21 +179,6 @@
       "anahtar": "886811938f19e53b",
       "ts": 1785409968395,
       "baslik": "İngiltere Merkez Bankası politika faizini piyasa beklentileri doğrultusunda yüzde 3,75'te sabit tuttu"
-    },
-    {
-      "anahtar": "da57b8f56902213c",
-      "ts": 1785400631874,
-      "baslik": "Avro tahvil getirileri Ortadoğu savaşı ve Fed belirsizliği ile yükseldi"
-    },
-    {
-      "anahtar": "3b529080b11c8ce3",
-      "ts": 1785400631874,
-      "baslik": "Temmuz TÜFE öncesi gıda enflasyonu yüzde 0,93 yükseldi"
-    },
-    {
-      "anahtar": "dabce2e7bec0fd39",
-      "ts": 1785390460908,
-      "baslik": "BOJ Temmuz önizlemesi: Faizler sabit ama yen zayıflığı ve enflasyon sert duruşa işaret ediyor"
     }
   ]
 }
