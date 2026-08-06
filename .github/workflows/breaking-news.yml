@@ -48,9 +48,12 @@ jobs:
         run: node src/news/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          TELEGRAM_BOTS: ${{ vars.TELEGRAM_BOTS }}
+          TELEGRAM_MONEYFAST_TOKEN: ${{ secrets.TELEGRAM_MONEYFAST_TOKEN }}
+          TELEGRAM_ALEX_TOKEN: ${{ secrets.TELEGRAM_ALEX_TOKEN }}
+          TELEGRAM_MONEYFAST_NEWS: ${{ secrets.TELEGRAM_MONEYFAST_NEWS }}
+          TELEGRAM_ALEX_NEWS: ${{ secrets.TELEGRAM_ALEX_NEWS }}
           NEWS_CHANNEL_ID: ${{ secrets.NEWS_CHANNEL_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_OUT_NEWS: ${{ secrets.TELEGRAM_OUT_NEWS }}
           NEWS_MAX_AGE_HOURS: ${{ inputs.max_age_hours || '3' }}
 
       - name: Gonderim gecmisini kaydet

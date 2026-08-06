@@ -1,21 +1,20 @@
 /**
- * Slack'e giden icerigin Telegram kanalina da gonderilmesi.
+ * Slack'e giden icerigin Telegram kanallarina da gonderilmesi.
  *
- * Her otomasyon kendi ortam degiskeniyle acilir; degisken bos ise hicbir sey
- * gonderilmez ve mevcut Slack akisi hic degismez. Boylece Telegram'i tek tek
- * devreye alabiliyoruz.
+ * Her akis kendi hedef degiskeniyle acilir; hedef tanimli degilse hicbir sey
+ * gonderilmez ve mevcut Slack akisi hic degismez. Boylece Telegram'i akis akis
+ * ve kanal kanal devreye alabiliyoruz.
  *
- *   TELEGRAM_BOT_TOKEN     BotFather'dan alinan bot anahtari (ortak)
- *   TELEGRAM_OUT_NEWS      Son Dakika haberleri  -> kanal
- *   TELEGRAM_OUT_JUICE     FinancialJuice akisi  -> kanal
- *   TELEGRAM_OUT_POSTER    Piyasa posteri        -> kanal
+ * Hedef cozumleme (tek bot / coklu bot yazimlari) targets.js icinde.
  *
- * KURAL: Telegram kanali ayri bir marka. Buradan cikan hicbir mesajda
+ * KURAL: Telegram kanallari ayri bir marka. Buradan cikan hicbir mesajda
  * "Vestaprime" adi, vestaprimes.com bagi veya baska bir marka izi
- * BULUNMAYACAK. Yeni bir mesaj bicimi eklerken bunu kontrol edin.
+ * BULUNMAYACAK. Yeni bir mesaj bicimi eklerken bunu kontrol edin - client.js
+ * icindeki koruma son savunma hatti, ilk savunma buradaki dikkat.
  */
 
-import { mesajGonder, fotografGonder, kacir, kanallar, etkinMi } from './client.js';
+import { mesajGonder, fotografGonder, kacir } from './client.js';
+import { hedefler } from './targets.js';
 
 const KATEGORI_EMOJI = {
   Ekonomi: '📊',
@@ -25,16 +24,12 @@ const KATEGORI_EMOJI = {
   Borsa: '📈',
 };
 
-function hedefler(degisken) {
-  return kanallar(process.env[degisken]);
-}
-
-async function hepsineGonder(degisken, html, secenekler) {
-  const liste = hedefler(degisken);
+async function hepsineGonder(akis, html, secenekler) {
+  const liste = hedefler(akis);
   if (liste.length === 0) return 0;
   let basarili = 0;
-  for (const chatId of liste) {
-    if (await mesajGonder(chatId, html, secenekler)) basarili += 1;
+  for (const { token, chatId } of liste) {
+    if (await mesajGonder(token, chatId, html, secenekler)) basarili += 1;
   }
   return basarili;
 }
@@ -47,14 +42,14 @@ export async function haberGonder({ baslik, kategori, kaynak, saat, link }) {
     `<b>${kacir(baslik)}</b>\n\n` +
     `${emoji} ${kacir(kategori)} · ${kacir(kaynak)} · ${kacir(saat)}` +
     (link ? `\n<a href="${kacir(link)}">Habere git</a>` : '');
-  return hepsineGonder('TELEGRAM_OUT_NEWS', html);
+  return hepsineGonder('news', html);
 }
 
 /**
  * FinancialJuice ham akis basligi.
  *
  * Kaynak bagi bilerek YOK: bag kaynagin kendi Telegram kanalina gidiyordu ve
- * bizim kanalimizin abonelerini oraya yonlendiriyordu. Isim (FinancialJuice)
+ * bizim kanallarimizin abonelerini oraya yonlendiriyordu. Isim (FinancialJuice)
  * atif olarak kaliyor, tiklanabilir bag kalmiyor.
  */
 export async function juiceGonder({ metin, saat, cevrildi = true }) {
@@ -62,7 +57,7 @@ export async function juiceGonder({ metin, saat, cevrildi = true }) {
     `⚡ ${kacir(metin)}\n\n` +
     `<i>FinancialJuice · ${kacir(saat)}</i>` +
     (cevrildi ? '' : ' · <i>çeviri yapılamadı</i>');
-  return hepsineGonder('TELEGRAM_OUT_JUICE', html);
+  return hepsineGonder('juice', html);
 }
 
 /**
@@ -70,18 +65,17 @@ export async function juiceGonder({ metin, saat, cevrildi = true }) {
  *
  * UYARI: Poster GORSELININ KENDISINDE logo ve "vestaprimes.com" yazisi var -
  * bu metinden temizlenemez. Marka gecmemesi gereken bir kanala poster
- * gondermeyin; TELEGRAM_OUT_POSTER'i bos birakin veya markasiz bir gorsel
- * uretin.
+ * gondermeyin; hedefi bos birakin veya markasiz bir gorsel uretin.
  */
 export async function posterGonder({ dosyaYolu, saat, canli = true }) {
-  const liste = hedefler('TELEGRAM_OUT_POSTER');
+  const liste = hedefler('poster');
   if (liste.length === 0) return 0;
   const aciklama =
     `📈 <b>Canlı Piyasalar</b> · ${kacir(saat)}` +
     (canli ? '' : '\n<i>Fiyatlar canlı akışa geçmeden yakalandı.</i>');
   let basarili = 0;
-  for (const chatId of liste) {
-    if (await fotografGonder(chatId, dosyaYolu, aciklama)) basarili += 1;
+  for (const { token, chatId } of liste) {
+    if (await fotografGonder(token, chatId, dosyaYolu, aciklama)) basarili += 1;
   }
   return basarili;
 }
@@ -94,7 +88,5 @@ export async function oylamaSonucGonder({ acilis, kapanis, degisim, yonEtiket, s
     `Açılış: <b>$${kacir(acilis)}</b> → 1 saat sonra: <b>$${kacir(kapanis)}</b>\n` +
     `Değişim: <b>${isaret}${degisim.toFixed(2)}%</b> → <b>${kacir(yonEtiket)}</b>` +
     (sert ? ' <i>(sert hareket)</i>' : '');
-  return hepsineGonder('TELEGRAM_OUT_POLL', html);
+  return hepsineGonder('poll', html);
 }
-
-export { etkinMi };

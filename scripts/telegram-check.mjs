@@ -1,8 +1,9 @@
 /**
- * Telegram cikis kurulumunu dogrular.
+ * Telegram cikis kurulumunu dogrular. Birden fazla bot destekler.
  *
- *   node scripts/telegram-check.mjs            -> sadece kontrol eder
- *   node scripts/telegram-check.mjs --gonder   -> her kanala test mesaji atar
+ *   node scripts/telegram-check.mjs            -> kurulumu ozetler
+ *   node scripts/telegram-check.mjs --bul      -> her botun gordugu sohbetleri listeler
+ *   node scripts/telegram-check.mjs --gonder   -> her hedefe test mesaji atar
  *
  * En sik iki hata:
  *   - bot kanala admin olarak eklenmemis  -> "chat not found" / "not enough rights"
@@ -11,7 +12,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { kimlik, mesajGonder, kanallar } from '../src/telegram-out/client.js';
+import { kimlik, mesajGonder, sohbetler } from '../src/telegram-out/client.js';
+import { hedefler, botlar, AKISLAR } from '../src/telegram-out/targets.js';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const envFile = path.join(rootDir, '.env');
@@ -20,75 +22,79 @@ if (fs.existsSync(envFile)) process.loadEnvFile(envFile);
 const gonder = process.argv.includes('--gonder');
 const bul = process.argv.includes('--bul');
 
-const HEDEFLER = [
-  ['TELEGRAM_OUT_NEWS', 'Son Dakika haberleri'],
-  ['TELEGRAM_OUT_JUICE', 'FinancialJuice akisi'],
-  ['TELEGRAM_OUT_POSTER', 'Piyasa posteri'],
-  ['TELEGRAM_OUT_POLL', 'Gunun tahmini sonucu'],
-];
+const ACIKLAMA = {
+  news: 'Son Dakika haberleri',
+  juice: 'FinancialJuice akisi',
+  poster: 'Piyasa posteri',
+  poll: 'Gunun tahmini sonucu',
+};
 
-if (!process.env.TELEGRAM_BOT_TOKEN) {
-  console.error('TELEGRAM_BOT_TOKEN tanimli degil. BotFather dan alip .env dosyasina ekleyin.');
+const botListesi = botlar();
+if (botListesi.length === 0) {
+  console.error('Hicbir bot tanimli degil. TELEGRAM_BOT_TOKEN veya TELEGRAM_BOTS ekleyin.');
   process.exit(1);
 }
 
-let bot;
-try {
-  bot = await kimlik();
-  console.log(`Bot: @${bot.username} (${bot.first_name}) - token gecerli\n`);
-} catch (err) {
-  console.error(`Token gecersiz: ${err.message}`);
-  process.exit(1);
-}
-
-// --bul: bot'un gordugu sohbetleri listeler. Ozel kanallarin -100... kimligini
-// bulmanin en pratik yolu: bota admin yetkisi verdikten sonra kanala bir mesaj
-// atin, sonra bu komutu calistirin.
-if (bul) {
-  const yanit = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/getUpdates`);
-  const j = await yanit.json();
-  const sohbetler = new Map();
-  for (const g of j.result || []) {
-    const c = g.channel_post?.chat || g.message?.chat || g.my_chat_member?.chat;
-    if (c) sohbetler.set(c.id, c);
+// --- Botlarin kimligini dogrula --------------------------------------------
+const adlar = new Map();
+for (const { slot, token } of botListesi) {
+  try {
+    const bot = await kimlik(token);
+    adlar.set(slot, `@${bot.username}`);
+    console.log(`Bot [${slot}]: @${bot.username} (${bot.first_name}) - token gecerli`);
+  } catch (err) {
+    console.error(`Bot [${slot}]: TOKEN GECERSIZ - ${err.message}`);
+    adlar.set(slot, '(gecersiz)');
   }
-  if (sohbetler.size === 0) {
-    console.log('Hicbir sohbet gorunmuyor.');
-    console.log('Yapilacak: bota kanalda admin yetkisi verin, kanala bir mesaj atin, sonra tekrar deneyin.');
-  } else {
-    console.log('Bot su sohbetleri goruyor:\n');
-    for (const c of sohbetler.values()) {
-      console.log(`  ${String(c.id).padEnd(16)} ${c.type.padEnd(10)} ${c.title || c.username || ''}`);
+}
+console.log('');
+
+// --- Kanal kimligi bulma ---------------------------------------------------
+if (bul) {
+  for (const { slot, token } of botListesi) {
+    console.log(`[${slot}] ${adlar.get(slot)} su sohbetleri goruyor:`);
+    try {
+      const liste = await sohbetler(token);
+      if (liste.length === 0) {
+        console.log('  (yok) - bota kanalda admin yetkisi verin, kanala bir mesaj atin, tekrar deneyin');
+      }
+      for (const c of liste) {
+        console.log(`  ${String(c.id).padEnd(16)} ${c.type.padEnd(10)} ${c.title || c.username || ''}`);
+      }
+    } catch (err) {
+      console.log(`  HATA: ${err.message}`);
     }
-    console.log('\nKullanacaginiz deger soldaki kimlik (kanallar icin -100... ile baslar).');
+    console.log('');
   }
   process.exit(0);
 }
 
+// --- Hedef ozeti / test gonderimi ------------------------------------------
 let hedefVar = false;
-for (const [degisken, aciklama] of HEDEFLER) {
-  const liste = kanallar(process.env[degisken]);
+for (const akis of Object.keys(AKISLAR)) {
+  const liste = hedefler(akis);
   if (liste.length === 0) {
-    console.log(`  ${degisken.padEnd(22)} - tanimsiz (${aciklama} Telegram'a gitmez)`);
+    console.log(`  ${akis.padEnd(7)} - hedef yok (${ACIKLAMA[akis]} Telegram'a gitmez)`);
     continue;
   }
   hedefVar = true;
-  for (const chatId of liste) {
+  for (const { token, chatId, slot } of liste) {
     if (!gonder) {
-      console.log(`  ${degisken.padEnd(22)} -> ${chatId}  (${aciklama})`);
+      console.log(`  ${akis.padEnd(7)} -> ${String(chatId).padEnd(16)} [${slot}] ${ACIKLAMA[akis]}`);
       continue;
     }
     const ok = await mesajGonder(
+      token,
       chatId,
-      `✅ <b>Bağlantı testi</b>\n\n${aciklama} bu kanala gönderilecek.\nBu mesajı görüyorsanız kurulum doğru.`,
+      `✅ <b>Bağlantı testi</b>\n\n${ACIKLAMA[akis]} bu kanala gönderilecek.\nBu mesajı görüyorsanız kurulum doğru.`,
     );
-    console.log(`  ${degisken.padEnd(22)} -> ${chatId}  ${ok ? 'GONDERILDI' : 'BASARISIZ'}`);
+    console.log(`  ${akis.padEnd(7)} -> ${String(chatId).padEnd(16)} [${slot}] ${ok ? 'GONDERILDI' : 'BASARISIZ'}`);
   }
 }
 
 if (!hedefVar) {
-  console.log('\nHicbir hedef kanal tanimli degil. En az bir TELEGRAM_OUT_* degiskeni ekleyin.');
+  console.log('\nHicbir hedef tanimli degil.');
 } else if (!gonder) {
-  console.log('\nTest mesaji atmak icin: node scripts/telegram-check.mjs --gonder');
+  console.log('\nTest mesaji atmak icin: npm run tg:test');
 }
 process.exit(0);
