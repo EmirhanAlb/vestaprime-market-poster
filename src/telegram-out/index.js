@@ -50,12 +50,17 @@ export async function haberGonder({ baslik, kategori, kaynak, saat, link }) {
   return hepsineGonder('TELEGRAM_OUT_NEWS', html);
 }
 
-/** FinancialJuice ham akis basligi. */
-export async function juiceGonder({ metin, saat, link, cevrildi = true }) {
+/**
+ * FinancialJuice ham akis basligi.
+ *
+ * Kaynak bagi bilerek YOK: bag kaynagin kendi Telegram kanalina gidiyordu ve
+ * bizim kanalimizin abonelerini oraya yonlendiriyordu. Isim (FinancialJuice)
+ * atif olarak kaliyor, tiklanabilir bag kalmiyor.
+ */
+export async function juiceGonder({ metin, saat, cevrildi = true }) {
   const html =
     `⚡ ${kacir(metin)}\n\n` +
     `<i>FinancialJuice · ${kacir(saat)}</i>` +
-    (link ? ` · <a href="${kacir(link)}">kaynak</a>` : '') +
     (cevrildi ? '' : ' · <i>çeviri yapılamadı</i>');
   return hepsineGonder('TELEGRAM_OUT_JUICE', html);
 }

@@ -218,7 +218,6 @@ async function birTur() {
     await juiceGonder({
       metin: mesaj.turkce,
       saat: saat(mesaj.tarih),
-      link: mesaj.link,
       cevrildi: mesaj.cevrildi,
     });
     // Slack mesaj hizi sinirina takilmamak icin kisa aralik.
