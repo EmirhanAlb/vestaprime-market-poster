@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "dcdf626d003b17a5",
+      "ts": 1786026344301,
+      "baslik": "Fed’in neden daha şahin olması gerektiğini Yardeni açıkladı"
+    },
+    {
       "anahtar": "1c35ccbb6df7404c",
       "ts": 1786016533135,
       "baslik": "İrlanda’da işsizlik oranı Temmuz’da %5,1’e yükseldi"
@@ -174,16 +179,6 @@
       "anahtar": "1ec4da8113df175f",
       "ts": 1785430377536,
       "baslik": "Fed faiz tutarken Hazine tahvil faizleri enflasyon endişesiyle yükseldi"
-    },
-    {
-      "anahtar": "afdcb0f6f5d92df4",
-      "ts": 1785416927777,
-      "baslik": "Sterlin bugün: BOE faizleri sabit tutunca sterlin yükseldi"
-    },
-    {
-      "anahtar": "e15d2b9a38ce7594",
-      "ts": 1785416927777,
-      "baslik": "Merkez Bankası rezervleri yükseldi"
     }
   ]
 }
