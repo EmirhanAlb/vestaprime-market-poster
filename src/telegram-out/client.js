@@ -58,6 +58,26 @@ async function cagir(metot, govde, denemeSayisi = 0) {
   }
 }
 
+/**
+ * Marka korumasi. Telegram kanali ayri bir marka; buradan cikan hicbir
+ * mesajda kurum adi veya alan adi gecmeyecek. Sablona yanlislikla marka
+ * eklenirse mesaj gonderilmez ve hata loglanir - sessizce sizmasindansa
+ * gorunur sekilde durmasi tercih edildi.
+ */
+const YASAKLI = /vestaprime|vestaprimes\.com/i;
+
+function markaKontrol(metin) {
+  const e = YASAKLI.exec(String(metin || ''));
+  if (e) {
+    console.error(
+      `  !! TELEGRAM GONDERIMI ENGELLENDI: metinde yasakli marka izi var ("${e[0]}"). ` +
+        'Telegram kanali ayri marka - sablonu duzeltin.',
+    );
+    return false;
+  }
+  return true;
+}
+
 /** Bot yapilandirilmis mi? Degilse tum gonderimler sessizce atlanir. */
 export function etkinMi(chatId) {
   return Boolean(token() && chatId);
@@ -85,6 +105,7 @@ async function hizSinirla() {
  */
 export async function mesajGonder(chatId, html, { onizleme = false } = {}) {
   if (!etkinMi(chatId)) return false;
+  if (!markaKontrol(html)) return false;
   try {
     await hizSinirla();
     await cagir('sendMessage', {
@@ -105,6 +126,7 @@ export async function mesajGonder(chatId, html, { onizleme = false } = {}) {
  */
 export async function fotografGonder(chatId, dosyaYolu, aciklamaHtml) {
   if (!etkinMi(chatId)) return false;
+  if (!markaKontrol(aciklamaHtml)) return false;
   try {
     const fs = await import('node:fs');
     const path = await import('node:path');

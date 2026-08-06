@@ -9,6 +9,10 @@
  *   TELEGRAM_OUT_NEWS      Son Dakika haberleri  -> kanal
  *   TELEGRAM_OUT_JUICE     FinancialJuice akisi  -> kanal
  *   TELEGRAM_OUT_POSTER    Piyasa posteri        -> kanal
+ *
+ * KURAL: Telegram kanali ayri bir marka. Buradan cikan hicbir mesajda
+ * "Vestaprime" adi, vestaprimes.com bagi veya baska bir marka izi
+ * BULUNMAYACAK. Yeni bir mesaj bicimi eklerken bunu kontrol edin.
  */
 
 import { mesajGonder, fotografGonder, kacir, kanallar, etkinMi } from './client.js';
@@ -56,13 +60,19 @@ export async function juiceGonder({ metin, saat, link, cevrildi = true }) {
   return hepsineGonder('TELEGRAM_OUT_JUICE', html);
 }
 
-/** Piyasa posteri (gorsel). */
+/**
+ * Piyasa posteri (gorsel).
+ *
+ * UYARI: Poster GORSELININ KENDISINDE logo ve "vestaprimes.com" yazisi var -
+ * bu metinden temizlenemez. Marka gecmemesi gereken bir kanala poster
+ * gondermeyin; TELEGRAM_OUT_POSTER'i bos birakin veya markasiz bir gorsel
+ * uretin.
+ */
 export async function posterGonder({ dosyaYolu, saat, canli = true }) {
   const liste = hedefler('TELEGRAM_OUT_POSTER');
   if (liste.length === 0) return 0;
   const aciklama =
-    `📈 <b>Canlı Piyasalar</b> · ${kacir(saat)}\n` +
-    `<a href="https://vestaprimes.com/en/market-poster">vestaprimes.com</a>` +
+    `📈 <b>Canlı Piyasalar</b> · ${kacir(saat)}` +
     (canli ? '' : '\n<i>Fiyatlar canlı akışa geçmeden yakalandı.</i>');
   let basarili = 0;
   for (const chatId of liste) {

@@ -80,7 +80,7 @@ for (const [degisken, aciklama] of HEDEFLER) {
     }
     const ok = await mesajGonder(
       chatId,
-      `✅ <b>Vestaprime otomasyon testi</b>\n\n${aciklama} bu kanala gönderilecek.\nBu mesajı görüyorsanız kurulum doğru.`,
+      `✅ <b>Bağlantı testi</b>\n\n${aciklama} bu kanala gönderilecek.\nBu mesajı görüyorsanız kurulum doğru.`,
     );
     console.log(`  ${degisken.padEnd(22)} -> ${chatId}  ${ok ? 'GONDERILDI' : 'BASARISIZ'}`);
   }

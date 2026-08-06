@@ -417,3 +417,17 @@ Hız sınırı: Telegram kanal başına dakikada ~20 mesaja izin veriyor. Financ
 tur başına 15 mesaja kadar gönderebildiği için mesajlar arasında 3 saniye aralık
 bırakılıyor (`TELEGRAM_OUT_DELAY_MS`). `429` yanıtında Telegram'ın bildirdiği
 süre kadar beklenip bir kez yeniden denenir.
+
+## Marka kuralı — Telegram kanalı
+
+Telegram kanalı **ayrı bir markadır**. Buradan çıkan hiçbir mesajda kurum adı,
+alan adı veya başka bir marka izi bulunmaz.
+
+Bu yalnızca bir kural değil, kodda zorlanıyor: `src/telegram-out/client.js`
+içindeki koruma, gönderilecek metinde marka izi bulursa **mesajı göndermez** ve
+hata loglar. Şablona yanlışlıkla marka eklenirse sessizce sızmak yerine görünür
+şekilde durur.
+
+> ⚠️ **Poster istisnası:** piyasa posterinin **görselinin içinde** logo ve
+> `vestaprimes.com` yazısı var; bu metin filtresiyle temizlenemez. Bu yüzden
+> `TELEGRAM_OUT_POSTER` markasız bir kanal için **boş bırakılmalıdır**.
