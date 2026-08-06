@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { WebClient } from '@slack/web-api';
 import { mesajlariCek } from './fetch.js';
 import { benzerleriEle } from '../news/state.js';
+import { juiceGonder } from '../telegram-out/index.js';
 
 /**
  * Ceviri motoru. Varsayilan "free": API anahtari ve maliyet gerektirmez.
@@ -212,6 +213,14 @@ async function birTur() {
     gorulen.add(mesaj.anahtar);
     sonMetinler.push(mesaj.metin);
     gonderilen += 1;
+
+    // Telegram cikisi opsiyonel; TELEGRAM_OUT_JUICE bos ise atlanir.
+    await juiceGonder({
+      metin: mesaj.turkce,
+      saat: saat(mesaj.tarih),
+      link: mesaj.link,
+      cevrildi: mesaj.cevrildi,
+    });
     // Slack mesaj hizi sinirina takilmamak icin kisa aralik.
     await new Promise((r) => setTimeout(r, 250));
   }

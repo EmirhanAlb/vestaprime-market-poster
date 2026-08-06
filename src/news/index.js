@@ -6,6 +6,7 @@ import { haberleriTopla } from './feed.js';
 import { skorla, MIN_SKOR } from './score.js';
 import { durumOku, durumYaz, benzerleriEle } from './state.js';
 import { haberGonder } from './slack-news.js';
+import { haberGonder as telegramHaber } from '../telegram-out/index.js';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const envFile = path.join(rootDir, '.env');
@@ -93,6 +94,19 @@ async function main() {
     }
     gonderilenler.push({ anahtar: haber.anahtar, ts: simdi, baslik: haber.baslik.slice(0, 120) });
     console.log(`  gonderildi: ${haber.baslik.slice(0, 70)}`);
+
+    // Telegram cikisi opsiyonel: TELEGRAM_OUT_NEWS bos ise hicbir sey olmaz.
+    // Hatasi Slack akisini etkilemez (istemci kendi icinde yakaliyor).
+    const tgSaat = haber.tarih
+      ? new Intl.DateTimeFormat('tr-TR', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false }).format(haber.tarih)
+      : '';
+    await telegramHaber({
+      baslik: haber.baslik,
+      kategori: haber.kaynak.category,
+      kaynak: haber.kaynak.name,
+      saat: tgSaat,
+      link: haber.link,
+    });
   }
 
   durumYaz(DURUM_DOSYASI, gonderilenler);

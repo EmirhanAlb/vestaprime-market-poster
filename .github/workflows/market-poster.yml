@@ -39,6 +39,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OUT_POSTER: ${{ secrets.TELEGRAM_OUT_POSTER }}
 
       - name: Hata durumunda ciktiyi sakla
         if: failure()

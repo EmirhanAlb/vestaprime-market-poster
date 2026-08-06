@@ -66,6 +66,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OUT_JUICE: ${{ secrets.TELEGRAM_OUT_JUICE }}
           TRANSLATOR: ${{ vars.TRANSLATOR || 'free' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           LOOP_SECONDS: ${{ vars.LOOP_SECONDS || '300' }}

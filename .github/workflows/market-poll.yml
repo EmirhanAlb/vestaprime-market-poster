@@ -55,6 +55,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           POLL_CHANNEL_ID: ${{ secrets.POLL_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OUT_POLL: ${{ secrets.TELEGRAM_OUT_POLL }}
           POLL_POST_TR: ${{ inputs.post_tr || '14:00' }}
           POLL_SETTLE_MINUTES: ${{ inputs.settle_minutes || '60' }}
           POLL_FLAT_BAND: ${{ vars.POLL_FLAT_BAND || '0.15' }}

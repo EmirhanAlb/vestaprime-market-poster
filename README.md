@@ -342,3 +342,78 @@ npm run juice        # gerçekten gönder
 ```
 
 Actions → **FinancialJuice -> Slack** → **Run workflow** (varsayılan `dry_run: true`).
+
+---
+
+# Telegram çıkışı — Slack'e gidenlerin kopyası
+
+Slack'e giden içerik aynı anda bir Telegram kanalına da gönderilebilir.
+
+> **İsim karışıklığına dikkat:** `src/telegram/` klasörü Telegram'dan **okur**
+> (FinancialJuice kanalının web önizlemesini ayrıştırır). `src/telegram-out/` ise
+> Telegram'a **yazar**. İkisi ayrı işler, bilerek ayrı klasörlerde.
+
+## Kurulum
+
+### 1. Bot oluştur
+
+Telegram'da [@BotFather](https://t.me/BotFather) ile konuş:
+
+```
+/newbot
+→ Bot adı:      Vestaprime Haber
+→ Kullanıcı adı: vestaprime_haber_bot   (sonu "bot" ile bitmeli, benzersiz olmalı)
+```
+
+BotFather sana `123456789:AAH...` biçiminde bir **token** verir. Bu değer gizlidir.
+
+### 2. Botu kanala admin yap
+
+Telegram kanalın → **Yönet** → **Yöneticiler** → **Yönetici Ekle** → botun kullanıcı
+adını ara → ekle. **"Mesaj Gönder" yetkisi açık olmalı**, diğerleri kapalı kalabilir.
+
+> Bot kanala sadece üye olarak eklenirse mesaj atamaz — **admin** olması şart.
+
+### 3. Kanal kimliğini bul
+
+Herkese açık kanalda `@kanaladi` doğrudan kullanılabilir. Özel kanalda `-100...`
+biçiminde bir kimlik gerekir. Botu admin yaptıktan sonra kanala bir mesaj at, sonra:
+
+```bash
+npm run tg:bul
+```
+
+Bot'un gördüğü sohbetleri kimlikleriyle listeler.
+
+### 4. Hangi akış nereye gitsin
+
+`.env` (lokal) veya GitHub repo secret'ları:
+
+| Değişken | Ne gönderilir |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | Bot anahtarı (ortak, zorunlu) |
+| `TELEGRAM_OUT_NEWS` | Son Dakika haberleri |
+| `TELEGRAM_OUT_JUICE` | FinancialJuice ham akışı |
+| `TELEGRAM_OUT_POSTER` | Piyasa posteri (görsel) |
+| `TELEGRAM_OUT_POLL` | Günün tahmini sonucu |
+
+**Boş bırakılan gönderilmez.** Yani Telegram'ı akış akış devreye alabilirsin;
+tanımlamadığın sürece mevcut Slack davranışı hiç değişmez.
+
+### 5. Doğrula
+
+```bash
+npm run tg:check    # token geçerli mi, hangi akış nereye gidiyor
+npm run tg:test     # her tanımlı kanala bir test mesajı at
+```
+
+## Tasarım notu
+
+Telegram gönderimi **Slack akışını asla durdurmaz**. Her gönderim kendi içinde
+yakalanır; Telegram tarafındaki bir hata (token yanlış, bot kanaldan atılmış,
+hız sınırı) yalnızca uyarı olarak loglanır ve Slack gönderimi normal devam eder.
+
+Hız sınırı: Telegram kanal başına dakikada ~20 mesaja izin veriyor. FinancialJuice
+tur başına 15 mesaja kadar gönderebildiği için mesajlar arasında 3 saniye aralık
+bırakılıyor (`TELEGRAM_OUT_DELAY_MS`). `429` yanıtında Telegram'ın bildirdiği
+süre kadar beklenip bir kez yeniden denenir.

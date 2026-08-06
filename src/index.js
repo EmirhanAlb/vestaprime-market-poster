@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { capturePoster } from './capture.js';
 import { uploadPosterToSlack } from './slack.js';
+import { posterGonder } from './telegram-out/index.js';
 
 // Lokal calistirmada .env dosyasini oku (GitHub Actions'ta secrets zaten env olarak gelir).
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -69,6 +70,9 @@ async function main() {
 
   const failed = results.filter((r) => !r.ok);
   console.log(`Ozet: ${results.length - failed.length}/${results.length} kanal basarili`);
+
+  // Telegram cikisi opsiyonel; TELEGRAM_OUT_POSTER bos ise atlanir.
+  await posterGonder({ dosyaYolu: outPath, saat: human, canli: result.live });
 
   // Bir kanal basarisiz olsa bile digerlerine gonderim yapildi; yine de
   // calistirmayi hatali isaretliyoruz ki Actions'ta gozden kacmasin.

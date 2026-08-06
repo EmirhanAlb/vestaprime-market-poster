@@ -49,6 +49,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           NEWS_CHANNEL_ID: ${{ secrets.NEWS_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OUT_NEWS: ${{ secrets.TELEGRAM_OUT_NEWS }}
           NEWS_MAX_AGE_HOURS: ${{ inputs.max_age_hours || '3' }}
 
       - name: Gonderim gecmisini kaydet

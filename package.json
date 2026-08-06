@@ -16,7 +16,10 @@
     "juice:dry": "node src/telegram/index.js --dry-run",
     "poll": "node src/poll/index.js",
     "poll:dry": "node src/poll/index.js --dry-run",
-    "poll:settle": "node src/poll/index.js --settle"
+    "poll:settle": "node src/poll/index.js --settle",
+    "tg:check": "node scripts/telegram-check.mjs",
+    "tg:test": "node scripts/telegram-check.mjs --gonder",
+    "tg:bul": "node scripts/telegram-check.mjs --bul"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0",
