@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1c35ccbb6df7404c",
+      "ts": 1786016533135,
+      "baslik": "İrlanda’da işsizlik oranı Temmuz’da %5,1’e yükseldi"
+    },
+    {
+      "anahtar": "18eef8057c681e63",
+      "ts": 1786016533135,
+      "baslik": "SON DAKİKA | Merkez Bankası rezervleri açıklandı! 1 haftada 1,8 milyar dolar arttı"
+    },
+    {
+      "anahtar": "a4ff829109bbbfc2",
+      "ts": 1786016533135,
+      "baslik": "Karadeniz’de savaşın faturası büyüyor: Navlun yüzde 50’nin üzerinde arttı"
+    },
+    {
       "anahtar": "211e36983039d14f",
       "ts": 1786008216654,
       "baslik": "Brezilya merkez bankası faiz indirdi ancak döngünün sonuna işaret etti"
@@ -169,16 +184,6 @@
       "anahtar": "e15d2b9a38ce7594",
       "ts": 1785416927777,
       "baslik": "Merkez Bankası rezervleri yükseldi"
-    },
-    {
-      "anahtar": "1f9f6110621728d9",
-      "ts": 1785409968395,
-      "baslik": "İtalya’da işsizlik oranı Haziran’da yüzde 5,7’ye yükseldi"
-    },
-    {
-      "anahtar": "886811938f19e53b",
-      "ts": 1785409968395,
-      "baslik": "İngiltere Merkez Bankası politika faizini piyasa beklentileri doğrultusunda yüzde 3,75'te sabit tuttu"
     }
   ]
 }
