@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "2a4ce8c16d4fe551",
+      "ts": 1786088190512,
+      "baslik": "Almanya’da sanayi üretimi Haziran’da otomotiv sektörüyle arttı"
+    },
+    {
       "anahtar": "28d8f0a5ee828be0",
       "ts": 1786029266088,
       "baslik": "Avro Bölgesi'nde perakende satışlar beklentilerin altında kaldı"
@@ -174,16 +179,6 @@
       "anahtar": "2eb137d141648efa",
       "ts": 1785491362827,
       "baslik": "Haziranda dış ticaret açığı yükseldi"
-    },
-    {
-      "anahtar": "722459223d056379",
-      "ts": 1785446335553,
-      "baslik": "FED faizi sabit tuttu: Piyasaya ne oldu? Uzman isim anlattı"
-    },
-    {
-      "anahtar": "1ec4da8113df175f",
-      "ts": 1785430377536,
-      "baslik": "Fed faiz tutarken Hazine tahvil faizleri enflasyon endişesiyle yükseldi"
     }
   ]
 }
