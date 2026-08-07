@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "af1f44c7c81493e4",
+      "ts": 1786129974299,
+      "baslik": "Petrol fiyatlarında Hürmüz belirsizliği! Citi fiyat tahminini yükseltti"
+    },
+    {
       "anahtar": "d9842ba8267bda91",
       "ts": 1786110667079,
       "baslik": "ABD'de tarım dışı istihdam sürprizi! Temmuzda 23 bin kişi azaldı"
@@ -169,11 +174,6 @@
       "anahtar": "2c217b32f0822f46",
       "ts": 1785571652331,
       "baslik": "TCMB, MKK'nın 'Kripto Varlık Merkezi Kayıt Sistemi'ni onayladı"
-    },
-    {
-      "anahtar": "f492e23ae7d47b13",
-      "ts": 1785523378288,
-      "baslik": "Fed’in Logan’ı yüzde 2’lik enflasyon hedefine ulaşmak için ılımlı adım gerektiğini söyledi"
     }
   ]
 }
