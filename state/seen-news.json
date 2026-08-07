@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b2e8c556fa4df079",
+      "ts": 1786098464164,
+      "baslik": "Macaristan’da enflasyon gıda fiyatlarıyla Temmuz’da %1,2’ye geriledi"
+    },
+    {
       "anahtar": "2a4ce8c16d4fe551",
       "ts": 1786088190512,
       "baslik": "Almanya’da sanayi üretimi Haziran’da otomotiv sektörüyle arttı"
@@ -164,21 +169,6 @@
       "anahtar": "38fa739947cbf119",
       "ts": 1785499477653,
       "baslik": "BoJ politika faizini beklentilere paralel şekilde %1 seviyesinde sabit tuttu"
-    },
-    {
-      "anahtar": "0abadc143719ef7d",
-      "ts": 1785491362827,
-      "baslik": "Avro Bölgesi enflasyonu Temmuz’da yüzde 2,9’a yükseldi - Eurostat"
-    },
-    {
-      "anahtar": "9b2b96e6d4aa84e2",
-      "ts": 1785491362827,
-      "baslik": "TCMB: Eşel mobil çıkışı ve petrol enflasyonu baskılıyor"
-    },
-    {
-      "anahtar": "2eb137d141648efa",
-      "ts": 1785491362827,
-      "baslik": "Haziranda dış ticaret açığı yükseldi"
     }
   ]
 }
