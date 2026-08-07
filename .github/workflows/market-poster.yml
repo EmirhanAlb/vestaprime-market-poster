@@ -38,11 +38,9 @@ jobs:
         run: npm start
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          TELEGRAM_BOTS: ${{ vars.TELEGRAM_BOTS }}
-          TELEGRAM_MONEYFAST_TOKEN: ${{ secrets.TELEGRAM_MONEYFAST_TOKEN }}
-          TELEGRAM_ALEX_TOKEN: ${{ secrets.TELEGRAM_ALEX_TOKEN }}
-          TELEGRAM_MONEYFAST_POSTER: ${{ secrets.TELEGRAM_MONEYFAST_POSTER }}
-          TELEGRAM_ALEX_POSTER: ${{ secrets.TELEGRAM_ALEX_POSTER }}
+          # Tum Telegram botlari ve kanallari tek JSON secret'ta.
+          # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
+          TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
 
       - name: Hata durumunda ciktiyi sakla

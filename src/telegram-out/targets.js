@@ -4,24 +4,24 @@
  * Her kanalin kendi botu olabiliyor (ayri token). Bu yuzden hedef = token +
  * sohbet kimligi ciftidir; tek bir token varsayilamaz.
  *
- * IKI YAZIM DESTEKLENIYOR
+ * UC YAZIM DESTEKLENIYOR (oncelik sirasiyla degil, hepsi birlikte calisir)
  *
- * 1) Tek bot (basit, geriye uyumlu):
- *      TELEGRAM_BOT_TOKEN=123:ABC
- *      TELEGRAM_OUT_NEWS=-100111,-100222      <- ikisi de ayni botla
- *      TELEGRAM_OUT_JUICE=-100111
+ * 1) TEK JSON - onerilen. Yeni kanal eklemek TEK secret duzenlemesi; workflow
+ *    dosyalarina dokunmak gerekmez:
+ *      TELEGRAM_CONFIG={"moneyfast":{"token":"123:ABC","news":"-100111",
+ *                        "juice":"-100111"},
+ *                       "alex":{"token":"456:DEF","news":"-100222"}}
  *
- * 2) Coklu bot (her kanalin kendi botu):
+ * 2) Yuva basina degiskenler:
  *      TELEGRAM_BOTS=moneyfast,alex
  *      TELEGRAM_MONEYFAST_TOKEN=123:ABC
  *      TELEGRAM_MONEYFAST_NEWS=-100111
- *      TELEGRAM_MONEYFAST_JUICE=-100111
- *      TELEGRAM_ALEX_TOKEN=456:DEF
- *      TELEGRAM_ALEX_NEWS=-100222
- *      TELEGRAM_ALEX_JUICE=-100222
  *
- * Ikisi ayni anda tanimliysa ikisi de calisir; boylece tek bottan cokluya
- * gecis tek seferde yapilmak zorunda kalmaz.
+ * 3) Tek bot (en basit, geriye uyumlu):
+ *      TELEGRAM_BOT_TOKEN=123:ABC
+ *      TELEGRAM_OUT_NEWS=-100111,-100222
+ *
+ * Ayni token+kanal cifti birden fazla yazimda gecerse bir kez gonderilir.
  */
 
 /** Desteklenen akislar ve tek-bot yaziminda karsilik gelen degisken adlari. */
@@ -37,6 +37,19 @@ function liste(deger) {
     .split(',')
     .map((x) => x.trim())
     .filter(Boolean);
+}
+
+/** TELEGRAM_CONFIG'i cozer. Bozuk JSON akisi durdurmaz, uyarilir. */
+function jsonYapilandirma() {
+  const ham = process.env.TELEGRAM_CONFIG;
+  if (!ham || !ham.trim()) return {};
+  try {
+    const d = JSON.parse(ham);
+    return d && typeof d === 'object' ? d : {};
+  } catch (err) {
+    console.warn(`  ! TELEGRAM_CONFIG cozulemedi (${err.message}); yok sayiliyor`);
+    return {};
+  }
 }
 
 /**
@@ -56,13 +69,12 @@ export function hedefler(akis) {
     sonuc.push({ token, chatId, slot });
   };
 
-  // 1) Tek bot yazimi
-  const varsayilanToken = process.env.TELEGRAM_BOT_TOKEN;
-  for (const chatId of liste(process.env[AKISLAR[akis]])) {
-    ekle(varsayilanToken, chatId, 'varsayilan');
+  // 1) JSON yapilandirma
+  for (const [slot, cfg] of Object.entries(jsonYapilandirma())) {
+    for (const chatId of liste(cfg?.[akis])) ekle(cfg?.token, chatId, slot);
   }
 
-  // 2) Coklu bot yazimi
+  // 2) Yuva basina degiskenler
   for (const slot of liste(process.env.TELEGRAM_BOTS)) {
     const on = `TELEGRAM_${slot.toUpperCase()}`;
     const token = process.env[`${on}_TOKEN`];
@@ -71,18 +83,29 @@ export function hedefler(akis) {
     }
   }
 
+  // 3) Tek bot yazimi
+  const varsayilanToken = process.env.TELEGRAM_BOT_TOKEN;
+  for (const chatId of liste(process.env[AKISLAR[akis]])) {
+    ekle(varsayilanToken, chatId, 'varsayilan');
+  }
+
   return sonuc;
 }
 
 /** Tanimli tum bot yuvalarini dondurur (kurulum kontrolu icin). */
 export function botlar() {
   const sonuc = [];
-  if (process.env.TELEGRAM_BOT_TOKEN) {
-    sonuc.push({ slot: 'varsayilan', token: process.env.TELEGRAM_BOT_TOKEN });
-  }
+  const gorulen = new Set();
+  const ekle = (slot, token) => {
+    if (!token || gorulen.has(token)) return;
+    gorulen.add(token);
+    sonuc.push({ slot, token });
+  };
+
+  for (const [slot, cfg] of Object.entries(jsonYapilandirma())) ekle(slot, cfg?.token);
   for (const slot of liste(process.env.TELEGRAM_BOTS)) {
-    const token = process.env[`TELEGRAM_${slot.toUpperCase()}_TOKEN`];
-    if (token) sonuc.push({ slot, token });
+    ekle(slot, process.env[`TELEGRAM_${slot.toUpperCase()}_TOKEN`]);
   }
+  ekle('varsayilan', process.env.TELEGRAM_BOT_TOKEN);
   return sonuc;
 }

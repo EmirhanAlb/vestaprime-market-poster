@@ -54,11 +54,9 @@ jobs:
         run: node src/poll/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          TELEGRAM_BOTS: ${{ vars.TELEGRAM_BOTS }}
-          TELEGRAM_MONEYFAST_TOKEN: ${{ secrets.TELEGRAM_MONEYFAST_TOKEN }}
-          TELEGRAM_ALEX_TOKEN: ${{ secrets.TELEGRAM_ALEX_TOKEN }}
-          TELEGRAM_MONEYFAST_POLL: ${{ secrets.TELEGRAM_MONEYFAST_POLL }}
-          TELEGRAM_ALEX_POLL: ${{ secrets.TELEGRAM_ALEX_POLL }}
+          # Tum Telegram botlari ve kanallari tek JSON secret'ta.
+          # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
+          TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
           POLL_CHANNEL_ID: ${{ secrets.POLL_CHANNEL_ID }}
           POLL_POST_TR: ${{ inputs.post_tr || '14:00' }}
           POLL_SETTLE_MINUTES: ${{ inputs.settle_minutes || '60' }}
