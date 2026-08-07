@@ -38,6 +38,8 @@ jobs:
         run: npm start
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          # Tum Slack workspace'leri ve kanallari tek JSON secret'ta.
+          SLACK_CONFIG: ${{ secrets.SLACK_CONFIG }}
           # Tum Telegram botlari ve kanallari tek JSON secret'ta.
           # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
           TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}

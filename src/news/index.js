@@ -6,6 +6,7 @@ import { haberleriTopla } from './feed.js';
 import { skorla, MIN_SKOR } from './score.js';
 import { durumOku, durumYaz, benzerleriEle } from './state.js';
 import { haberGonder } from './slack-news.js';
+import { tokenaGoreGrupla } from '../slack-out/targets.js';
 import { haberGonder as telegramHaber } from '../telegram-out/index.js';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -71,21 +72,23 @@ async function main() {
     return;
   }
 
-  const token = process.env.SLACK_BOT_TOKEN;
-  const channels = (process.env.NEWS_CHANNEL_ID || process.env.SLACK_CHANNEL_ID || '')
-    .split(',')
-    .map((c) => c.trim())
-    .filter(Boolean);
-
-  if (!token || channels.length === 0) {
-    throw new Error('SLACK_BOT_TOKEN ve NEWS_CHANNEL_ID tanimli degil.');
+  // Slack token'lari workspace'e bagli; her workspace kendi token'iyla
+  // ayri ayri gonderilir.
+  const gruplar = tokenaGoreGrupla('news');
+  if (gruplar.length === 0) {
+    throw new Error('Slack hedefi tanimli degil (SLACK_CONFIG veya NEWS_CHANNEL_ID).');
   }
-
-  console.log(`\nSlack'e gonderiliyor (${channels.length} kanal)...`);
+  const toplamKanal = gruplar.reduce((t, g) => t + g.channels.length, 0);
+  console.log(
+    `\nSlack'e gonderiliyor (${gruplar.length} workspace, ${toplamKanal} kanal)...`,
+  );
   const basarisizlar = [];
 
   for (const haber of secilenler) {
-    const sonuc = await haberGonder({ token, channels, haber, tz: TZ });
+    const sonuc = [];
+    for (const g of gruplar) {
+      sonuc.push(...(await haberGonder({ token: g.token, channels: g.channels, haber, tz: TZ })));
+    }
     const hatalar = sonuc.filter((s) => !s.ok);
     if (hatalar.length === sonuc.length) {
       // Hicbir kanala gidemediyse gecmise yazma; bir sonraki calistirma yeniden denesin.

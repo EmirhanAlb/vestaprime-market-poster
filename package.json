@@ -19,7 +19,9 @@
     "poll:settle": "node src/poll/index.js --settle",
     "tg:check": "node scripts/telegram-check.mjs",
     "tg:test": "node scripts/telegram-check.mjs --gonder",
-    "tg:bul": "node scripts/telegram-check.mjs --bul"
+    "tg:bul": "node scripts/telegram-check.mjs --bul",
+    "slack:check": "node scripts/slack-check.mjs",
+    "slack:test": "node scripts/slack-check.mjs --gonder"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0",

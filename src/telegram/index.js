@@ -5,6 +5,7 @@ import { WebClient } from '@slack/web-api';
 import { mesajlariCek } from './fetch.js';
 import { benzerleriEle } from '../news/state.js';
 import { juiceGonder } from '../telegram-out/index.js';
+import { tokenaGoreGrupla } from '../slack-out/targets.js';
 
 /**
  * Ceviri motoru. Varsayilan "free": API anahtari ve maliyet gerektirmez.
@@ -81,7 +82,7 @@ function kacir(metin) {
   return (metin || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-async function slackeGonder(client, channels, mesaj) {
+async function slackeGonder(gruplar, mesaj) {
   const bloklar = [
     { type: 'section', text: { type: 'mrkdwn', text: `:zap: ${kacir(mesaj.turkce)}` } },
     {
@@ -98,9 +99,10 @@ async function slackeGonder(client, channels, mesaj) {
   ];
 
   const sonuclar = [];
-  for (const channel of channels) {
+  for (const { istemci, channels } of gruplar) {
+   for (const channel of channels) {
     try {
-      const res = await client.chat.postMessage({
+      const res = await istemci.chat.postMessage({
         channel,
         text: mesaj.turkce.slice(0, 300),
         blocks: bloklar,
@@ -114,6 +116,7 @@ async function slackeGonder(client, channels, mesaj) {
       console.error(`  ${channel}: HATA -> ${hata}`);
       sonuclar.push({ channel, ok: false });
     }
+   }
   }
   return sonuclar;
 }
@@ -182,18 +185,13 @@ async function birTur() {
     return;
   }
 
-  const token = process.env.SLACK_BOT_TOKEN;
-  const channels = (process.env.TELEGRAM_CHANNEL_ID || process.env.SLACK_CHANNEL_ID || '')
-    .split(',')
-    .map((c) => c.trim())
-    .filter(Boolean);
-
-  if (!token || channels.length === 0) {
-    throw new Error('SLACK_BOT_TOKEN ve TELEGRAM_CHANNEL_ID tanimli degil.');
+  // Slack token'lari workspace'e bagli; her workspace kendi istemcisiyle.
+  const gruplar = tokenaGoreGrupla('juice').map((g) => ({ ...g, istemci: new WebClient(g.token) }));
+  if (gruplar.length === 0) {
+    throw new Error('Slack hedefi tanimli degil (SLACK_CONFIG veya TELEGRAM_CHANNEL_ID).');
   }
-
-  const client = new WebClient(token);
-  console.log(`\nSlack'e gonderiliyor (${channels.length} kanal)...`);
+  const toplamKanal = gruplar.reduce((t, g) => t + g.channels.length, 0);
+  console.log(`\nSlack'e gonderiliyor (${gruplar.length} workspace, ${toplamKanal} kanal)...`);
 
   // Atlananlar gonderilmedi ama gorulmus sayilir; yoksa her turda yeniden
   // kuyruga girip tavani doldururlar.
@@ -204,7 +202,7 @@ async function birTur() {
 
   let gonderilen = 0;
   for (const mesaj of cevrilmis) {
-    const sonuc = await slackeGonder(client, channels, mesaj);
+    const sonuc = await slackeGonder(gruplar, mesaj);
     if (!sonuc.some((s) => s.ok)) {
       // Hicbir kanala gidemedi: gorulmus isaretlemiyoruz ki sonraki turda
       // yeniden denensin, ve siraligi bozmamak icin duruyoruz.
