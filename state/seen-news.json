@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "d9842ba8267bda91",
+      "ts": 1786110667079,
+      "baslik": "ABD'de tarım dışı istihdam sürprizi! Temmuzda 23 bin kişi azaldı"
+    },
+    {
+      "anahtar": "4ed1dfbb41182a64",
+      "ts": 1786110667079,
+      "baslik": "ABD TARIM DIŞI İSTİHDAM VERİSİ AÇIKLANDI! Temmuz 2026 ABD Tarım Dışı İstihdam Sonucu Kaç Oldu? ABD İşsizlik Oranında Bek"
+    },
+    {
       "anahtar": "b2e8c556fa4df079",
       "ts": 1786098464164,
       "baslik": "Macaristan’da enflasyon gıda fiyatlarıyla Temmuz’da %1,2’ye geriledi"
@@ -164,11 +174,6 @@
       "anahtar": "f492e23ae7d47b13",
       "ts": 1785523378288,
       "baslik": "Fed’in Logan’ı yüzde 2’lik enflasyon hedefine ulaşmak için ılımlı adım gerektiğini söyledi"
-    },
-    {
-      "anahtar": "38fa739947cbf119",
-      "ts": 1785499477653,
-      "baslik": "BoJ politika faizini beklentilere paralel şekilde %1 seviyesinde sabit tuttu"
     }
   ]
 }
