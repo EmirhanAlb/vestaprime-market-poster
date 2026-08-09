@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "2150cbaf4a4624e6",
+      "ts": 1786261632076,
+      "baslik": "Husiler duyurdu: Suudi Arabistan'daki petrol devine İHA saldırısı"
+    },
+    {
       "anahtar": "e25ff78c6ac99a48",
       "ts": 1786174935659,
       "baslik": "Çin Merkez Bankası’ndan rekor altın alımı: Rezervler 2 bin 366 tona çıktı"
@@ -174,16 +179,6 @@
       "anahtar": "755d6bd70b6d6a5a",
       "ts": 1785663186751,
       "baslik": "SON DAKİKA HABERLER: Ermenistan Başbakanı Paşinyan istifa etti!"
-    },
-    {
-      "anahtar": "d146c4d91f1520fb",
-      "ts": 1785589343469,
-      "baslik": "Kadın işsizlik oranı tek haneye geriledi"
-    },
-    {
-      "anahtar": "2c217b32f0822f46",
-      "ts": 1785571652331,
-      "baslik": "TCMB, MKK'nın 'Kripto Varlık Merkezi Kayıt Sistemi'ni onayladı"
     }
   ]
 }
