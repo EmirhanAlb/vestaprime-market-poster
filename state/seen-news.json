@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "dc864f730b671f98",
+      "ts": 1786363808890,
+      "baslik": "Yunanistan’da sanayi üretimi Haziran’da %1,1 arttı"
+    },
+    {
       "anahtar": "0274a39417a54d92",
       "ts": 1786341402932,
       "baslik": "Hürmüz Boğazı gerilimi petrol fiyatlarını yükseltti"
@@ -159,21 +164,6 @@
       "anahtar": "e2cf9fb998cff799",
       "ts": 1785771874319,
       "baslik": "Meksika analistleri 2026 enflasyon tahminini düşürdü"
-    },
-    {
-      "anahtar": "f1adb63f63405c2b",
-      "ts": 1785742446545,
-      "baslik": "Bitcoin 63 bin doların altına geriledi, Coldcard saldırısı endişe yarattı"
-    },
-    {
-      "anahtar": "1fab17dee298fbeb",
-      "ts": 1785742446545,
-      "baslik": "Son dakika... ENAG temmuz enflasyonunu açıkladı"
-    },
-    {
-      "anahtar": "27290c733a6fab62",
-      "ts": 1785742446545,
-      "baslik": "TCMB'den Dijital Türk Lirası Projesi'nde yeni aşama: 85 başvurudan 23 proje seçildi"
     }
   ]
 }
