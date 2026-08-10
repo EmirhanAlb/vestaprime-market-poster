@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8ad52d19ed485ba7",
+      "ts": 1786335256421,
+      "baslik": "Çin’de TÜFE yavaşladı, ÜFE’deki deflasyon hafifçe geriledi"
+    },
+    {
       "anahtar": "e5e6beef3a203120",
       "ts": 1786327919247,
       "baslik": "Petrol, Hürmüz belirsizliği ve Husi saldırıları ile yükseldi"
@@ -164,11 +169,6 @@
       "anahtar": "27290c733a6fab62",
       "ts": 1785742446545,
       "baslik": "TCMB'den Dijital Türk Lirası Projesi'nde yeni aşama: 85 başvurudan 23 proje seçildi"
-    },
-    {
-      "anahtar": "40986fba6945125a",
-      "ts": 1785727928579,
-      "baslik": "Trump İran saldırısını erteledi, altın yükseldi"
     }
   ]
 }
