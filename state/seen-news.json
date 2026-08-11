@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "417df91d1837ac4d",
+      "ts": 1786413992985,
+      "baslik": "Singapur, 2. çeyrek verilerinin ardından 2026 GSYH tahminini yükseltti"
+    },
+    {
       "anahtar": "49ed7cab1723c8f5",
       "ts": 1786371628455,
       "baslik": "Kazakistan’ın petrol üretimi Tengiz sahasının toparlanmasıyla %40 arttı"
@@ -159,16 +164,6 @@
       "anahtar": "49c4e05b24beb102",
       "ts": 1785853730200,
       "baslik": "ABD'nin dış ticaret açığı haziranda azaldı"
-    },
-    {
-      "anahtar": "1aa011279eeb7c2e",
-      "ts": 1785784161185,
-      "baslik": "Venezuela’nın petrol ihracatı Temmuz’da Hindistan talebinin düşmesiyle %25 azaldı"
-    },
-    {
-      "anahtar": "e2cf9fb998cff799",
-      "ts": 1785771874319,
-      "baslik": "Meksika analistleri 2026 enflasyon tahminini düşürdü"
     }
   ]
 }
