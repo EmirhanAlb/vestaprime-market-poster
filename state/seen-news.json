@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c6ea5ff24f83b62d",
+      "ts": 1786469473075,
+      "baslik": "Rusya'nın federal bütçe açığı yaklaşık 79 milyar dolara çıktı"
+    },
+    {
       "anahtar": "9b136b73ad7fbdfa",
       "ts": 1786456599735,
       "baslik": "Brezilya’da enflasyon Temmuz’da %4,4’e geriledi, faiz indirimine kapı açtı"
@@ -164,26 +169,6 @@
       "anahtar": "cafaab8d0e089474",
       "ts": 1785869898525,
       "baslik": "TCMB: Enflasyonun ana eğilimi Temmuz'da geriledi, enerji ve hizmet fiyatları öne çıktı"
-    },
-    {
-      "anahtar": "3a10fbc1b248f466",
-      "ts": 1785857096464,
-      "baslik": "ABD ekonomisinde kritik veriler: Ticaret açığı arttı, enflasyon yavaşlıyor"
-    },
-    {
-      "anahtar": "66056810d6c5e6a2",
-      "ts": 1785853730200,
-      "baslik": "Brezilya’da sanayi üretimi yüksek faizler nedeniyle Haziran’da %1,8 düştü"
-    },
-    {
-      "anahtar": "f52b842eda161f97",
-      "ts": 1785853730200,
-      "baslik": "Mevsim etkilerinden arındırılmış özel kapsamlı TÜFE temmuzda aylık yüzde 1,93 arttı"
-    },
-    {
-      "anahtar": "49c4e05b24beb102",
-      "ts": 1785853730200,
-      "baslik": "ABD'nin dış ticaret açığı haziranda azaldı"
     }
   ]
 }
