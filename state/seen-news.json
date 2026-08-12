@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9ccce4c186d8ef60",
+      "ts": 1786508628211,
+      "baslik": "Altın, Hürmüz şüpheleri ve TÜFE ile 4.400 dolara yakın yükseldi"
+    },
+    {
+      "anahtar": "4a3948289f826072",
+      "ts": 1786508628211,
+      "baslik": "Asya FX ve dolar ABD TÜFE öncesi yatay; Hürmüz gerilimi petrolü yükseltti"
+    },
+    {
+      "anahtar": "bc9c16cfb1cc4b27",
+      "ts": 1786508628211,
+      "baslik": "Jeopolitik gerilim fiyatları yukarı taşıdı: Petrol, kritik ABD enflasyon verisi öncesi yükseldi"
+    },
+    {
       "anahtar": "c6ea5ff24f83b62d",
       "ts": 1786469473075,
       "baslik": "Rusya'nın federal bütçe açığı yaklaşık 79 milyar dolara çıktı"
@@ -164,11 +179,6 @@
       "anahtar": "579abb85ede3d243",
       "ts": 1785909144053,
       "baslik": "RBI faiz oranlarını sabit tuttu, enflasyon görünümünde netlik bekliyor"
-    },
-    {
-      "anahtar": "cafaab8d0e089474",
-      "ts": 1785869898525,
-      "baslik": "TCMB: Enflasyonun ana eğilimi Temmuz'da geriledi, enerji ve hizmet fiyatları öne çıktı"
     }
   ]
 }
