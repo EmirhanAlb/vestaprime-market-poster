@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "f0306954c35f9fda",
+      "ts": 1786552161675,
+      "baslik": "Temmuz enflasyon verileri beklentileri karşıladı, Hazine tahvilleri yükseldi"
+    },
+    {
       "anahtar": "5702861a0abb6994",
       "ts": 1786530993377,
       "baslik": "UEA, Ortadoğu’daki çatışmalar nedeniyle 2026 petrol arz tahminini düşürdü"
@@ -179,11 +184,6 @@
       "anahtar": "dfa6bae56b3340f6",
       "ts": 1785954164758,
       "baslik": "Hollanda ve İngiltere gaz fiyatları ABD-İran görüşmeleriyle %5 düştü"
-    },
-    {
-      "anahtar": "081c8b9441bab88a",
-      "ts": 1785942865753,
-      "baslik": "Hürmüz Boğazı'ndaki kriz LNG taşımacılığını vurdu: Gemi kiraları 235 bin dolara çıktı"
     }
   ]
 }
