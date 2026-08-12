@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "7e86e8d21fcdfc8a",
+      "ts": 1786526218850,
+      "baslik": "Alman tahvil getirileri petrol fiyatlarıyla yükseldi; ABD TÜFE odakta"
+    },
+    {
+      "anahtar": "d7e826c518d81798",
+      "ts": 1786526218850,
+      "baslik": "İtalya’da tüketici fiyatları Temmuz’da düştü, yıllık enflasyon yavaşladı"
+    },
+    {
       "anahtar": "255f410e1545587e",
       "ts": 1786514322433,
       "baslik": "ABD, Hürmüz Boğazı'ndaki aksaklıkların sürmesi nedeniyle petrol fiyatı tahminini yükseltti"
@@ -164,21 +174,6 @@
       "anahtar": "081c8b9441bab88a",
       "ts": 1785942865753,
       "baslik": "Hürmüz Boğazı'ndaki kriz LNG taşımacılığını vurdu: Gemi kiraları 235 bin dolara çıktı"
-    },
-    {
-      "anahtar": "8ecee097b7355594",
-      "ts": 1785919480417,
-      "baslik": "Piyasalarda Hürmüz Boğazı iyimserliği: Petrol çakıldı, borsalar rekora koştu!"
-    },
-    {
-      "anahtar": "48313f8a3c36df9c",
-      "ts": 1785919480417,
-      "baslik": "Düşen petrol fiyatları enflasyon baskısını hafifletti, Alman tahvil getirileri 3 haftanın en düşüğüne geriledi"
-    },
-    {
-      "anahtar": "912bea2f6f75acb8",
-      "ts": 1785919480417,
-      "baslik": "Karahan: Temmuz enflasyonu %31,8, sıkı para politikası sürecek"
     }
   ]
 }
