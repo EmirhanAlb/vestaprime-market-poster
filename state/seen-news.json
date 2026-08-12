@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9514bd7ae8ba970e",
+      "ts": 1786563935620,
+      "baslik": "ABD bütçe açığı Temmuz’da 1,8 trilyon dolara yükseldi"
+    },
+    {
       "anahtar": "e024aa48aeaa9ccc",
       "ts": 1786555995413,
       "baslik": "Son dakika! Ekrem İmamoğlu CHP’den istifa etti"
@@ -184,11 +189,6 @@
       "anahtar": "3f24ad83b55a7054",
       "ts": 1785965531045,
       "baslik": "OR Royalties, altın fiyatlarıyla 2026 2Ç’de gelirini %62 artırdı"
-    },
-    {
-      "anahtar": "dfa6bae56b3340f6",
-      "ts": 1785954164758,
-      "baslik": "Hollanda ve İngiltere gaz fiyatları ABD-İran görüşmeleriyle %5 düştü"
     }
   ]
 }
