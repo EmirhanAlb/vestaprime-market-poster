@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "255f410e1545587e",
+      "ts": 1786514322433,
+      "baslik": "ABD, Hürmüz Boğazı'ndaki aksaklıkların sürmesi nedeniyle petrol fiyatı tahminini yükseltti"
+    },
+    {
       "anahtar": "9ccce4c186d8ef60",
       "ts": 1786508628211,
       "baslik": "Altın, Hürmüz şüpheleri ve TÜFE ile 4.400 dolara yakın yükseldi"
@@ -174,11 +179,6 @@
       "anahtar": "912bea2f6f75acb8",
       "ts": 1785919480417,
       "baslik": "Karahan: Temmuz enflasyonu %31,8, sıkı para politikası sürecek"
-    },
-    {
-      "anahtar": "579abb85ede3d243",
-      "ts": 1785909144053,
-      "baslik": "RBI faiz oranlarını sabit tuttu, enflasyon görünümünde netlik bekliyor"
     }
   ]
 }
