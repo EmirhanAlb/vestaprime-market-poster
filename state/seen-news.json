@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "4742d23b6e90de39",
+      "ts": 1786608135304,
+      "baslik": "Merkez Bankası yıl sonu enflasyon tahminini açıkladı"
+    },
+    {
+      "anahtar": "054f007ea233a7fa",
+      "ts": 1786608135304,
+      "baslik": "Cari açık haziranda beklentilerin altında kaldı"
+    },
+    {
+      "anahtar": "eba94710543dafdd",
+      "ts": 1786608135304,
+      "baslik": "FTSE 100: Hisseler düştü, GSYİH yavaşladı, Hürmüz gerilimi sürüyor"
+    },
+    {
       "anahtar": "9514bd7ae8ba970e",
       "ts": 1786563935620,
       "baslik": "ABD bütçe açığı Temmuz’da 1,8 trilyon dolara yükseldi"
@@ -184,11 +199,6 @@
       "anahtar": "7901a043ababe561",
       "ts": 1786008216654,
       "baslik": "Avro banknotları değişiyor! ECB yeni tasarımlar için süreci başlattı"
-    },
-    {
-      "anahtar": "3f24ad83b55a7054",
-      "ts": 1785965531045,
-      "baslik": "OR Royalties, altın fiyatlarıyla 2026 2Ç’de gelirini %62 artırdı"
     }
   ]
 }
