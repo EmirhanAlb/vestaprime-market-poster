@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "75cb49f3147d06ad",
+      "ts": 1786623110424,
+      "baslik": "TCMB rezervleri 5 ayın zirvesine çıktı"
+    },
+    {
       "anahtar": "32385834b65e9017",
       "ts": 1786614134360,
       "baslik": "Tarım ÜFE temmuzda arttı"
@@ -179,21 +184,6 @@
       "anahtar": "dcdf626d003b17a5",
       "ts": 1786026344301,
       "baslik": "Fed’in neden daha şahin olması gerektiğini Yardeni açıkladı"
-    },
-    {
-      "anahtar": "1c35ccbb6df7404c",
-      "ts": 1786016533135,
-      "baslik": "İrlanda’da işsizlik oranı Temmuz’da %5,1’e yükseldi"
-    },
-    {
-      "anahtar": "18eef8057c681e63",
-      "ts": 1786016533135,
-      "baslik": "SON DAKİKA | Merkez Bankası rezervleri açıklandı! 1 haftada 1,8 milyar dolar arttı"
-    },
-    {
-      "anahtar": "a4ff829109bbbfc2",
-      "ts": 1786016533135,
-      "baslik": "Karadeniz’de savaşın faturası büyüyor: Navlun yüzde 50’nin üzerinde arttı"
     }
   ]
 }
