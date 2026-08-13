@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "2b9cb9de46ca4504",
+      "ts": 1786635056975,
+      "baslik": "Rusya’nın deniz yoluyla tahıl ihracatı Temmuz’da yüzde 20 düştü"
+    },
+    {
       "anahtar": "cd8fd182ebf1f428",
       "ts": 1786629559753,
       "baslik": "Merkez Bankası rezervleri 178,4 milyar dolara yükseldi"
@@ -184,16 +189,6 @@
       "anahtar": "2a4ce8c16d4fe551",
       "ts": 1786088190512,
       "baslik": "Almanya’da sanayi üretimi Haziran’da otomotiv sektörüyle arttı"
-    },
-    {
-      "anahtar": "28d8f0a5ee828be0",
-      "ts": 1786029266088,
-      "baslik": "Avro Bölgesi'nde perakende satışlar beklentilerin altında kaldı"
-    },
-    {
-      "anahtar": "dcdf626d003b17a5",
-      "ts": 1786026344301,
-      "baslik": "Fed’in neden daha şahin olması gerektiğini Yardeni açıkladı"
     }
   ]
 }
