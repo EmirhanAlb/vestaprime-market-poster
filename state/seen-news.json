@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "32385834b65e9017",
+      "ts": 1786614134360,
+      "baslik": "Tarım ÜFE temmuzda arttı"
+    },
+    {
       "anahtar": "4742d23b6e90de39",
       "ts": 1786608135304,
       "baslik": "Merkez Bankası yıl sonu enflasyon tahminini açıkladı"
@@ -189,16 +194,6 @@
       "anahtar": "a4ff829109bbbfc2",
       "ts": 1786016533135,
       "baslik": "Karadeniz’de savaşın faturası büyüyor: Navlun yüzde 50’nin üzerinde arttı"
-    },
-    {
-      "anahtar": "211e36983039d14f",
-      "ts": 1786008216654,
-      "baslik": "Brezilya merkez bankası faiz indirdi ancak döngünün sonuna işaret etti"
-    },
-    {
-      "anahtar": "7901a043ababe561",
-      "ts": 1786008216654,
-      "baslik": "Avro banknotları değişiyor! ECB yeni tasarımlar için süreci başlattı"
     }
   ]
 }
