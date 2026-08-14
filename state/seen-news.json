@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9869db1631acb23c",
+      "ts": 1786703659674,
+      "baslik": "Hırvatistan’da enflasyon Temmuz’da %3,9’a geriledi"
+    },
+    {
+      "anahtar": "b547c7581948fcdd",
+      "ts": 1786703659674,
+      "baslik": "Uzman isim o tarihe dikkat çekti! Altında yeni fiyatlama sinyali: Fed beklentileri ve kâr satışları öne çıktı"
+    },
+    {
+      "anahtar": "638f915626d2e309",
+      "ts": 1786703659674,
+      "baslik": "Son dakika: İYİ Parti Milletvekili Ömer Karakaş partisinden istifa etti"
+    },
+    {
       "anahtar": "20b52d27714ff854",
       "ts": 1786698750366,
       "baslik": "TCMB yıl sonu enflasyon tahminini %28’e yükseltti: TL ve BIST 100 baskı altında"
@@ -204,11 +219,6 @@
       "anahtar": "4ed1dfbb41182a64",
       "ts": 1786110667079,
       "baslik": "ABD TARIM DIŞI İSTİHDAM VERİSİ AÇIKLANDI! Temmuz 2026 ABD Tarım Dışı İstihdam Sonucu Kaç Oldu? ABD İşsizlik Oranında Bek"
-    },
-    {
-      "anahtar": "b2e8c556fa4df079",
-      "ts": 1786098464164,
-      "baslik": "Macaristan’da enflasyon gıda fiyatlarıyla Temmuz’da %1,2’ye geriledi"
     }
   ]
 }
