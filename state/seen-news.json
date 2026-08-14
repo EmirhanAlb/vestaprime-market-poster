@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b469f794c7dca52d",
+      "ts": 1786716979346,
+      "baslik": "ABD perakende satışları dokuz ayın ardından ilk kez düştü"
+    },
+    {
+      "anahtar": "c7626b22a3cc19a4",
+      "ts": 1786716979346,
+      "baslik": "Hindistan Merkez Bankası döviz swap programını erken kapatma kararı aldı"
+    },
+    {
       "anahtar": "468fc5dda373c024",
       "ts": 1786713506498,
       "baslik": "ABD'de perakende satışlar temmuzda artış beklentilerinin aksine azaldı"
@@ -214,16 +224,6 @@
       "anahtar": "af1f44c7c81493e4",
       "ts": 1786129974299,
       "baslik": "Petrol fiyatlarında Hürmüz belirsizliği! Citi fiyat tahminini yükseltti"
-    },
-    {
-      "anahtar": "d9842ba8267bda91",
-      "ts": 1786110667079,
-      "baslik": "ABD'de tarım dışı istihdam sürprizi! Temmuzda 23 bin kişi azaldı"
-    },
-    {
-      "anahtar": "4ed1dfbb41182a64",
-      "ts": 1786110667079,
-      "baslik": "ABD TARIM DIŞI İSTİHDAM VERİSİ AÇIKLANDI! Temmuz 2026 ABD Tarım Dışı İstihdam Sonucu Kaç Oldu? ABD İşsizlik Oranında Bek"
     }
   ]
 }
