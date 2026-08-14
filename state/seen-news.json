@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "20b52d27714ff854",
+      "ts": 1786698750366,
+      "baslik": "TCMB yıl sonu enflasyon tahminini %28’e yükseltti: TL ve BIST 100 baskı altında"
+    },
+    {
+      "anahtar": "651c71d795f1f365",
+      "ts": 1786698750366,
+      "baslik": "Petrol şirketlerinin karı savaşla arttı, yükselen akaryakıt fiyatları Trump'ı sıkıştırdı"
+    },
+    {
       "anahtar": "79667863a6a93f9a",
       "ts": 1786674255199,
       "baslik": "Altın 4.400 doların altına geriledi, Fed ve Hürmüz görüşmeleri ralliye sınır getirdi"
@@ -199,11 +209,6 @@
       "anahtar": "b2e8c556fa4df079",
       "ts": 1786098464164,
       "baslik": "Macaristan’da enflasyon gıda fiyatlarıyla Temmuz’da %1,2’ye geriledi"
-    },
-    {
-      "anahtar": "2a4ce8c16d4fe551",
-      "ts": 1786088190512,
-      "baslik": "Almanya’da sanayi üretimi Haziran’da otomotiv sektörüyle arttı"
     }
   ]
 }
