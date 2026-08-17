@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c3371f6ff013829f",
+      "ts": 1786952043430,
+      "baslik": "Citigroup, yıl sonu faiz beklentisini açıkladı: TCMB’nin alanı daralıyor"
+    },
+    {
       "anahtar": "d876f076707a3ccd",
       "ts": 1786943414042,
       "baslik": "Merkez Bankası enflasyon tahminini yükseltti! Memur ve emeklinin ocak zammında yeni hesap"
@@ -219,11 +224,6 @@
       "anahtar": "dc864f730b671f98",
       "ts": 1786363808890,
       "baslik": "Yunanistan’da sanayi üretimi Haziran’da %1,1 arttı"
-    },
-    {
-      "anahtar": "0274a39417a54d92",
-      "ts": 1786341402932,
-      "baslik": "Hürmüz Boğazı gerilimi petrol fiyatlarını yükseltti"
     }
   ]
 }
