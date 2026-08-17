@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c14cc3a1b5e50d23",
+      "ts": 1786971270446,
+      "baslik": "Merkez bankası takas son tarihini değiştirdi, Hindistan tahvil faizleri yükseldi"
+    },
+    {
+      "anahtar": "a13d7e145ca0f75a",
+      "ts": 1786971270446,
+      "baslik": "Nijerya’da tüketici enflasyonu Temmuz’da %15,43’e geriledi"
+    },
+    {
+      "anahtar": "8d11186bfd2bfe6e",
+      "ts": 1786971270446,
+      "baslik": "Brezilya’da IGP-10 enflasyon endeksi Ağustos’ta %0,51 düştü"
+    },
+    {
       "anahtar": "55ff847ec7e9fda2",
       "ts": 1786956635924,
       "baslik": "Avrupa doğal gazı Hürmüz abluka riskleriyle 4. günde de yükseldi"
@@ -224,11 +239,6 @@
       "anahtar": "49ed7cab1723c8f5",
       "ts": 1786371628455,
       "baslik": "Kazakistan’ın petrol üretimi Tengiz sahasının toparlanmasıyla %40 arttı"
-    },
-    {
-      "anahtar": "dc864f730b671f98",
-      "ts": 1786363808890,
-      "baslik": "Yunanistan’da sanayi üretimi Haziran’da %1,1 arttı"
     }
   ]
 }
