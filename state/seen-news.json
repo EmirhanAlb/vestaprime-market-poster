@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e8e4dabe65071bf8",
+      "ts": 1787049260610,
+      "baslik": "Azerbaycan 2026 enflasyon tahminini %5,7’ye yükseltti"
+    },
+    {
       "anahtar": "bbdd60dcb7d4a184",
       "ts": 1787032563016,
       "baslik": "Ons altın 4.400 doların altına geriledi: Gözler Fed tutanaklarında"
@@ -249,16 +254,6 @@
       "anahtar": "0f73a67ec36d525b",
       "ts": 1786456599735,
       "baslik": "İsviçre Merkez Bankası'nın ABD borsasındaki yatırımları rekor seviyede"
-    },
-    {
-      "anahtar": "a57ce3ce0da14c16",
-      "ts": 1786437061230,
-      "baslik": "Ticaret satış hacmi haziranda yıllık bazda azaldı, perakende satış hacmi arttı"
-    },
-    {
-      "anahtar": "de846b819a9225f3",
-      "ts": 1786432590429,
-      "baslik": "Avustralya Merkez Bankası faizi beklendiği gibi sabit tuttu"
     }
   ]
 }
