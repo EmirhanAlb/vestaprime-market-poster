@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "7c2d518305772a5d",
+      "ts": 1787088575844,
+      "baslik": "TCMB döviz satımını 6.6 milyar dolara indirdi"
+    },
+    {
       "anahtar": "7731143c115d66cb",
       "ts": 1787062660487,
       "baslik": "ABD'de sanayi üretimi temmuzda beklentilerin altında kaldı"
@@ -254,11 +259,6 @@
       "anahtar": "bc9c16cfb1cc4b27",
       "ts": 1786508628211,
       "baslik": "Jeopolitik gerilim fiyatları yukarı taşıdı: Petrol, kritik ABD enflasyon verisi öncesi yükseldi"
-    },
-    {
-      "anahtar": "c6ea5ff24f83b62d",
-      "ts": 1786469473075,
-      "baslik": "Rusya'nın federal bütçe açığı yaklaşık 79 milyar dolara çıktı"
     }
   ]
 }
