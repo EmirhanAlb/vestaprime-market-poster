@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9fc8f66a12a41d1d",
+      "ts": 1787022034259,
+      "baslik": "Petrol fiyatları yükseldi, İran krizi devam ediyor"
+    },
+    {
+      "anahtar": "acb9547198e9f392",
+      "ts": 1787022034259,
+      "baslik": "Avustralya’da tüketici güveni Ağustos’ta arttı ancak karamsar görüş sürüyor - Westpac"
+    },
+    {
       "anahtar": "f2bf19945fb9aed9",
       "ts": 1786975514058,
       "baslik": "Kanada TSX, beklentilerin üzerinde gelen enflasyonla geriledi"
@@ -244,16 +254,6 @@
       "anahtar": "de846b819a9225f3",
       "ts": 1786432590429,
       "baslik": "Avustralya Merkez Bankası faizi beklendiği gibi sabit tuttu"
-    },
-    {
-      "anahtar": "417df91d1837ac4d",
-      "ts": 1786413992985,
-      "baslik": "Singapur, 2. çeyrek verilerinin ardından 2026 GSYH tahminini yükseltti"
-    },
-    {
-      "anahtar": "49ed7cab1723c8f5",
-      "ts": 1786371628455,
-      "baslik": "Kazakistan’ın petrol üretimi Tengiz sahasının toparlanmasıyla %40 arttı"
     }
   ]
 }
