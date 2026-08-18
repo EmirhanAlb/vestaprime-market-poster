@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "7731143c115d66cb",
+      "ts": 1787062660487,
+      "baslik": "ABD'de sanayi üretimi temmuzda beklentilerin altında kaldı"
+    },
+    {
       "anahtar": "4b7e608e82ec7083",
       "ts": 1787060580882,
       "baslik": "ECB’den Lane: Yüzde 3’lük euro bölgesi enflasyonu hala çok yüksek"
@@ -254,16 +259,6 @@
       "anahtar": "c6ea5ff24f83b62d",
       "ts": 1786469473075,
       "baslik": "Rusya'nın federal bütçe açığı yaklaşık 79 milyar dolara çıktı"
-    },
-    {
-      "anahtar": "9b136b73ad7fbdfa",
-      "ts": 1786456599735,
-      "baslik": "Brezilya’da enflasyon Temmuz’da %4,4’e geriledi, faiz indirimine kapı açtı"
-    },
-    {
-      "anahtar": "0f73a67ec36d525b",
-      "ts": 1786456599735,
-      "baslik": "İsviçre Merkez Bankası'nın ABD borsasındaki yatırımları rekor seviyede"
     }
   ]
 }
