@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1e816ce0f928a848",
+      "ts": 1787140499423,
+      "baslik": "Güney Afrika’da perakende satışlar yıllık %1,6 arttı"
+    },
+    {
       "anahtar": "a21f01a296069023",
       "ts": 1787132346442,
       "baslik": "Güney Afrika’da enflasyon Temmuz’da %4,3’e geriledi"
@@ -249,16 +254,6 @@
       "anahtar": "f0306954c35f9fda",
       "ts": 1786552161675,
       "baslik": "Temmuz enflasyon verileri beklentileri karşıladı, Hazine tahvilleri yükseldi"
-    },
-    {
-      "anahtar": "5702861a0abb6994",
-      "ts": 1786530993377,
-      "baslik": "UEA, Ortadoğu’daki çatışmalar nedeniyle 2026 petrol arz tahminini düşürdü"
-    },
-    {
-      "anahtar": "51bba8ecc9f2d653",
-      "ts": 1786530993377,
-      "baslik": "Truflation’ın Veri Başkanı enflasyonun önümüzdeki aylarda nasıl seyredeceğini açıkladı"
     }
   ]
 }
