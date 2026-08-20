@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e4437376f5b3e0fa",
+      "ts": 1787189810865,
+      "baslik": "Trump İran’a yeni yaptırımlar açıkladı, petrol fiyatları sabit"
+    },
+    {
       "anahtar": "dcff8b7ad3996fe3",
       "ts": 1787151476467,
       "baslik": "Fed araştırması: Verimlilik artışı tarife enflasyonunu sınırladı"
@@ -249,21 +254,6 @@
       "anahtar": "eba94710543dafdd",
       "ts": 1786608135304,
       "baslik": "FTSE 100: Hisseler düştü, GSYİH yavaşladı, Hürmüz gerilimi sürüyor"
-    },
-    {
-      "anahtar": "9514bd7ae8ba970e",
-      "ts": 1786563935620,
-      "baslik": "ABD bütçe açığı Temmuz’da 1,8 trilyon dolara yükseldi"
-    },
-    {
-      "anahtar": "e024aa48aeaa9ccc",
-      "ts": 1786555995413,
-      "baslik": "Son dakika! Ekrem İmamoğlu CHP’den istifa etti"
-    },
-    {
-      "anahtar": "f0306954c35f9fda",
-      "ts": 1786552161675,
-      "baslik": "Temmuz enflasyon verileri beklentileri karşıladı, Hazine tahvilleri yükseldi"
     }
   ]
 }
