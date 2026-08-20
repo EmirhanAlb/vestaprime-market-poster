@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "50c98bb16d72a772",
+      "ts": 1787238350524,
+      "baslik": "Mısır merkez bankası gecelik faizleri sabit tuttu"
+    },
+    {
       "anahtar": "b5c76ed341a1beb6",
       "ts": 1787230731493,
       "baslik": "Merkez Bankası rezervleri 183,5 milyar dolara yükseldi"
@@ -234,16 +239,6 @@
       "anahtar": "2b9cb9de46ca4504",
       "ts": 1786635056975,
       "baslik": "Rusya’nın deniz yoluyla tahıl ihracatı Temmuz’da yüzde 20 düştü"
-    },
-    {
-      "anahtar": "cd8fd182ebf1f428",
-      "ts": 1786629559753,
-      "baslik": "Merkez Bankası rezervleri 178,4 milyar dolara yükseldi"
-    },
-    {
-      "anahtar": "b3d8410ae5f69f90",
-      "ts": 1786629559753,
-      "baslik": "Cleveland Fed’in Hammack’ı enflasyonu frenlemek için acil faiz artırımı çağrısı yaptı"
     }
   ]
 }
