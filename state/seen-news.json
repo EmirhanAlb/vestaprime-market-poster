@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b5c76ed341a1beb6",
+      "ts": 1787230731493,
+      "baslik": "Merkez Bankası rezervleri 183,5 milyar dolara yükseldi"
+    },
+    {
       "anahtar": "bb8a18fe29ebe619",
       "ts": 1787215598812,
       "baslik": "Polonya’nın sanayi üretimi Temmuz’da %5,1 arttı, beklentileri karşılamadı"
@@ -239,16 +244,6 @@
       "anahtar": "b3d8410ae5f69f90",
       "ts": 1786629559753,
       "baslik": "Cleveland Fed’in Hammack’ı enflasyonu frenlemek için acil faiz artırımı çağrısı yaptı"
-    },
-    {
-      "anahtar": "75cb49f3147d06ad",
-      "ts": 1786623110424,
-      "baslik": "TCMB rezervleri 5 ayın zirvesine çıktı"
-    },
-    {
-      "anahtar": "32385834b65e9017",
-      "ts": 1786614134360,
-      "baslik": "Tarım ÜFE temmuzda arttı"
     }
   ]
 }
