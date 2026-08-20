@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "bb8a18fe29ebe619",
+      "ts": 1787215598812,
+      "baslik": "Polonya’nın sanayi üretimi Temmuz’da %5,1 arttı, beklentileri karşılamadı"
+    },
+    {
       "anahtar": "9ee4fe05b4de9f25",
       "ts": 1787212280861,
       "baslik": "Yurt dışı ÜFE temmuzda aylık yüzde 2,51, yıllık yüzde 29,67 arttı"
@@ -244,21 +249,6 @@
       "anahtar": "32385834b65e9017",
       "ts": 1786614134360,
       "baslik": "Tarım ÜFE temmuzda arttı"
-    },
-    {
-      "anahtar": "4742d23b6e90de39",
-      "ts": 1786608135304,
-      "baslik": "Merkez Bankası yıl sonu enflasyon tahminini açıkladı"
-    },
-    {
-      "anahtar": "054f007ea233a7fa",
-      "ts": 1786608135304,
-      "baslik": "Cari açık haziranda beklentilerin altında kaldı"
-    },
-    {
-      "anahtar": "eba94710543dafdd",
-      "ts": 1786608135304,
-      "baslik": "FTSE 100: Hisseler düştü, GSYİH yavaşladı, Hürmüz gerilimi sürüyor"
     }
   ]
 }
