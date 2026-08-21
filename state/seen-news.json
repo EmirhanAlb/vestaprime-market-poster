@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e31b0f2db828ecd4",
+      "ts": 1787306529689,
+      "baslik": "Avrupa gazı Hürmüz krizi sürerken Mart zirvesine ulaştı"
+    },
+    {
       "anahtar": "695577dc33fad7f3",
       "ts": 1787303354145,
       "baslik": "UBS, EUR/USD hedefini Fed ve ECB politika ayrışmasıyla yükseltti"
@@ -229,16 +234,6 @@
       "anahtar": "638f915626d2e309",
       "ts": 1786703659674,
       "baslik": "Son dakika: İYİ Parti Milletvekili Ömer Karakaş partisinden istifa etti"
-    },
-    {
-      "anahtar": "20b52d27714ff854",
-      "ts": 1786698750366,
-      "baslik": "TCMB yıl sonu enflasyon tahminini %28’e yükseltti: TL ve BIST 100 baskı altında"
-    },
-    {
-      "anahtar": "651c71d795f1f365",
-      "ts": 1786698750366,
-      "baslik": "Petrol şirketlerinin karı savaşla arttı, yükselen akaryakıt fiyatları Trump'ı sıkıştırdı"
     }
   ]
 }
