@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0237afab0924603c",
+      "ts": 1787295738654,
+      "baslik": "İngiltere’de perakende satışlar Temmuz’da beklentiye paralel düştü"
+    },
+    {
       "anahtar": "4cddf9d4fe458514",
       "ts": 1787276489172,
       "baslik": "Japonya’da TÜFE Temmuz’da yükseldi, çekirdek enflasyon arttı ancak BOJ hedefinin altında kaldı"
@@ -224,11 +229,6 @@
       "anahtar": "651c71d795f1f365",
       "ts": 1786698750366,
       "baslik": "Petrol şirketlerinin karı savaşla arttı, yükselen akaryakıt fiyatları Trump'ı sıkıştırdı"
-    },
-    {
-      "anahtar": "79667863a6a93f9a",
-      "ts": 1786674255199,
-      "baslik": "Altın 4.400 doların altına geriledi, Fed ve Hürmüz görüşmeleri ralliye sınır getirdi"
     }
   ]
 }
