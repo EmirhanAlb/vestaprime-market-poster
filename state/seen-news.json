@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e54246f759338821",
+      "ts": 1787494536417,
+      "baslik": "İran yaptırım endişeleri petrol fiyatlarını yükseltti, Körfez borsaları arttı"
+    },
+    {
       "anahtar": "5d5d5ef0dffaa55f",
       "ts": 1787374676535,
       "baslik": "ABD’nin Kanada’ya tarifeleri ticaret görüşmeleri çöktükten sonra yürürlüğe girdi"
@@ -189,11 +194,6 @@
       "anahtar": "d85b6da5296dc9d5",
       "ts": 1786943414042,
       "baslik": "Asya dövizleri Fed faiz artırımı beklentilerinde düşüşle yükseldi"
-    },
-    {
-      "anahtar": "94ceaa2f176be88d",
-      "ts": 1786777529684,
-      "baslik": "Küresel piyasalarda risk iştahı arttı: Enflasyon iyimserliği ve Orta Doğu belirsizliği"
     }
   ]
 }
