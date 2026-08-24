@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "3af2aace146482a1",
+      "ts": 1787561680032,
+      "baslik": "Polonya’nın Temmuz perakende satışları %3,9 arttı, beklentileri karşılamadı"
+    },
+    {
+      "anahtar": "6f842bf76aacf61e",
+      "ts": 1787561680032,
+      "baslik": "Merkez Bankası'nın repo kararı faiz indirimi sinyali mi? Muhammet Bayram açıkladı"
+    },
+    {
       "anahtar": "0133ff1123e68ddd",
       "ts": 1787557153808,
       "baslik": "Merkez Bankası yıllık enflasyon beklentilerini açıkladı"
@@ -184,11 +194,6 @@
       "anahtar": "8d11186bfd2bfe6e",
       "ts": 1786971270446,
       "baslik": "Brezilya’da IGP-10 enflasyon endeksi Ağustos’ta %0,51 düştü"
-    },
-    {
-      "anahtar": "55ff847ec7e9fda2",
-      "ts": 1786956635924,
-      "baslik": "Avrupa doğal gazı Hürmüz abluka riskleriyle 4. günde de yükseldi"
     }
   ]
 }
