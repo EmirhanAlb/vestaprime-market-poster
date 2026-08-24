@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0133ff1123e68ddd",
+      "ts": 1787557153808,
+      "baslik": "Merkez Bankası yıllık enflasyon beklentilerini açıkladı"
+    },
+    {
+      "anahtar": "26b8ddcd4153b8c1",
+      "ts": 1787557153808,
+      "baslik": "TCMB açıkladı: FAST işlem tutar limiti yükseltildi"
+    },
+    {
       "anahtar": "e54246f759338821",
       "ts": 1787494536417,
       "baslik": "İran yaptırım endişeleri petrol fiyatlarını yükseltti, Körfez borsaları arttı"
@@ -179,21 +189,6 @@
       "anahtar": "55ff847ec7e9fda2",
       "ts": 1786956635924,
       "baslik": "Avrupa doğal gazı Hürmüz abluka riskleriyle 4. günde de yükseldi"
-    },
-    {
-      "anahtar": "c3371f6ff013829f",
-      "ts": 1786952043430,
-      "baslik": "Citigroup, yıl sonu faiz beklentisini açıkladı: TCMB’nin alanı daralıyor"
-    },
-    {
-      "anahtar": "d876f076707a3ccd",
-      "ts": 1786943414042,
-      "baslik": "Merkez Bankası enflasyon tahminini yükseltti! Memur ve emeklinin ocak zammında yeni hesap"
-    },
-    {
-      "anahtar": "d85b6da5296dc9d5",
-      "ts": 1786943414042,
-      "baslik": "Asya dövizleri Fed faiz artırımı beklentilerinde düşüşle yükseldi"
     }
   ]
 }
