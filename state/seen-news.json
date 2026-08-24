@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "256b465429073b3d",
+      "ts": 1787582580097,
+      "baslik": "Trump, Kanada'ya yönelik otomobil ve kamyon tarifelerinin yüzde 50'ye yükseltileceğini açıkladı"
+    },
+    {
       "anahtar": "2cd76a54b715e463",
       "ts": 1787579561229,
       "baslik": "Macaristan kuraklık ve enerji krizi nedeniyle yüzde 7,5 bütçe açığı hedefliyor"
@@ -169,11 +174,6 @@
       "anahtar": "acb9547198e9f392",
       "ts": 1787022034259,
       "baslik": "Avustralya’da tüketici güveni Ağustos’ta arttı ancak karamsar görüş sürüyor - Westpac"
-    },
-    {
-      "anahtar": "f2bf19945fb9aed9",
-      "ts": 1786975514058,
-      "baslik": "Kanada TSX, beklentilerin üzerinde gelen enflasyonla geriledi"
     }
   ]
 }
