@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "2cd76a54b715e463",
+      "ts": 1787579561229,
+      "baslik": "Macaristan kuraklık ve enerji krizi nedeniyle yüzde 7,5 bütçe açığı hedefliyor"
+    },
+    {
       "anahtar": "3af2aace146482a1",
       "ts": 1787561680032,
       "baslik": "Polonya’nın Temmuz perakende satışları %3,9 arttı, beklentileri karşılamadı"
@@ -169,31 +174,6 @@
       "anahtar": "f2bf19945fb9aed9",
       "ts": 1786975514058,
       "baslik": "Kanada TSX, beklentilerin üzerinde gelen enflasyonla geriledi"
-    },
-    {
-      "anahtar": "852390bc64d259ab",
-      "ts": 1786973982302,
-      "baslik": "New York Fed imalat endeksi ağustosta beklentileri aştı"
-    },
-    {
-      "anahtar": "4e35c21d93a2ac5f",
-      "ts": 1786973982302,
-      "baslik": "Kanada’da enflasyon benzin fiyatlarıyla yüzde 3’e yükseldi"
-    },
-    {
-      "anahtar": "c14cc3a1b5e50d23",
-      "ts": 1786971270446,
-      "baslik": "Merkez bankası takas son tarihini değiştirdi, Hindistan tahvil faizleri yükseldi"
-    },
-    {
-      "anahtar": "a13d7e145ca0f75a",
-      "ts": 1786971270446,
-      "baslik": "Nijerya’da tüketici enflasyonu Temmuz’da %15,43’e geriledi"
-    },
-    {
-      "anahtar": "8d11186bfd2bfe6e",
-      "ts": 1786971270446,
-      "baslik": "Brezilya’da IGP-10 enflasyon endeksi Ağustos’ta %0,51 düştü"
     }
   ]
 }
