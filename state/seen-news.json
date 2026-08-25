@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "4a8c057b155d5032",
+      "ts": 1787627025111,
+      "baslik": "Petrol fiyatları ABD’nin İran’a yeni yaptırımlarıyla yükseldi"
+    },
+    {
       "anahtar": "256b465429073b3d",
       "ts": 1787582580097,
       "baslik": "Trump, Kanada'ya yönelik otomobil ve kamyon tarifelerinin yüzde 50'ye yükseltileceğini açıkladı"
@@ -164,16 +169,6 @@
       "anahtar": "bbdd60dcb7d4a184",
       "ts": 1787032563016,
       "baslik": "Ons altın 4.400 doların altına geriledi: Gözler Fed tutanaklarında"
-    },
-    {
-      "anahtar": "9fc8f66a12a41d1d",
-      "ts": 1787022034259,
-      "baslik": "Petrol fiyatları yükseldi, İran krizi devam ediyor"
-    },
-    {
-      "anahtar": "acb9547198e9f392",
-      "ts": 1787022034259,
-      "baslik": "Avustralya’da tüketici güveni Ağustos’ta arttı ancak karamsar görüş sürüyor - Westpac"
     }
   ]
 }
