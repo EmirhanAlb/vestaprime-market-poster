@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e507be2f12f603d9",
+      "ts": 1787641362453,
+      "baslik": "İhracat ikinci çeyrek büyümesini destekledi, Almanya GSYH beklentileri aştı"
+    },
+    {
       "anahtar": "4a8c057b155d5032",
       "ts": 1787627025111,
       "baslik": "Petrol fiyatları ABD’nin İran’a yeni yaptırımlarıyla yükseldi"
@@ -164,11 +169,6 @@
       "anahtar": "e8e4dabe65071bf8",
       "ts": 1787049260610,
       "baslik": "Azerbaycan 2026 enflasyon tahminini %5,7’ye yükseltti"
-    },
-    {
-      "anahtar": "bbdd60dcb7d4a184",
-      "ts": 1787032563016,
-      "baslik": "Ons altın 4.400 doların altına geriledi: Gözler Fed tutanaklarında"
     }
   ]
 }
