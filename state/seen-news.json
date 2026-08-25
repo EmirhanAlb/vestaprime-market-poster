@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1bba75be81fad66f",
+      "ts": 1787655644427,
+      "baslik": "Brent petrol 88 dolara geriledi! Gözler Hürmüz Boğazı'nda"
+    },
+    {
       "anahtar": "01cdb57d76c23e31",
       "ts": 1787652125284,
       "baslik": "İran savaşı maliyetleri artırdı! ABD'li çiftçiler 40 yılın en ağır kriziyle boğuşuyor"
@@ -169,11 +174,6 @@
       "anahtar": "f2420ee3f5f6c1fe",
       "ts": 1787060580882,
       "baslik": "Son dakika... Mustafa Bozbey CHP'den istifa etti"
-    },
-    {
-      "anahtar": "e8e4dabe65071bf8",
-      "ts": 1787049260610,
-      "baslik": "Azerbaycan 2026 enflasyon tahminini %5,7’ye yükseltti"
     }
   ]
 }
