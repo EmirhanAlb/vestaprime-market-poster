@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ac22df033253caf8",
+      "ts": 1787693619701,
+      "baslik": "TCMB, iki elektronik para kuruluşunun faaliyet iznini iptal etti"
+    },
+    {
       "anahtar": "d3d18d0553f61eff",
       "ts": 1787662893609,
       "baslik": "Macaristan Merkez Bankası faiz oranını %5,5’e indirdi"
@@ -159,26 +164,6 @@
       "anahtar": "2b7ceb3f61348db8",
       "ts": 1787103460954,
       "baslik": "Breville Group tarife baskısına rağmen rekor gelir açıkladı"
-    },
-    {
-      "anahtar": "7c2d518305772a5d",
-      "ts": 1787088575844,
-      "baslik": "TCMB döviz satımını 6.6 milyar dolara indirdi"
-    },
-    {
-      "anahtar": "7731143c115d66cb",
-      "ts": 1787062660487,
-      "baslik": "ABD'de sanayi üretimi temmuzda beklentilerin altında kaldı"
-    },
-    {
-      "anahtar": "4b7e608e82ec7083",
-      "ts": 1787060580882,
-      "baslik": "ECB’den Lane: Yüzde 3’lük euro bölgesi enflasyonu hala çok yüksek"
-    },
-    {
-      "anahtar": "f2420ee3f5f6c1fe",
-      "ts": 1787060580882,
-      "baslik": "Son dakika... Mustafa Bozbey CHP'den istifa etti"
     }
   ]
 }
