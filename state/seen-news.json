@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "120423cfb727b2a3",
+      "ts": 1787749736172,
+      "baslik": "Fed’in tercih ettiği enflasyon endeksi Temmuz’da yıllık bazda bir önceki ayla aynı kaldı"
+    },
+    {
       "anahtar": "e56a94d8913d5e74",
       "ts": 1787738810858,
       "baslik": "Avrupa'da doğal gaz fiyatları geriledi! Hürmüz Boğazı gelişmesi etkili oldu"
@@ -159,16 +164,6 @@
       "anahtar": "dcff8b7ad3996fe3",
       "ts": 1787151476467,
       "baslik": "Fed araştırması: Verimlilik artışı tarife enflasyonunu sınırladı"
-    },
-    {
-      "anahtar": "80187edccdb9cccc",
-      "ts": 1787144249582,
-      "baslik": "TÜİK: İşsizlik oranı yüzde 7,9 geriledi"
-    },
-    {
-      "anahtar": "1e816ce0f928a848",
-      "ts": 1787140499423,
-      "baslik": "Güney Afrika’da perakende satışlar yıllık %1,6 arttı"
     }
   ]
 }
