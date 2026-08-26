@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e56a94d8913d5e74",
+      "ts": 1787738810858,
+      "baslik": "Avrupa'da doğal gaz fiyatları geriledi! Hürmüz Boğazı gelişmesi etkili oldu"
+    },
+    {
       "anahtar": "fa8953ed2d2c9342",
       "ts": 1787735999737,
       "baslik": "Avrupa gazı Ortadoğu’da ateşkes umutlarıyla %3 düştü"
@@ -164,11 +169,6 @@
       "anahtar": "1e816ce0f928a848",
       "ts": 1787140499423,
       "baslik": "Güney Afrika’da perakende satışlar yıllık %1,6 arttı"
-    },
-    {
-      "anahtar": "a21f01a296069023",
-      "ts": 1787132346442,
-      "baslik": "Güney Afrika’da enflasyon Temmuz’da %4,3’e geriledi"
     }
   ]
 }
