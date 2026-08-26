@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "480b498b469490e9",
+      "ts": 1787720800157,
+      "baslik": "Petrol, Hürmüz umuduyla sert düştü: Fiyatlarda yüzde 2'lik gerileme"
+    },
+    {
       "anahtar": "1bb63c29007da513",
       "ts": 1787713846032,
       "baslik": "İran-Umman Hürmüz görüşmeleri petrolü vurdu, Asya enerji hisseleri düştü"
@@ -159,11 +164,6 @@
       "anahtar": "af34f85b53523f62",
       "ts": 1787122693900,
       "baslik": "İngiltere’de Temmuz TÜFE’si ev enerji maliyetleriyle %2,9’a yükseldi"
-    },
-    {
-      "anahtar": "857dbee58c5ba74c",
-      "ts": 1787115812431,
-      "baslik": "Trump, Kanada'ya uygulanması planlanan yüzde 50'lik tarifeyi askıya aldı"
     }
   ]
 }
