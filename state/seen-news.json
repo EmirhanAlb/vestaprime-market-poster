@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9064697431a7f3d5",
+      "ts": 1787731849336,
+      "baslik": "Bitcoin ABD enflasyon verisi öncesi 79 bin dolara geriledi"
+    },
+    {
+      "anahtar": "fe77b4163dd86118",
+      "ts": 1787731849336,
+      "baslik": "Ham petrol çöküşü ECB’nin sert uyarılarını dengeledi"
+    },
+    {
       "anahtar": "480b498b469490e9",
       "ts": 1787720800157,
       "baslik": "Petrol, Hürmüz umuduyla sert düştü: Fiyatlarda yüzde 2'lik gerileme"
@@ -154,16 +164,6 @@
       "anahtar": "a21f01a296069023",
       "ts": 1787132346442,
       "baslik": "Güney Afrika’da enflasyon Temmuz’da %4,3’e geriledi"
-    },
-    {
-      "anahtar": "abd4d830e9b9c0a2",
-      "ts": 1787122693900,
-      "baslik": "İsviçre sanayi üretimi ikinci çeyrekte %5,5 arttı"
-    },
-    {
-      "anahtar": "af34f85b53523f62",
-      "ts": 1787122693900,
-      "baslik": "İngiltere’de Temmuz TÜFE’si ev enerji maliyetleriyle %2,9’a yükseldi"
     }
   ]
 }
