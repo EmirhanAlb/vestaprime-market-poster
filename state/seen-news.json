@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "72dd99729d511b9e",
+      "ts": 1787782724603,
+      "baslik": "Meksika merkez bankası 2026 büyüme tahminini yükseltti"
+    },
+    {
       "anahtar": "d743920e751d2f1d",
       "ts": 1787752562223,
       "baslik": "Brezilya’da enflasyon Ağustos başında hedef aralığına geriledi"
@@ -169,11 +174,6 @@
       "anahtar": "e4437376f5b3e0fa",
       "ts": 1787189810865,
       "baslik": "Trump İran’a yeni yaptırımlar açıkladı, petrol fiyatları sabit"
-    },
-    {
-      "anahtar": "dcff8b7ad3996fe3",
-      "ts": 1787151476467,
-      "baslik": "Fed araştırması: Verimlilik artışı tarife enflasyonunu sınırladı"
     }
   ]
 }
