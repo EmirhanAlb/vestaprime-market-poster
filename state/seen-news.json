@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5f846d12551b4a26",
+      "ts": 1787828629935,
+      "baslik": "Almanya'da tüketici güveni gelir beklentisindeki artışla beklenmedik şekilde yükseldi"
+    },
+    {
       "anahtar": "72dd99729d511b9e",
       "ts": 1787782724603,
       "baslik": "Meksika merkez bankası 2026 büyüme tahminini yükseltti"
@@ -159,21 +164,6 @@
       "anahtar": "b5c76ed341a1beb6",
       "ts": 1787230731493,
       "baslik": "Merkez Bankası rezervleri 183,5 milyar dolara yükseldi"
-    },
-    {
-      "anahtar": "bb8a18fe29ebe619",
-      "ts": 1787215598812,
-      "baslik": "Polonya’nın sanayi üretimi Temmuz’da %5,1 arttı, beklentileri karşılamadı"
-    },
-    {
-      "anahtar": "9ee4fe05b4de9f25",
-      "ts": 1787212280861,
-      "baslik": "Yurt dışı ÜFE temmuzda aylık yüzde 2,51, yıllık yüzde 29,67 arttı"
-    },
-    {
-      "anahtar": "e4437376f5b3e0fa",
-      "ts": 1787189810865,
-      "baslik": "Trump İran’a yeni yaptırımlar açıkladı, petrol fiyatları sabit"
     }
   ]
 }
