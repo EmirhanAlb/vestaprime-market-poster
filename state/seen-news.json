@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e4e742ff78981b06",
+      "ts": 1787864810443,
+      "baslik": "Trump İran mutabakatını iptal etti, Hürmüz görüşmeleri tıkandı ve petrol riski arttı"
+    },
+    {
       "anahtar": "5f846d12551b4a26",
       "ts": 1787828629935,
       "baslik": "Almanya'da tüketici güveni gelir beklentisindeki artışla beklenmedik şekilde yükseldi"
@@ -154,16 +159,6 @@
       "anahtar": "4cddf9d4fe458514",
       "ts": 1787276489172,
       "baslik": "Japonya’da TÜFE Temmuz’da yükseldi, çekirdek enflasyon arttı ancak BOJ hedefinin altında kaldı"
-    },
-    {
-      "anahtar": "50c98bb16d72a772",
-      "ts": 1787238350524,
-      "baslik": "Mısır merkez bankası gecelik faizleri sabit tuttu"
-    },
-    {
-      "anahtar": "b5c76ed341a1beb6",
-      "ts": 1787230731493,
-      "baslik": "Merkez Bankası rezervleri 183,5 milyar dolara yükseldi"
     }
   ]
 }
