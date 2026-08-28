@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "78e993b54a81ea9a",
+      "ts": 1787941610343,
+      "baslik": "Gümüş iki ayın zirvesine çıktı! Gözler Fed Başkanı Warsh’ın mesajlarında"
+    },
+    {
+      "anahtar": "792769e9d18ff163",
+      "ts": 1787941610343,
+      "baslik": "Kraken, Solana enflasyon reformuna desteğini son saatlerde açıkladı"
+    },
+    {
       "anahtar": "e4e742ff78981b06",
       "ts": 1787864810443,
       "baslik": "Trump İran mutabakatını iptal etti, Hürmüz görüşmeleri tıkandı ve petrol riski arttı"
@@ -134,31 +144,6 @@
       "anahtar": "5d5d5ef0dffaa55f",
       "ts": 1787374676535,
       "baslik": "ABD’nin Kanada’ya tarifeleri ticaret görüşmeleri çöktükten sonra yürürlüğe girdi"
-    },
-    {
-      "anahtar": "e31b0f2db828ecd4",
-      "ts": 1787306529689,
-      "baslik": "Avrupa gazı Hürmüz krizi sürerken Mart zirvesine ulaştı"
-    },
-    {
-      "anahtar": "695577dc33fad7f3",
-      "ts": 1787303354145,
-      "baslik": "UBS, EUR/USD hedefini Fed ve ECB politika ayrışmasıyla yükseltti"
-    },
-    {
-      "anahtar": "ae86d5c40ea5ba17",
-      "ts": 1787299615863,
-      "baslik": "Tüketici güveni ağustosta arttı"
-    },
-    {
-      "anahtar": "0237afab0924603c",
-      "ts": 1787295738654,
-      "baslik": "İngiltere’de perakende satışlar Temmuz’da beklentiye paralel düştü"
-    },
-    {
-      "anahtar": "4cddf9d4fe458514",
-      "ts": 1787276489172,
-      "baslik": "Japonya’da TÜFE Temmuz’da yükseldi, çekirdek enflasyon arttı ancak BOJ hedefinin altında kaldı"
     }
   ]
 }
