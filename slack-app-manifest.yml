@@ -11,6 +11,10 @@ oauth_config:
     bot:
       - files:write
       - chat:write
+      # Gunun Tahmini oylamasi oylari emoji tepkilerinden okuyor. Bu scope
+      # olmadan oylama paylasilir, acilis fiyati yakalanir, ama sonuc
+      # aciklanamaz: reactions.get "missing_scope" doner ve is hata verir.
+      - reactions:read
 settings:
   org_deploy_enabled: false
   socket_mode_enabled: false

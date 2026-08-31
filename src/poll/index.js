@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WebClient } from '@slack/web-api';
+import { hedefler as slackHedefleri } from '../slack-out/targets.js';
 import { altinFiyati, fiyatYaz } from './price.js';
 import { bugunSaat, saatCoz, trSaat, trTarih, bekle } from './time.js';
 
@@ -62,11 +63,52 @@ const SECENEKLER = [
   { yon: 'duragan', emoji: 'left_right_arrow', etiket: 'Durağan', gorsel: ':left_right_arrow:' },
 ];
 
+/**
+ * Oylama kanallari.
+ *
+ * Eskiden yalnizca POLL_CHANNEL_ID okunuyordu. Diger akislar SLACK_CONFIG'e
+ * tasindiginda oylama geride kaldi: kanal yalnizca SLACK_CONFIG'te tanimliysa
+ * bu fonksiyon bos donuyor ve akis "tanimli degil" diye duruyordu. Artik
+ * hedefler ortak cozumleyiciden geliyor (o zaten her iki yazimi da destekler).
+ *
+ * Oylama akisi hala tek token'la calisiyor: oylari okumak ve sonucu ayni
+ * mesajin altina yazmak icin mesaji atan workspace'in istemcisi gerekiyor.
+ * Baska workspace'lerdeki hedefler bu yuzden atlanir - ama sessizce degil.
+ */
 function kanallar() {
-  return (process.env.POLL_CHANNEL_ID || '')
-    .split(',')
-    .map((c) => c.trim())
-    .filter(Boolean);
+  const token = process.env.SLACK_BOT_TOKEN;
+  const hepsi = slackHedefleri('poll');
+  const disarida = hepsi.filter((h) => h.token !== token);
+  if (disarida.length) {
+    const slotlar = [...new Set(disarida.map((d) => d.slot))].join(', ');
+    console.warn(
+      `  ! ${disarida.length} oylama kanali baska workspace'te (${slotlar}); ` +
+        'oylama akisi coklu workspace desteklemiyor, bu kanallar atlaniyor.',
+    );
+  }
+  return [...new Set(hepsi.filter((h) => h.token === token).map((h) => h.channel))];
+}
+
+/**
+ * Token'a verilmis OAuth scope'lari.
+ *
+ * Slack scope listesini govdede degil "x-oauth-scopes" yanit basliginda
+ * donuyor ve WebClient bu basligi disari vermiyor; bu yuzden dogrudan fetch.
+ * Okuyamazsak bos donuyoruz: kontrol akisi durdurmasin.
+ */
+async function scopeler(token) {
+  try {
+    const r = await fetch('https://slack.com/api/auth.test', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return (r.headers.get('x-oauth-scopes') || '')
+      .split(',')
+      .map((x) => x.trim())
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
 }
 
 function kayitEkle(kayit) {
@@ -286,7 +328,24 @@ async function sonuclandir(client, botKullanici, mesajlar, acilisFiyat, kapanisF
 async function main() {
   const token = process.env.SLACK_BOT_TOKEN;
   const hedefler = kanallar();
-  if (!token || hedefler.length === 0) throw new Error('SLACK_BOT_TOKEN ve POLL_CHANNEL_ID tanimli degil.');
+  if (!token) throw new Error('SLACK_BOT_TOKEN tanimli degil.');
+  if (hedefler.length === 0) {
+    throw new Error('Oylama kanali tanimli degil (SLACK_CONFIG icinde "poll" ya da POLL_CHANNEL_ID).');
+  }
+
+  // Oylar emoji tepkilerinden okunuyor. Bu izin yoksa oylama paylasilabilir
+  // ama sonuc asla aciklanamaz - reactions.get "missing_scope" doner. Kanalda
+  // sonuclanmayacak bir oylama birakmaktansa hicbir sey paylasmadan duruyoruz.
+  const izinler = await scopeler(token);
+  if (izinler.length && !izinler.includes('reactions:read')) {
+    throw new Error(
+      "Slack uygulamasinda 'reactions:read' izni yok; oylar okunamaz, sonuc aciklanamaz. " +
+        `Mevcut izinler: ${izinler.join(', ')}. ` +
+        'Duzeltme: api.slack.com/apps > uygulama > OAuth & Permissions > Bot Token Scopes ' +
+        'altina reactions:read ekleyin, "Reinstall to Workspace" yapin, olusan yeni token ile ' +
+        'SLACK_BOT_TOKEN secret ini guncelleyin.',
+    );
+  }
 
   const client = new WebClient(token);
   const kimlik = await client.auth.test();

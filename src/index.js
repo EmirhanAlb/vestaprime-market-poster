@@ -31,7 +31,7 @@ function stamp() {
   };
 }
 
-async function main() {
+async function birTur() {
   const { file, human } = stamp();
   const outDir = path.join(rootDir, 'out');
   fs.mkdirSync(outDir, { recursive: true });
@@ -84,7 +84,49 @@ async function main() {
   if (process.env.KEEP_LOCAL_FILE !== '1' && process.env.CI) fs.unlinkSync(outPath);
 }
 
-main().catch((err) => {
-  console.error('HATA:', err?.message || err);
-  process.exit(1);
-});
+/**
+ * Dongu modu.
+ *
+ * Saatlik cron ayarliydi ama GitHub'in zamanlayicisi bu repoda onu
+ * calistirmiyor: 27-31 Agustos 2026 arasinda gunde 24 yerine 1-6 calistirma
+ * gerceklesti, aralarda 10 saati asan bosluklar oldu. Son Dakika ve
+ * FinancialJuice akislarindaki cozumun ayni: tek uzun is icinde kendimiz
+ * bekliyoruz, is bitince workflow kendini yeniden tetikliyor.
+ *
+ * Tarayici her turda capture.js icindeki finally blogunda kapaniyor, bu
+ * yuzden uzun dongude surec sismiyor.
+ */
+const ARALIK_SN = Number(process.env.LOOP_SECONDS || 3600);
+const SURE_DK = Number(process.env.LOOP_MINUTES || 300);
+
+async function dongu() {
+  const bitis = Date.now() + SURE_DK * 60_000;
+  let tur = 0;
+  console.log(`Dongu modu: her ${ARALIK_SN} sn, ${SURE_DK} dk boyunca.\n`);
+
+  while (Date.now() < bitis) {
+    tur += 1;
+    const basla = Date.now();
+    console.log(`--- tur ${tur} | ${new Date().toISOString().slice(11, 19)} UTC ---`);
+    try {
+      await birTur();
+    } catch (err) {
+      // Tek turun hatasi donguyu bitirmemeli: sayfa gecici olarak
+      // yuklenmeyebilir ya da Slack anlik hata dondurebilir.
+      console.error('  tur hatasi:', err?.message || err);
+    }
+    const kalan = ARALIK_SN * 1000 - (Date.now() - basla);
+    if (kalan <= 0 || Date.now() + kalan >= bitis) break;
+    await new Promise((r) => setTimeout(r, kalan));
+  }
+  console.log(`\nDongu tamamlandi: ${tur} tur.`);
+}
+
+const calistir = process.argv.includes('--loop') ? dongu : birTur;
+
+calistir()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error('HATA:', err?.message || err);
+    process.exit(1);
+  });

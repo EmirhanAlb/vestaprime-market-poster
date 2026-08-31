@@ -1,20 +1,42 @@
 name: Market Poster -> Slack
 
+# NEDEN CRON DEGIL DE UZUN CALISAN IS?
+#
+# Saatlik cron ayarliydi ama GitHub'in zamanlayicisi bu repoda onu
+# calistirmiyor: 27-31 Agustos 2026 arasinda gunde 24 yerine 1-6 calistirma
+# gerceklesti, aralarda 10 saati asan bosluklar oldu. Son Dakika ve
+# FinancialJuice akislarindaki cozumun ayni: tek uzun is icinde saatte bir
+# poster uretmek, is bitiminde workflow'un kendini yeniden tetiklemesi.
+#
+# Yan fayda: Chromium ve font kurulumu (~2-3 dk) her poster icin degil,
+# 5 saatte bir odenir.
+
 on:
   schedule:
-    # Her saat basi (UTC). GitHub cron'u yogunlukta 5-20 dk gecikebilir.
-    # Sadece belirli saatlerde isterseniz ornek: '0 6-20 * * 1-5' (TR 09:00-23:00, hafta ici)
-    - cron: '0 * * * *'
-  workflow_dispatch: # Actions sekmesinden elle tetikleme
+    # Yalnizca guvenlik agi: zincir bir sekilde kopmussa yeniden baslatir.
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+    inputs:
+      loop_minutes:
+        description: 'Dongunun surecegi dakika (0 = tek tur)'
+        required: false
+        default: '300'
 
+# Ayni anda tek is calisir. Zamanlanmis tetikleme uzun is surerken gelirse
+# beklemede kalir ve is bitince zinciri devralir; ikinci bir zincir olusmaz.
 concurrency:
   group: market-poster
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  actions: write # is bitiminde kendini yeniden tetiklemek icin
+
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 300 dakikalik dongu + kurulum payi.
+    timeout-minutes: 320
     steps:
       - uses: actions/checkout@v5
 
@@ -34,8 +56,8 @@ jobs:
       - name: Chromium'u kur
         run: npx playwright install --with-deps chromium
 
-      - name: Poster'i yakala ve Slack'e gonder
-        run: npm start
+      - name: Poster'i yakala ve Slack'e gonder (dongu)
+        run: node src/index.js --loop
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           # Tum Slack workspace'leri ve kanallari tek JSON secret'ta.
@@ -44,6 +66,8 @@ jobs:
           # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
           TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          LOOP_SECONDS: ${{ vars.POSTER_LOOP_SECONDS || '3600' }}
+          LOOP_MINUTES: ${{ inputs.loop_minutes || '300' }}
 
       - name: Hata durumunda ciktiyi sakla
         if: failure()
@@ -53,3 +77,11 @@ jobs:
           path: out/
           if-no-files-found: ignore
           retention-days: 3
+
+      # Is basarisiz bitse bile zincir devam etmeli; aksi halde tek bir gecici
+      # hata akisi kalici olarak durdururdu.
+      - name: Zinciri devam ettir
+        if: ${{ always() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Market Poster -> Slack" --ref "${{ github.ref_name }}"
