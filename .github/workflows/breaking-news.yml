@@ -1,38 +1,55 @@
 name: Son Dakika -> Slack
 
+# NEDEN CRON DEGIL DE UZUN CALISAN IS?
+#
+# Bu akis 10 dakikalik cron ile kuruluydu ama GitHub'in zamanlayicisi onu
+# calistirmiyor. Olculen davranis (25-31 Agustos 2026): gunde beklenen ~100
+# calistirma yerine 6-7 calistirma; aralarda 10 saati asan bosluklar.
+#
+# Ustune ikinci bir etki biniyordu: is 3.5-4 saatte bir calisiyor ama her
+# calistirma yalnizca son NEWS_MAX_AGE_HOURS saate bakiyor. Aradaki fark
+# pencereye hic girmeden kaliciydi - haber kaybediliyordu, hata da vermiyordu.
+#
+# Cozum FinancialJuice akisindakiyle ayni ve orada calistigi kanitli: tek bir
+# uzun is icinde 10 dakikada bir yoklamak ve is bitiminde workflow'un kendini
+# yeniden tetiklemesi. workflow_dispatch, GITHUB_TOKEN ile tetiklendiginde yeni
+# calistirma uretebilen iki olaydan biri.
+
 on:
   schedule:
-    # Saatler UTC. Turkiye UTC+3.
-    # ABD piyasasi acikken (TR 16:00-24:00, hafta ici) 10 dakikada bir:
-    - cron: '*/10 13-20 * * 1-5'
-    # Hafta ici diger saatlerde 30 dakikada bir:
-    - cron: '*/30 0-12,21-23 * * 1-5'
-    # Hafta sonu (kripto 7/24 aktif) 30 dakikada bir:
-    - cron: '*/30 * * * 0,6'
+    # Yalnizca guvenlik agi: zincir bir sekilde kopmussa yeniden baslatir.
+    - cron: '0 */2 * * *'
   workflow_dispatch:
     inputs:
       max_age_hours:
-        description: 'Kac saatlik haberler degerlendirilsin (elle test icin)'
+        description: 'Kac saatlik haberler degerlendirilsin'
         required: false
-        default: '3'
+        default: '6'
+      loop_minutes:
+        description: 'Dongunun surecegi dakika (0 = tek tur)'
+        required: false
+        default: '55'
       dry_run:
         description: 'Slack e gonderme, sadece ne gidecegini yazdir'
         type: boolean
         required: false
         default: false
 
-# Ayni anda iki calistirma olursa state dosyasi cakisir; siraya alinir.
+# Ayni anda tek is calisir. Zamanlanmis tetikleme uzun is surerken gelirse
+# beklemede kalir ve is bitince zinciri devralir; ikinci bir zincir olusmaz.
 concurrency:
   group: breaking-news
   cancel-in-progress: false
 
 permissions:
   contents: write # gonderilen haber gecmisini repoya geri yazmak icin
+  actions: write  # is bitiminde kendini yeniden tetiklemek icin
 
 jobs:
   news:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    # 55 dakikalik dongu + kurulum payi.
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v5
 
@@ -44,8 +61,8 @@ jobs:
       - name: Bagimliliklari kur
         run: npm ci
 
-      - name: Haberleri tara ve gonder
-        run: node src/news/index.js ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: Haberleri tara ve gonder (dongu)
+        run: node src/news/index.js --loop ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           # Tum Slack workspace'leri ve kanallari tek JSON secret'ta.
@@ -54,10 +71,15 @@ jobs:
           # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
           TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
           NEWS_CHANNEL_ID: ${{ secrets.NEWS_CHANNEL_ID }}
-          NEWS_MAX_AGE_HOURS: ${{ inputs.max_age_hours || '3' }}
+          NEWS_MAX_AGE_HOURS: ${{ inputs.max_age_hours || '6' }}
+          LOOP_SECONDS: ${{ vars.NEWS_LOOP_SECONDS || '600' }}
+          LOOP_MINUTES: ${{ inputs.loop_minutes || '55' }}
 
+      # Dongu 55 dakikada bitiyor: gecmis saatte bir commit'lenir. Is beklenmedik
+      # sekilde olurse en fazla bir saatlik gonderim kaydi kaybolur (o haberler
+      # tekrar gidebilir) - sinirsiz uzun bir is bunu saatlerce buyuturdu.
       - name: Gonderim gecmisini kaydet
-        if: ${{ !inputs.dry_run }}
+        if: ${{ always() && !inputs.dry_run }}
         run: |
           if [ -z "$(git status --porcelain state/)" ]; then
             echo "Gecmiste degisiklik yok, commit atlanacak."
@@ -70,3 +92,11 @@ jobs:
           # Bu sirada baska bir commit girmis olabilir; once uzaktakini al.
           git pull --rebase --autostash origin main
           git push origin HEAD:main
+
+      # Is basarisiz bitse bile zincir devam etmeli; aksi halde tek bir gecici
+      # hata akisi kalici olarak durdururdu.
+      - name: Zinciri devam ettir
+        if: ${{ always() && !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Son Dakika -> Slack" --ref "${{ github.ref_name }}"

@@ -22,7 +22,7 @@ const MAX_YAS_SAAT = Number(process.env.NEWS_MAX_AGE_HOURS || 3);
 /** Tek calistirmada gonderilecek azami haber; ani akin olursa kanali bogmaz. */
 const MAX_GONDERIM = Number(process.env.NEWS_MAX_PER_RUN || 3);
 
-async function main() {
+async function birTur() {
   const gonderilenler = durumOku(DURUM_DOSYASI);
   const gorulen = new Set(gonderilenler.map((g) => g.anahtar));
   console.log(`Kayitli gecmis: ${gonderilenler.length} haber`);
@@ -120,10 +120,50 @@ async function main() {
   }
 }
 
-main()
+/**
+ * Dongu modu.
+ *
+ * GitHub'in zamanlayicisi bu repoda cron'u guvenilir calistirmiyor: Son Dakika
+ * icin 10 dakikalik cron ayarliyken olculen gerceklesme gunde 6-7 calistirma
+ * oldu (~100 beklenirken). Ustune MAX_YAS_SAAT penceresi dar oldugu icin iki
+ * calistirma arasinda kalan haberler pencereye hic girmeden dusuyordu.
+ *
+ * Cozum FinancialJuice akisindakiyle ayni: tek bir uzun is icinde kendimiz
+ * yokluyoruz, is bitince workflow kendini workflow_dispatch ile yeniden
+ * tetikliyor. Cron yalnizca zincir koparsa devreye giren guvenlik agi.
+ */
+const ARALIK_SN = Number(process.env.LOOP_SECONDS || 600);
+const SURE_DK = Number(process.env.LOOP_MINUTES || 55);
+
+async function dongu() {
+  const bitis = Date.now() + SURE_DK * 60_000;
+  let tur = 0;
+  console.log(`Dongu modu: her ${ARALIK_SN} sn, ${SURE_DK} dk boyunca.\n`);
+
+  while (Date.now() < bitis) {
+    tur += 1;
+    const basla = Date.now();
+    console.log(`--- tur ${tur} | ${new Date().toISOString().slice(11, 19)} UTC ---`);
+    try {
+      await birTur();
+    } catch (err) {
+      // Tek bir turun hatasi donguyu bitirmemeli: bir feed gecici olarak
+      // erisilemez olabilir ya da Slack anlik hata dondurebilir.
+      console.error('  tur hatasi:', err?.message || err);
+    }
+    const kalan = ARALIK_SN * 1000 - (Date.now() - basla);
+    if (kalan <= 0 || Date.now() + kalan >= bitis) break;
+    await new Promise((r) => setTimeout(r, kalan));
+  }
+  console.log(`\nDongu tamamlandi: ${tur} tur.`);
+}
+
+const calistir = process.argv.includes('--loop') ? dongu : birTur;
+
+calistir()
   .then(() => {
     // Zaman asimina ugrayan feed soketleri acik kalabiliyor ve Node cikmiyor.
-    // Cron'da calistigimiz icin isi bitirince acikca cikiyoruz.
+    // Isi bitirince acikca cikiyoruz.
     process.exit(0);
   })
   .catch((err) => {
