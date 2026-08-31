@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c3343754e2ae096a",
+      "ts": 1788152088332,
+      "baslik": "Asya borsaları Fed faiz artırımı beklentileri ve Ortadoğu gerilimiyle düştü"
+    },
+    {
       "anahtar": "78e993b54a81ea9a",
       "ts": 1787941610343,
       "baslik": "Gümüş iki ayın zirvesine çıktı! Gözler Fed Başkanı Warsh’ın mesajlarında"
@@ -134,16 +139,6 @@
       "anahtar": "26b8ddcd4153b8c1",
       "ts": 1787557153808,
       "baslik": "TCMB açıkladı: FAST işlem tutar limiti yükseltildi"
-    },
-    {
-      "anahtar": "e54246f759338821",
-      "ts": 1787494536417,
-      "baslik": "İran yaptırım endişeleri petrol fiyatlarını yükseltti, Körfez borsaları arttı"
-    },
-    {
-      "anahtar": "5d5d5ef0dffaa55f",
-      "ts": 1787374676535,
-      "baslik": "ABD’nin Kanada’ya tarifeleri ticaret görüşmeleri çöktükten sonra yürürlüğe girdi"
     }
   ]
 }
