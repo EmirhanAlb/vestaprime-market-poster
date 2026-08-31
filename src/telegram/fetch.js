@@ -9,7 +9,15 @@
 
 import { createHash } from 'node:crypto';
 
-const KANAL = process.env.TELEGRAM_CHANNEL || 'Financial_Juice_News';
+/**
+ * Okunacak kanal.
+ *
+ * Onceki kaynak @Financial_Juice_News 27 Agustos 2026 gecesi yayini birakti
+ * (son mesaj 20:59 UTC, sonrasi sessiz). Yerine kanalin ana hesabi
+ * @FinancialJuice kullaniliyor. Degistirmek icin kod duzenlemeye gerek yok:
+ * repo degiskeni TELEGRAM_CHANNEL yeterli.
+ */
+const KANAL = process.env.TELEGRAM_CHANNEL || 'FinancialJuice';
 const URL = `https://t.me/s/${KANAL}`;
 const ZAMAN_ASIMI_MS = 20_000;
 
@@ -44,6 +52,22 @@ function htmlCoz(metin) {
  * noktalama oluyor. Bu yuzden anahtar hesaplanirken harf ve rakam disindaki
  * her sey atiliyor, aksi halde ayni haber iki kez gonderiliyordu.
  */
+/**
+ * Kanalin kendi reklam bagini atar.
+ *
+ * @FinancialJuice her basligin sonuna "|<a href="https://t.me/FinancialJuice">FJ</a>"
+ * ekliyor - olculen: sayfadaki 20 blogun 20'sinde de var. Etiketler soyulunca
+ * geriye "|FJ" kaliyor; temizlenmezse her Slack mesajinin sonunda gorunur ve
+ * cevirmene de gider. Bag kanalin kendisini gosterdigi icin haber degeri yok.
+ */
+function reklamiAt(ham) {
+  const kacilmis = KANAL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return ham.replace(
+    new RegExp(`\\s*\\|?\\s*<a[^>]+href="https?://t\\.me/${kacilmis}[^"]*"[^>]*>[\\s\\S]*?</a>`, 'gi'),
+    '',
+  );
+}
+
 function anahtarla(metin) {
   const sade = metin
     .toLocaleLowerCase('tr-TR')
@@ -95,7 +119,7 @@ export async function mesajlariCek() {
     const link = `https://t.me/${post}`;
     const blokIci = new Set();
 
-    for (const ham of metinEsleme[1].split(/<br\s*\/?>/i)) {
+    for (const ham of reklamiAt(metinEsleme[1]).split(/<br\s*\/?>/i)) {
       const metin = htmlCoz(ham);
       if (!metin) continue;
       const anahtar = anahtarla(metin);

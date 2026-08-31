@@ -51,12 +51,17 @@ jobs:
 
       # Gecmis repoya commit'lenmiyor (5 dakikalik is gunde ~288 commit
       # demek olurdu); Actions cache kullaniliyor.
+      # Anahtarda kanal adi var: kaynak kanal degistiginde eski gecmis geri
+      # YUKLENMEMELI. Yuklenirse yeni kanalin sayfadaki tum basliklari birden
+      # "yeni" sayilir ve tek turda 15 mesajlik akin olur. Anahtar degisince
+      # gecmis bos gelir ve akis ilk-calistirma yoluna girip yalnizca en yeni
+      # birkac basligi gonderir.
       - name: Gonderim gecmisini geri yukle
         uses: actions/cache@v4
         with:
           path: state/seen-telegram.json
-          key: financial-juice-state-${{ github.run_id }}
-          restore-keys: financial-juice-state-
+          key: fj-state-${{ vars.TELEGRAM_CHANNEL || 'FinancialJuice' }}-${{ github.run_id }}
+          restore-keys: fj-state-${{ vars.TELEGRAM_CHANNEL || 'FinancialJuice' }}-
 
       - name: Bagimliliklari kur
         run: npm ci
@@ -71,6 +76,10 @@ jobs:
           # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
           TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          # OKUNAN kaynak kanal (yukaridaki TELEGRAM_CHANNEL_ID ise Slack
+          # hedefi - isimler benziyor, karistirmayin). Kaynagi degistirmek
+          # icin repo degiskeni TELEGRAM_CHANNEL'i guncellemek yeterli.
+          TELEGRAM_CHANNEL: ${{ vars.TELEGRAM_CHANNEL || 'FinancialJuice' }}
           TRANSLATOR: ${{ vars.TRANSLATOR || 'free' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           LOOP_SECONDS: ${{ vars.LOOP_SECONDS || '300' }}

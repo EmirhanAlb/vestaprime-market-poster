@@ -35,11 +35,24 @@ const GECMIS_SINIRI = 600;
 const METIN_SINIRI = 200;
 /**
  * Ayni haberi farkli kelimelerle sayan tekrarlari eleme esigi.
- * Gercek veriyle olculdu: kanalin ayni hikayeyi 5 kez atan varyantlari
- * 0.33-0.93 arasinda, birbirinden bagimsiz basliklar <=0.02. Aradaki bosluk
- * genis oldugu icin 0.30 guvenli.
+ *
+ * Eski kaynak @Financial_Juice_News icin 0.30 olculmustu: o kanal ayni
+ * hikayeyi 5 kez atiyordu (varyantlar 0.33-0.93), bagimsiz basliklar <=0.02
+ * kaliyordu - arada genis bir bosluk vardi.
+ *
+ * Kaynak @FinancialJuice'a gecince bu gecerliligini yitirdi. Ana hesap ayni
+ * hikayeyi tekrarlamiyor ama basliklari uzun ortak onekler tasiyor
+ * ("North Korea foreign ministry spokesperson: ...", "Iran's Revolutionary
+ * Guards: ..."), bu da bagimsiz basliklari esige dogru itiyor. 20 baslikli
+ * bir sayfada olculdu:
+ *   0.30 -> 2 eleme, biri YANLIS ("tanker yasa disi gecmeye calisti" ayri bir
+ *           olayken "gemiler kurallara uymali" ile ayni sayildi)
+ *   0.50 -> 1 eleme, dogru (ayni KCNA aciklamasinin iki cumlesi)
+ *   0.70 -> eleme yok, gercek tekrar da geciyor
+ * Bu yuzden 0.50. Tek sayfalik olcum oldugu icin TELEGRAM_SIMILARITY ile
+ * kod degistirmeden ayarlanabilir birakildi.
  */
-const BENZERLIK_ESIGI = Number(process.env.TELEGRAM_SIMILARITY || 0.3);
+const BENZERLIK_ESIGI = Number(process.env.TELEGRAM_SIMILARITY || 0.5);
 
 /**
  * Gecmis, blok ID imleci yerine baslik icerik anahtarlariyla tutuluyor:
