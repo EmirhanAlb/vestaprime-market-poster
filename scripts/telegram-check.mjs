@@ -12,7 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { kimlik, mesajGonder, sohbetler } from '../src/telegram-out/client.js';
+import { kimlik, mesajGonder, sohbetler, sohbetKontrol } from '../src/telegram-out/client.js';
 import { hedefler, botlar, AKISLAR } from '../src/telegram-out/targets.js';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -71,6 +71,8 @@ if (bul) {
 
 // --- Hedef ozeti / test gonderimi ------------------------------------------
 let hedefVar = false;
+const bozuk = [];
+const erisim = new Map(); // ayni token+kanal cifti bir kez sorulsun
 for (const akis of Object.keys(AKISLAR)) {
   const liste = hedefler(akis);
   if (liste.length === 0) {
@@ -80,7 +82,23 @@ for (const akis of Object.keys(AKISLAR)) {
   hedefVar = true;
   for (const { token, chatId, slot } of liste) {
     if (!gonder) {
-      console.log(`  ${akis.padEnd(7)} -> ${String(chatId).padEnd(16)} [${slot}] ${ACIKLAMA[akis]}`);
+      // Token gecerli olmasi kanala yazilabilecegi anlamina gelmiyor. Bu
+      // kontrol eskiden yoktu ve bir hedef ("chat not found") aylarca bos
+      // dondugu halde bu ozet onu saglam gosteriyordu.
+      const anahtar = `${token}|${chatId}`;
+      if (!erisim.has(anahtar)) erisim.set(anahtar, await sohbetKontrol(token, chatId));
+      const d = erisim.get(anahtar);
+      let durum;
+      if (!d.ok) {
+        durum = `ERISILEMIYOR (${d.hata})`;
+        bozuk.push({ akis, slot, chatId, sebep: d.hata });
+      } else if (!d.yazabilir) {
+        durum = `YAZAMIYOR (uyelik: ${d.uyelik})`;
+        bozuk.push({ akis, slot, chatId, sebep: `yazma yetkisi yok (${d.uyelik})` });
+      } else {
+        durum = `OK "${d.baslik}"`;
+      }
+      console.log(`  ${akis.padEnd(7)} -> ${String(chatId).padEnd(16)} [${slot}] ${durum}`);
       continue;
     }
     const ok = await mesajGonder(
@@ -95,6 +113,18 @@ for (const akis of Object.keys(AKISLAR)) {
 if (!hedefVar) {
   console.log('\nHicbir hedef tanimli degil.');
 } else if (!gonder) {
-  console.log('\nTest mesaji atmak icin: npm run tg:test');
+  if (bozuk.length) {
+    console.error(`\n${bozuk.length} hedef calismiyor:`);
+    for (const b of bozuk) {
+      console.error(`  ${b.akis} -> ${b.chatId} [${b.slot}]: ${b.sebep}`);
+    }
+    console.error(
+      '\nEn sik iki sebep: (1) bot kanaldan cikarilmis ya da hic eklenmemis - ' +
+        'kanal ayarlarindan bota yonetici yetkisi verin; (2) kanal kimligi yanlis - ' +
+        'dogrusunu bulmak icin: npm run tg:bul',
+    );
+    process.exit(1); // sessizce "her sey yolunda" demesin
+  }
+  console.log('\nTum hedefler erisilebilir. Test mesaji atmak icin: npm run tg:test');
 }
 process.exit(0);

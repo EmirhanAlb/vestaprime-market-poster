@@ -103,6 +103,7 @@ export async function mesajGonder(token, chatId, html, { onizleme = false } = {}
     return true;
   } catch (err) {
     console.warn(`  ! telegram gonderilemedi (${chatId}): ${err.message}`);
+    actionsUyar(`Telegram gonderilemedi: ${chatId}`, err.message);
     return false;
   }
 }
@@ -141,7 +142,53 @@ export async function fotografGonder(token, chatId, dosyaYolu, aciklamaHtml) {
     return true;
   } catch (err) {
     console.warn(`  ! telegram fotografi gonderilemedi (${chatId}): ${err.message}`);
+    actionsUyar(`Telegram fotografi gonderilemedi: ${chatId}`, err.message);
     return false;
+  }
+}
+
+/**
+ * Kalici gonderim hatasini GitHub Actions'ta gorunur kilar.
+ *
+ * Gonderim hatalari console.warn ile gecistiriliyordu ve loglarin icinde
+ * kayboluyordu: JUST_IN kanali "chat not found" ile aylarca sessizce bos
+ * dondu, is yine "success" gorundu. Actions anotasyonu ozet sayfasinin
+ * tepesinde cikar, log acmaya gerek kalmaz.
+ *
+ * Is BASARISIZ sayilmiyor: dort kanaldan biri yanlis yapilandirildi diye
+ * digerlerine gonderimi durdurmak daha kotu olurdu.
+ */
+function actionsUyar(baslik, mesaj) {
+  if (!process.env.GITHUB_ACTIONS) return;
+  const temiz = (t) => String(t).replace(/\r?\n/g, ' ').replace(/::/g, ':');
+  console.log(`::error title=${temiz(baslik)}::${temiz(mesaj)}`);
+}
+
+/**
+ * Hedefin gercekten erisilebilir oldugunu dogrular.
+ *
+ * Token gecerli olmasi kanala yazilabilecegi anlamina gelmiyor: bot kanaldan
+ * cikarilmis ya da kanal kimligi yanlis olabilir. Kurulum kontrolu yalnizca
+ * token'a bakiyordu, bu yuzden bozuk hedefi yakalayamiyordu.
+ */
+export async function sohbetKontrol(token, chatId) {
+  try {
+    const sohbet = await cagir(token, 'getChat', { chat_id: chatId });
+    let uyelik = null;
+    let yazabilir = true;
+    try {
+      const ben = await cagir(token, 'getMe', {});
+      const uye = await cagir(token, 'getChatMember', { chat_id: chatId, user_id: ben.id });
+      uyelik = uye?.status || null;
+      // Kanallarda yazma yetkisi ayri bir bayrak; administrator olmak yetmiyor.
+      if (uye?.can_post_messages === false) yazabilir = false;
+      if (uyelik === 'left' || uyelik === 'kicked') yazabilir = false;
+    } catch {
+      // Uyelik okunamadi; getChat gectigi icin hedefi bozuk saymiyoruz.
+    }
+    return { ok: true, baslik: sohbet?.title || sohbet?.username || '', uyelik, yazabilir };
+  } catch (err) {
+    return { ok: false, hata: err.message };
   }
 }
 

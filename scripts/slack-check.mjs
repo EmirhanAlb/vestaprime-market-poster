@@ -48,7 +48,49 @@ for (const { slot, token } of wsListesi) {
 console.log('');
 
 // --- Hedef ozeti / test gonderimi -----------------------------------------
+/**
+ * Kanalin gercekten yazilabilir oldugunu, kanalda hicbir sey gostermeden
+ * dogrular.
+ *
+ * Token gecerli olmasi kanala yazilabilecegi anlamina gelmiyor: bot kanala
+ * davet edilmemis olabilir (not_in_channel) ya da kimlik yanlis olabilir.
+ * conversations.info dogru arac olurdu ama channels:read izni istiyor ve
+ * uygulamada yok. Bunun yerine mesaj GELECEGE zamanlanip hemen siliniyor:
+ * yalnizca chat:write yetiyor ve kanalda hicbir iz kalmiyor.
+ *
+ * Silme basarisiz olursa sessizce gecmiyoruz - aksi halde 20 dakika sonra
+ * kanala test mesaji duserdi.
+ */
+async function yazilabilirMi(token, channel) {
+  const istemci = new WebClient(token);
+  let zamanlanan;
+  try {
+    const r = await istemci.chat.scheduleMessage({
+      channel,
+      post_at: Math.floor(Date.now() / 1000) + 1200, // 20 dk sonrasi
+      text: 'baglanti testi',
+    });
+    zamanlanan = r.scheduled_message_id;
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, hata: err?.data?.error || err.message };
+  } finally {
+    if (zamanlanan) {
+      try {
+        await istemci.chat.deleteScheduledMessage({ channel, scheduled_message_id: zamanlanan });
+      } catch (err) {
+        console.error(
+          `  !! TEMIZLIK BASARISIZ: ${channel} kanalinda zamanlanmis test mesaji silinemedi ` +
+            `(${err?.data?.error || err.message}). 20 dk icinde elle silin.`,
+        );
+      }
+    }
+  }
+}
+
 let hedefVar = false;
+const bozuk = [];
+const erisim = new Map(); // ayni token+kanal cifti bir kez sinansin
 for (const akis of Object.keys(AKISLAR)) {
   const liste = hedefler(akis);
   if (liste.length === 0) {
@@ -59,7 +101,12 @@ for (const akis of Object.keys(AKISLAR)) {
   for (const { token, channel, slot } of liste) {
     const ws = adlar.get(token) || '?';
     if (!gonder) {
-      console.log(`  ${akis.padEnd(7)} -> ${channel.padEnd(13)} [${slot}/${ws}] ${ACIKLAMA[akis]}`);
+      const anahtar = `${token}|${channel}`;
+      if (!erisim.has(anahtar)) erisim.set(anahtar, await yazilabilirMi(token, channel));
+      const d = erisim.get(anahtar);
+      if (!d.ok) bozuk.push({ akis, slot, ws, channel, sebep: d.hata });
+      const durum = d.ok ? 'ERISILEBILIR' : `ERISILEMIYOR (${d.hata})`;
+      console.log(`  ${akis.padEnd(7)} -> ${channel.padEnd(13)} [${slot}/${ws}] ${durum}`);
       continue;
     }
     try {
@@ -74,6 +121,19 @@ for (const akis of Object.keys(AKISLAR)) {
   }
 }
 
-if (!hedefVar) console.log('\nHicbir hedef tanimli degil.');
-else if (!gonder) console.log('\nTest mesaji atmak icin: npm run slack:test');
+if (!hedefVar) {
+  console.log('\nHicbir hedef tanimli degil.');
+} else if (!gonder) {
+  if (bozuk.length) {
+    console.error(`\n${bozuk.length} hedef calismiyor:`);
+    for (const b of bozuk) console.error(`  ${b.akis} -> ${b.channel} [${b.slot}/${b.ws}]: ${b.sebep}`);
+    console.error(
+      '\nEn sik sebep not_in_channel: bot kanala davet edilmemis. ' +
+        'Slack kanalinda /invite @bot yazin. channel_not_found ise kanal kimligi yanlis ' +
+        'ya da baska bir workspace e ait.',
+    );
+    process.exit(1); // sessizce "her sey yolunda" demesin
+  }
+  console.log('\nTum hedefler erisilebilir. Test mesaji atmak icin: npm run slack:test');
+}
 process.exit(0);
