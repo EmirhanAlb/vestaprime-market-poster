@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "89757497a1bb152a",
+      "ts": 1788169397877,
+      "baslik": "ABD-İran çatışması petrol fiyatlarını yükseltti, enerji hisseleri ralli yaptı"
+    },
+    {
+      "anahtar": "3557a774e9a3854d",
+      "ts": 1788166397344,
+      "baslik": "Bağımsız GSYH geçen yıl yüzde 3,7 arttı"
+    },
+    {
+      "anahtar": "c62a6089aeadff36",
+      "ts": 1788166397344,
+      "baslik": "Oxford Economics, BoJ’un faiz artışı beklentisini yükseltti"
+    },
+    {
       "anahtar": "c3343754e2ae096a",
       "ts": 1788152088332,
       "baslik": "Asya borsaları Fed faiz artırımı beklentileri ve Ortadoğu gerilimiyle düştü"
@@ -119,26 +134,6 @@
       "anahtar": "2cd76a54b715e463",
       "ts": 1787579561229,
       "baslik": "Macaristan kuraklık ve enerji krizi nedeniyle yüzde 7,5 bütçe açığı hedefliyor"
-    },
-    {
-      "anahtar": "3af2aace146482a1",
-      "ts": 1787561680032,
-      "baslik": "Polonya’nın Temmuz perakende satışları %3,9 arttı, beklentileri karşılamadı"
-    },
-    {
-      "anahtar": "6f842bf76aacf61e",
-      "ts": 1787561680032,
-      "baslik": "Merkez Bankası'nın repo kararı faiz indirimi sinyali mi? Muhammet Bayram açıkladı"
-    },
-    {
-      "anahtar": "0133ff1123e68ddd",
-      "ts": 1787557153808,
-      "baslik": "Merkez Bankası yıllık enflasyon beklentilerini açıkladı"
-    },
-    {
-      "anahtar": "26b8ddcd4153b8c1",
-      "ts": 1787557153808,
-      "baslik": "TCMB açıkladı: FAST işlem tutar limiti yükseltildi"
     }
   ]
 }
