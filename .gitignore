@@ -1,4 +1,6 @@
 node_modules/
 out/
 .env
+# .env in elle alinan yedekleri de asla commit edilmemeli (token iceriyorlar).
+.env.*
 .DS_Store

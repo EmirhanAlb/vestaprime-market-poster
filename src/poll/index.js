@@ -77,6 +77,18 @@ const SECENEKLER = [
  */
 function kanallar() {
   const token = process.env.SLACK_BOT_TOKEN;
+
+  // POLL_CHANNEL_ID acikca verilmisse tek yetkili odur; SLACK_CONFIG'teki
+  // "poll" alani dikkate alinmaz. Diger akislar iki kaynagi BIRLESTIRIR ama
+  // oylama icin bu yanlis olurdu: secret'ta kalmis eski bir kanal sessizce
+  // oylamaya dahil olur ve onu dusurmenin tek yolu secret'i bastan yazmak
+  // olurdu (GitHub secret degerlerini geri gostermiyor).
+  const acik = (process.env.POLL_CHANNEL_ID || '')
+    .split(',')
+    .map((c) => c.trim())
+    .filter(Boolean);
+  if (acik.length) return [...new Set(acik)];
+
   const hepsi = slackHedefleri('poll');
   const disarida = hepsi.filter((h) => h.token !== token);
   if (disarida.length) {
@@ -333,17 +345,24 @@ async function main() {
     throw new Error('Oylama kanali tanimli degil (SLACK_CONFIG icinde "poll" ya da POLL_CHANNEL_ID).');
   }
 
-  // Oylar emoji tepkilerinden okunuyor. Bu izin yoksa oylama paylasilabilir
-  // ama sonuc asla aciklanamaz - reactions.get "missing_scope" doner. Kanalda
-  // sonuclanmayacak bir oylama birakmaktansa hicbir sey paylasmadan duruyoruz.
+  // Oylama iki tepki iznine dayaniyor:
+  //   reactions:write - oy seceneklerinin emojilerini mesaja onceden koymak.
+  //                     Yoksa oylama tikanacak secenek olmadan paylasilir ve
+  //                     kimse oy veremez. Eksikligi sessiz, cunku kod
+  //                     reactions.add hatasini yutup uyari basiyor.
+  //   reactions:read  - oylari geri okumak. Yoksa sonuc asla aciklanamaz.
+  // Ikisi de burada kontrol ediliyor: sonuclanamayacak ya da oy alamayacak
+  // bir oylamayi kanalda birakmaktansa hicbir sey paylasmadan duruyoruz.
+  const GEREKLI_IZINLER = ['reactions:write', 'reactions:read'];
   const izinler = await scopeler(token);
-  if (izinler.length && !izinler.includes('reactions:read')) {
+  const eksikler = izinler.length ? GEREKLI_IZINLER.filter((i) => !izinler.includes(i)) : [];
+  if (eksikler.length) {
     throw new Error(
-      "Slack uygulamasinda 'reactions:read' izni yok; oylar okunamaz, sonuc aciklanamaz. " +
+      `Slack uygulamasinda su izin(ler) yok: ${eksikler.join(', ')}. ` +
         `Mevcut izinler: ${izinler.join(', ')}. ` +
         'Duzeltme: api.slack.com/apps > uygulama > OAuth & Permissions > Bot Token Scopes ' +
-        'altina reactions:read ekleyin, "Reinstall to Workspace" yapin, olusan yeni token ile ' +
-        'SLACK_BOT_TOKEN secret ini guncelleyin.',
+        `altina ${eksikler.join(' ve ')} ekleyin, "Reinstall to Workspace" yapin. Token degisirse ` +
+        'SLACK_BOT_TOKEN ve SLACK_CONFIG secret larini guncelleyin.',
     );
   }
 

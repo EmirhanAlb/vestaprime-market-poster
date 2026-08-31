@@ -59,7 +59,14 @@ jobs:
           # Tum Telegram botlari ve kanallari tek JSON secret'ta.
           # Yeni kanal eklemek icin yalnizca bu secret guncellenir.
           TELEGRAM_CONFIG: ${{ secrets.TELEGRAM_CONFIG }}
-          POLL_CHANNEL_ID: ${{ secrets.POLL_CHANNEL_ID }}
+          # Oylama kanali. Kanal kimligi sir degil, bu yuzden secret'ta degil
+          # burada - versiyon kontrolunde, gorunur ve degistirmesi kolay.
+          #
+          # Acikca verildiginde SLACK_CONFIG'teki "poll" alanini EZER (bkz.
+          # kanallar(), src/poll/index.js). Birlestirilseydi secret'ta kalmis
+          # eski deneme kanali C0AHQDASSUR sessizce oylamaya dahil olurdu ve
+          # onu duşurmek icin secret'in tamamini yeniden yazmak gerekirdi.
+          POLL_CHANNEL_ID: ${{ vars.POLL_CHANNEL_ID || 'C08AJ51934P' }}
           POLL_POST_TR: ${{ inputs.post_tr || '14:00' }}
           POLL_SETTLE_MINUTES: ${{ inputs.settle_minutes || '60' }}
           POLL_FLAT_BAND: ${{ vars.POLL_FLAT_BAND || '0.15' }}
