@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b32799e1568ef8ff",
+      "ts": 1788236445425,
+      "baslik": "Asya hisseleri Fed belirsizliği ile geriledi"
+    },
+    {
       "anahtar": "b730e249f28c77d5",
       "ts": 1788229790015,
       "baslik": "Avustralya’da cari açık 2. çeyrekte beklentinin altında arttı"
@@ -149,11 +154,6 @@
       "anahtar": "e507be2f12f603d9",
       "ts": 1787641362453,
       "baslik": "İhracat ikinci çeyrek büyümesini destekledi, Almanya GSYH beklentileri aştı"
-    },
-    {
-      "anahtar": "4a8c057b155d5032",
-      "ts": 1787627025111,
-      "baslik": "Petrol fiyatları ABD’nin İran’a yeni yaptırımlarıyla yükseldi"
     }
   ]
 }
