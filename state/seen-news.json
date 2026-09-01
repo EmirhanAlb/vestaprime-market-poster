@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "13f5fab8f0b6987b",
+      "ts": 1788224370748,
+      "baslik": "Petrol Trump’ın İran’a yeni saldırı tehdidiyle yükseldi"
+    },
+    {
       "anahtar": "4fadac407726084e",
       "ts": 1788180279236,
       "baslik": "Almanya’da enflasyon Ağustos’ta %2,9’a yükseldi, tahminlerin altında"
@@ -144,16 +149,6 @@
       "anahtar": "4a8c057b155d5032",
       "ts": 1787627025111,
       "baslik": "Petrol fiyatları ABD’nin İran’a yeni yaptırımlarıyla yükseldi"
-    },
-    {
-      "anahtar": "256b465429073b3d",
-      "ts": 1787582580097,
-      "baslik": "Trump, Kanada'ya yönelik otomobil ve kamyon tarifelerinin yüzde 50'ye yükseltileceğini açıkladı"
-    },
-    {
-      "anahtar": "2cd76a54b715e463",
-      "ts": 1787579561229,
-      "baslik": "Macaristan kuraklık ve enerji krizi nedeniyle yüzde 7,5 bütçe açığı hedefliyor"
     }
   ]
 }
