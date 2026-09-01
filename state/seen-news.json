@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "9d7e2afc69eebfd3",
+      "ts": 1788249719372,
+      "baslik": "Ons altın 4.400 dolar bandında: Gözler Fed ve ABD istihdam verisinde"
+    },
+    {
+      "anahtar": "265b2a2f4186202d",
+      "ts": 1788248519632,
+      "baslik": "Londra borsası tatil sonrası düştü, küresel tahvil satışları ve Orta Doğu saldırıları baskı yaptı"
+    },
+    {
       "anahtar": "17a81a48e2828dda",
       "ts": 1788244280871,
       "baslik": "Almanya’da perakende satışlar Temmuz’da yüzde 3,4 düştü"
@@ -159,11 +169,6 @@
       "anahtar": "01cdb57d76c23e31",
       "ts": 1787652125284,
       "baslik": "İran savaşı maliyetleri artırdı! ABD'li çiftçiler 40 yılın en ağır kriziyle boğuşuyor"
-    },
-    {
-      "anahtar": "e507be2f12f603d9",
-      "ts": 1787641362453,
-      "baslik": "İhracat ikinci çeyrek büyümesini destekledi, Almanya GSYH beklentileri aştı"
     }
   ]
 }
