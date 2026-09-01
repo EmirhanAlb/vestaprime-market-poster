@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "d4cc4918a943c22a",
+      "ts": 1788258782613,
+      "baslik": "Euro Bölgesi'nde enflasyon yüzde 3,3'e yükseldi"
+    },
+    {
       "anahtar": "9d7e2afc69eebfd3",
       "ts": 1788249719372,
       "baslik": "Ons altın 4.400 dolar bandında: Gözler Fed ve ABD istihdam verisinde"
@@ -164,11 +169,6 @@
       "anahtar": "1bba75be81fad66f",
       "ts": 1787655644427,
       "baslik": "Brent petrol 88 dolara geriledi! Gözler Hürmüz Boğazı'nda"
-    },
-    {
-      "anahtar": "01cdb57d76c23e31",
-      "ts": 1787652125284,
-      "baslik": "İran savaşı maliyetleri artırdı! ABD'li çiftçiler 40 yılın en ağır kriziyle boğuşuyor"
     }
   ]
 }
