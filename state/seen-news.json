@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b1daecfdc20c10d1",
+      "ts": 1788263008550,
+      "baslik": "TCMB açıkladı: Eylül ayı azami kredi kartı faiz oranları belli oldu"
+    },
+    {
       "anahtar": "d4cc4918a943c22a",
       "ts": 1788258782613,
       "baslik": "Euro Bölgesi'nde enflasyon yüzde 3,3'e yükseldi"
@@ -164,11 +169,6 @@
       "anahtar": "d3d18d0553f61eff",
       "ts": 1787662893609,
       "baslik": "Macaristan Merkez Bankası faiz oranını %5,5’e indirdi"
-    },
-    {
-      "anahtar": "1bba75be81fad66f",
-      "ts": 1787655644427,
-      "baslik": "Brent petrol 88 dolara geriledi! Gözler Hürmüz Boğazı'nda"
     }
   ]
 }
