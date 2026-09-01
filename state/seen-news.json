@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "19fe9b1b22e2c314",
+      "ts": 1788298661170,
+      "baslik": "Petrol piyasasında savaş alarmı: Brent 95 doların üzerine çıktı"
+    },
+    {
       "anahtar": "b1daecfdc20c10d1",
       "ts": 1788263008550,
       "baslik": "TCMB açıkladı: Eylül ayı azami kredi kartı faiz oranları belli oldu"
@@ -159,16 +164,6 @@
       "anahtar": "e7c1342af7c12259",
       "ts": 1787713846032,
       "baslik": "Avustralya’da enflasyon temmuzda beklentileri aştı, RBA faiz artışı ihtimali güçlendi"
-    },
-    {
-      "anahtar": "ac22df033253caf8",
-      "ts": 1787693619701,
-      "baslik": "TCMB, iki elektronik para kuruluşunun faaliyet iznini iptal etti"
-    },
-    {
-      "anahtar": "d3d18d0553f61eff",
-      "ts": 1787662893609,
-      "baslik": "Macaristan Merkez Bankası faiz oranını %5,5’e indirdi"
     }
   ]
 }
