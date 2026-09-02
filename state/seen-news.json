@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "568a295491dbb4cf",
+      "ts": 1788336726893,
+      "baslik": "Enflasyon endişeleri getiriyi zirveye taşıdı, tahviller çakıldı"
+    },
+    {
+      "anahtar": "5aa0e3936ce05093",
+      "ts": 1788336726893,
+      "baslik": "Petrol fiyatlarındaki artış, Fed verisi ve %5 faiz: Piyasaları neler etkiliyor?"
+    },
+    {
+      "anahtar": "77853d9aca3d6127",
+      "ts": 1788336726893,
+      "baslik": "Sterlin bugün: Fed’in sert duruşu dolara güç verdi, sterlin geriledi"
+    },
+    {
       "anahtar": "4f4c5b2d2b252684",
       "ts": 1788331275973,
       "baslik": "Brent 96 doların üzerinde: Hürmüz krizi Türkiye’yi nasıl etkiler?"
@@ -174,16 +189,6 @@
       "anahtar": "fa8953ed2d2c9342",
       "ts": 1787735999737,
       "baslik": "Avrupa gazı Ortadoğu’da ateşkes umutlarıyla %3 düştü"
-    },
-    {
-      "anahtar": "9064697431a7f3d5",
-      "ts": 1787731849336,
-      "baslik": "Bitcoin ABD enflasyon verisi öncesi 79 bin dolara geriledi"
-    },
-    {
-      "anahtar": "fe77b4163dd86118",
-      "ts": 1787731849336,
-      "baslik": "Ham petrol çöküşü ECB’nin sert uyarılarını dengeledi"
     }
   ]
 }
