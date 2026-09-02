@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ac18bd1fafdffaab",
+      "ts": 1788348827148,
+      "baslik": "Putin saldırıların faturasını açıkladı: Dev maliyet GSYH'nin yüzde 1'i"
+    },
+    {
       "anahtar": "568a295491dbb4cf",
       "ts": 1788336726893,
       "baslik": "Enflasyon endişeleri getiriyi zirveye taşıdı, tahviller çakıldı"
@@ -179,16 +184,6 @@
       "anahtar": "120423cfb727b2a3",
       "ts": 1787749736172,
       "baslik": "Fed’in tercih ettiği enflasyon endeksi Temmuz’da yıllık bazda bir önceki ayla aynı kaldı"
-    },
-    {
-      "anahtar": "e56a94d8913d5e74",
-      "ts": 1787738810858,
-      "baslik": "Avrupa'da doğal gaz fiyatları geriledi! Hürmüz Boğazı gelişmesi etkili oldu"
-    },
-    {
-      "anahtar": "fa8953ed2d2c9342",
-      "ts": 1787735999737,
-      "baslik": "Avrupa gazı Ortadoğu’da ateşkes umutlarıyla %3 düştü"
     }
   ]
 }
