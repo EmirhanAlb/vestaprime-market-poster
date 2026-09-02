@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "36510a63c217ee63",
+      "ts": 1788328259879,
+      "baslik": "İran gerginliği petrol ve Fed faiz artışı endişelerini körüklerken Altın 3 haftanın en düşüğüne geriledi"
+    },
+    {
+      "anahtar": "850dc217ce318310",
+      "ts": 1788328259879,
+      "baslik": "Petrol, ABD-İran çatışmasının yeniden alevlenmesiyle 3. günde de yükseldi"
+    },
+    {
+      "anahtar": "d7f74498299186e1",
+      "ts": 1788327059749,
+      "baslik": "TCMB raporu: Deprem bölgesinde konut arzı arttı, kira enflasyonu yavaşladı"
+    },
+    {
       "anahtar": "814efc7de7e82818",
       "ts": 1788317383726,
       "baslik": "RBNZ faiz oranını yüzde 2,75’e yükseltti, yeni artışlar sinyali verdi"
@@ -159,21 +174,6 @@
       "anahtar": "fe77b4163dd86118",
       "ts": 1787731849336,
       "baslik": "Ham petrol çöküşü ECB’nin sert uyarılarını dengeledi"
-    },
-    {
-      "anahtar": "480b498b469490e9",
-      "ts": 1787720800157,
-      "baslik": "Petrol, Hürmüz umuduyla sert düştü: Fiyatlarda yüzde 2'lik gerileme"
-    },
-    {
-      "anahtar": "1bb63c29007da513",
-      "ts": 1787713846032,
-      "baslik": "İran-Umman Hürmüz görüşmeleri petrolü vurdu, Asya enerji hisseleri düştü"
-    },
-    {
-      "anahtar": "e7c1342af7c12259",
-      "ts": 1787713846032,
-      "baslik": "Avustralya’da enflasyon temmuzda beklentileri aştı, RBA faiz artışı ihtimali güçlendi"
     }
   ]
 }
