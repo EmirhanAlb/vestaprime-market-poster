@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "612e3e04faff5e2c",
+      "ts": 1788357885817,
+      "baslik": "Kanada Merkez Bankası faiz oranını sabit tuttu"
+    },
+    {
       "anahtar": "ac18bd1fafdffaab",
       "ts": 1788348827148,
       "baslik": "Putin saldırıların faturasını açıkladı: Dev maliyet GSYH'nin yüzde 1'i"
@@ -169,21 +174,6 @@
       "anahtar": "72dd99729d511b9e",
       "ts": 1787782724603,
       "baslik": "Meksika merkez bankası 2026 büyüme tahminini yükseltti"
-    },
-    {
-      "anahtar": "d743920e751d2f1d",
-      "ts": 1787752562223,
-      "baslik": "Brezilya’da enflasyon Ağustos başında hedef aralığına geriledi"
-    },
-    {
-      "anahtar": "29f5cb565daaf225",
-      "ts": 1787752562223,
-      "baslik": "Çek parlamentosu gevşetilmiş bütçe açığı kurallarını onayladı"
-    },
-    {
-      "anahtar": "120423cfb727b2a3",
-      "ts": 1787749736172,
-      "baslik": "Fed’in tercih ettiği enflasyon endeksi Temmuz’da yıllık bazda bir önceki ayla aynı kaldı"
     }
   ]
 }
