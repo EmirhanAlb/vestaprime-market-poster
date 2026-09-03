@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "acf0c33cefa81994",
+      "ts": 1788397793287,
+      "baslik": "Altın, Trump ve Fed açıklamaları enflasyon endişelerini azalttıkça 4.400 dolar civarında tutuyor"
+    },
+    {
       "anahtar": "b0c3e22a2c3e2efc",
       "ts": 1788364542035,
       "baslik": "SON DAKİKA | Gemi faciasıyla ilgili KKTC Ulaştırma Bakanı görevden alındı"
@@ -174,11 +179,6 @@
       "anahtar": "5f846d12551b4a26",
       "ts": 1787828629935,
       "baslik": "Almanya'da tüketici güveni gelir beklentisindeki artışla beklenmedik şekilde yükseldi"
-    },
-    {
-      "anahtar": "72dd99729d511b9e",
-      "ts": 1787782724603,
-      "baslik": "Meksika merkez bankası 2026 büyüme tahminini yükseltti"
     }
   ]
 }
