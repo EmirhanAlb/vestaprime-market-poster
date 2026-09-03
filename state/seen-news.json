@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b62654c5c65335c8",
+      "ts": 1788435239948,
+      "baslik": "UBS, Essity’yi zayıf büyüme ve hammadde enflasyonu gerekçesiyle düşürdü"
+    },
+    {
+      "anahtar": "13d96d3954d56a9f",
+      "ts": 1788433440036,
+      "baslik": "HSBC, Fed görünümüyle Hazine tahvili getiri tahminlerini yükseltti"
+    },
+    {
       "anahtar": "c37c4f0929daac1b",
       "ts": 1788426796868,
       "baslik": "Avrupa doğal gazı savaş zirvelerini aştıktan sonra geriledi"
@@ -204,11 +214,6 @@
       "anahtar": "e4e742ff78981b06",
       "ts": 1787864810443,
       "baslik": "Trump İran mutabakatını iptal etti, Hürmüz görüşmeleri tıkandı ve petrol riski arttı"
-    },
-    {
-      "anahtar": "5f846d12551b4a26",
-      "ts": 1787828629935,
-      "baslik": "Almanya'da tüketici güveni gelir beklentisindeki artışla beklenmedik şekilde yükseldi"
     }
   ]
 }
