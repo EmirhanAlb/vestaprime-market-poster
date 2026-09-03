@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1493773d51551dd8",
+      "ts": 1788474511674,
+      "baslik": "Citi, Hürmüz kapanışı nedeniyle 3Ç Brent tahminini 86 dolara yükseltti"
+    },
+    {
       "anahtar": "e72b50251ccbad6e",
       "ts": 1788439493704,
       "baslik": "Fed’den kritik faiz mesajı geldi, Bitcoin 78 bin doların üzerine fırladı"
@@ -219,11 +224,6 @@
       "anahtar": "792769e9d18ff163",
       "ts": 1787941610343,
       "baslik": "Kraken, Solana enflasyon reformuna desteğini son saatlerde açıkladı"
-    },
-    {
-      "anahtar": "e4e742ff78981b06",
-      "ts": 1787864810443,
-      "baslik": "Trump İran mutabakatını iptal etti, Hürmüz görüşmeleri tıkandı ve petrol riski arttı"
     }
   ]
 }
