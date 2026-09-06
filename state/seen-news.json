@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b954b9b4a4a0e792",
+      "ts": 1788695025606,
+      "baslik": "Hürmüz gerilimine rağmen Irak'ın petrol ihracat kapasitesi günlük 3 milyon varile çıktı"
+    },
+    {
       "anahtar": "03abc85e2c3c8ff4",
       "ts": 1788542289919,
       "baslik": "Venezuela’nın Ağustos enflasyonu %8,9’a geriledi"
@@ -274,16 +279,6 @@
       "anahtar": "c3343754e2ae096a",
       "ts": 1788152088332,
       "baslik": "Asya borsaları Fed faiz artırımı beklentileri ve Ortadoğu gerilimiyle düştü"
-    },
-    {
-      "anahtar": "78e993b54a81ea9a",
-      "ts": 1787941610343,
-      "baslik": "Gümüş iki ayın zirvesine çıktı! Gözler Fed Başkanı Warsh’ın mesajlarında"
-    },
-    {
-      "anahtar": "792769e9d18ff163",
-      "ts": 1787941610343,
-      "baslik": "Kraken, Solana enflasyon reformuna desteğini son saatlerde açıkladı"
     }
   ]
 }
