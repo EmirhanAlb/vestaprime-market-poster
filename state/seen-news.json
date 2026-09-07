@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "554d05b29fc6ee6d",
+      "ts": 1788762055967,
+      "baslik": "Almanya’da sanayi üretimi Temmuz’da yüzde 1,1 düştü"
+    },
+    {
       "anahtar": "31356ffe33992eec",
       "ts": 1788745723910,
       "baslik": "Petrol, ABD-İran tanker saldırıları sonrası kazançlarını artırdı"
@@ -284,11 +289,6 @@
       "anahtar": "c62a6089aeadff36",
       "ts": 1788166397344,
       "baslik": "Oxford Economics, BoJ’un faiz artışı beklentisini yükseltti"
-    },
-    {
-      "anahtar": "c3343754e2ae096a",
-      "ts": 1788152088332,
-      "baslik": "Asya borsaları Fed faiz artırımı beklentileri ve Ortadoğu gerilimiyle düştü"
     }
   ]
 }
