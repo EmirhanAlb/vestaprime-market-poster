@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "4dd31c49ca9c1223",
+      "ts": 1788785016920,
+      "baslik": "TCMB rezervlerinde düşüş sürüyor: 4,4 milyar dolar azaldı"
+    },
+    {
       "anahtar": "e82eb2f1bfb1665e",
       "ts": 1788773512317,
       "baslik": "Tayland’da enflasyon Ağustos’ta yüzde 2,53’e yükseldi"
@@ -284,26 +289,6 @@
       "anahtar": "4fadac407726084e",
       "ts": 1788180279236,
       "baslik": "Almanya’da enflasyon Ağustos’ta %2,9’a yükseldi, tahminlerin altında"
-    },
-    {
-      "anahtar": "bda142fb8f9a73a7",
-      "ts": 1788176657662,
-      "baslik": "Japonya’nın ham petrol ithalatı Temmuz’da yüzde 17 arttı"
-    },
-    {
-      "anahtar": "9b7a92414d627305",
-      "ts": 1788172416362,
-      "baslik": "Bakan Işıkhan açıkladı: İşsizlik oranı temmuzda yüzde 8,1 oldu"
-    },
-    {
-      "anahtar": "5ab7bd93ab095f42",
-      "ts": 1788171816702,
-      "baslik": "ABD’nin İran’daki füze üslerine saldırısı sonrası Avrupa gazı fırladı"
-    },
-    {
-      "anahtar": "89757497a1bb152a",
-      "ts": 1788169397877,
-      "baslik": "ABD-İran çatışması petrol fiyatlarını yükseltti, enerji hisseleri ralli yaptı"
     }
   ]
 }
