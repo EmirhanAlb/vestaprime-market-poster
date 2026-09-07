@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e82eb2f1bfb1665e",
+      "ts": 1788773512317,
+      "baslik": "Tayland’da enflasyon Ağustos’ta yüzde 2,53’e yükseldi"
+    },
+    {
+      "anahtar": "bd2dd065859fff79",
+      "ts": 1788773512317,
+      "baslik": "Sterlin bugün: Pound dolar karşısında yükseldi, Fed faiz bahisleri dolara baskı yapıyor"
+    },
+    {
       "anahtar": "dec179d54aeb048a",
       "ts": 1788767475437,
       "baslik": "Bakır kayıplarını sildi: Daralan stoklar Fed baskısını dengeledi"
@@ -294,16 +304,6 @@
       "anahtar": "89757497a1bb152a",
       "ts": 1788169397877,
       "baslik": "ABD-İran çatışması petrol fiyatlarını yükseltti, enerji hisseleri ralli yaptı"
-    },
-    {
-      "anahtar": "3557a774e9a3854d",
-      "ts": 1788166397344,
-      "baslik": "Bağımsız GSYH geçen yıl yüzde 3,7 arttı"
-    },
-    {
-      "anahtar": "c62a6089aeadff36",
-      "ts": 1788166397344,
-      "baslik": "Oxford Economics, BoJ’un faiz artışı beklentisini yükseltti"
     }
   ]
 }
