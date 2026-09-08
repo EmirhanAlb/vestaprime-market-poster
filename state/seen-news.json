@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "00e124ac2a2866d6",
+      "ts": 1788842372277,
+      "baslik": "Çin merkez bankası altın rezervlerini 2023’ten beri en fazla artırdı"
+    },
+    {
       "anahtar": "13e9e5148ee2478e",
       "ts": 1788835728442,
       "baslik": "Altın yen’deki sıçramayla yükseldi; petrol ve Fed beklentileri kazançları sınırladı"
@@ -284,11 +289,6 @@
       "anahtar": "304713a8f3e7589e",
       "ts": 1788242481156,
       "baslik": "Petrol fiyatları yükseldi! Brent 92 dolara yaklaşıyor, Hürmüz gerilimi tırmandı"
-    },
-    {
-      "anahtar": "b32799e1568ef8ff",
-      "ts": 1788236445425,
-      "baslik": "Asya hisseleri Fed belirsizliği ile geriledi"
     }
   ]
 }
