@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8a07a2b94dc5380d",
+      "ts": 1788850840152,
+      "baslik": "Bitcoin, Fed ve petrol baskısıyla 78 bin dolara geriledi"
+    },
+    {
       "anahtar": "00e124ac2a2866d6",
       "ts": 1788842372277,
       "baslik": "Çin merkez bankası altın rezervlerini 2023’ten beri en fazla artırdı"
@@ -279,16 +284,6 @@
       "anahtar": "265b2a2f4186202d",
       "ts": 1788248519632,
       "baslik": "Londra borsası tatil sonrası düştü, küresel tahvil satışları ve Orta Doğu saldırıları baskı yaptı"
-    },
-    {
-      "anahtar": "17a81a48e2828dda",
-      "ts": 1788244280871,
-      "baslik": "Almanya’da perakende satışlar Temmuz’da yüzde 3,4 düştü"
-    },
-    {
-      "anahtar": "304713a8f3e7589e",
-      "ts": 1788242481156,
-      "baslik": "Petrol fiyatları yükseldi! Brent 92 dolara yaklaşıyor, Hürmüz gerilimi tırmandı"
     }
   ]
 }
