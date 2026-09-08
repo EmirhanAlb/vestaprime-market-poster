@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5463056e168b86dd",
+      "ts": 1788861091873,
+      "baslik": "Brent petrol Husilerden Aramco’ya saldırı ile 97 dolara çıktı"
+    },
+    {
       "anahtar": "8a07a2b94dc5380d",
       "ts": 1788850840152,
       "baslik": "Bitcoin, Fed ve petrol baskısıyla 78 bin dolara geriledi"
@@ -274,16 +279,6 @@
       "anahtar": "d4cc4918a943c22a",
       "ts": 1788258782613,
       "baslik": "Euro Bölgesi'nde enflasyon yüzde 3,3'e yükseldi"
-    },
-    {
-      "anahtar": "9d7e2afc69eebfd3",
-      "ts": 1788249719372,
-      "baslik": "Ons altın 4.400 dolar bandında: Gözler Fed ve ABD istihdam verisinde"
-    },
-    {
-      "anahtar": "265b2a2f4186202d",
-      "ts": 1788248519632,
-      "baslik": "Londra borsası tatil sonrası düştü, küresel tahvil satışları ve Orta Doğu saldırıları baskı yaptı"
     }
   ]
 }
