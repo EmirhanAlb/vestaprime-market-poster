@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "13e9e5148ee2478e",
+      "ts": 1788835728442,
+      "baslik": "Altın yen’deki sıçramayla yükseldi; petrol ve Fed beklentileri kazançları sınırladı"
+    },
+    {
       "anahtar": "b8d654d495713327",
       "ts": 1788830880598,
       "baslik": "Avustralya’da tüketici güveni Eylül’de %5,2 düştü - Westpac"
@@ -284,11 +289,6 @@
       "anahtar": "b32799e1568ef8ff",
       "ts": 1788236445425,
       "baslik": "Asya hisseleri Fed belirsizliği ile geriledi"
-    },
-    {
-      "anahtar": "b730e249f28c77d5",
-      "ts": 1788229790015,
-      "baslik": "Avustralya’da cari açık 2. çeyrekte beklentinin altında arttı"
     }
   ]
 }
