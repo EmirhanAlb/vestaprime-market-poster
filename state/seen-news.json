@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b8d654d495713327",
+      "ts": 1788830880598,
+      "baslik": "Avustralya’da tüketici güveni Eylül’de %5,2 düştü - Westpac"
+    },
+    {
+      "anahtar": "47ca6f2e651cd4fd",
+      "ts": 1788830880598,
+      "baslik": "Dow vadeli işlemleri Fed faiz artırımı beklentileri ve yükselen petrol ile geriledi"
+    },
+    {
       "anahtar": "4dd31c49ca9c1223",
       "ts": 1788785016920,
       "baslik": "TCMB rezervlerinde düşüş sürüyor: 4,4 milyar dolar azaldı"
@@ -279,16 +289,6 @@
       "anahtar": "b730e249f28c77d5",
       "ts": 1788229790015,
       "baslik": "Avustralya’da cari açık 2. çeyrekte beklentinin altında arttı"
-    },
-    {
-      "anahtar": "13f5fab8f0b6987b",
-      "ts": 1788224370748,
-      "baslik": "Petrol Trump’ın İran’a yeni saldırı tehdidiyle yükseldi"
-    },
-    {
-      "anahtar": "4fadac407726084e",
-      "ts": 1788180279236,
-      "baslik": "Almanya’da enflasyon Ağustos’ta %2,9’a yükseldi, tahminlerin altında"
     }
   ]
 }
