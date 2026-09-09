@@ -58,6 +58,18 @@
       "kazananlar": [
         "U08BGH62D6U"
       ]
+    },
+    {
+      "tarih": "09.09.2026",
+      "kanal": "C08AJ51934P",
+      "ts": "1788959879.298659",
+      "acilisFiyat": 4427.88,
+      "kapanisFiyat": 4419.9,
+      "degisim": -0.18,
+      "yon": "asagi",
+      "oySayisi": 4,
+      "gecersiz": 0,
+      "kazananlar": []
     }
   ]
 }
