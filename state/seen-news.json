@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "6ebf8e2acb42f9be",
+      "ts": 1788959549443,
+      "baslik": "Meksika’da enflasyon Ağustos’ta geriledi, çekirdek fiyat artışı yavaşladı"
+    },
+    {
+      "anahtar": "4086ae43342c7fa0",
+      "ts": 1788959549443,
+      "baslik": "Kazakistan Kashagan petrol sahası operatörüne yaptırımları askıya aldı"
+    },
+    {
+      "anahtar": "cd99645b6ab738f1",
+      "ts": 1788958350998,
+      "baslik": "Macaristan merkez bankası faizi Ağustos’ta %5,5’e indirdi"
+    },
+    {
       "anahtar": "8939076862a0d9da",
       "ts": 1788944453653,
       "baslik": "İran savaşı genişlerken Avrupa gazı 2023 zirvesine fırladı"
@@ -269,11 +284,6 @@
       "anahtar": "612e3e04faff5e2c",
       "ts": 1788357885817,
       "baslik": "Kanada Merkez Bankası faiz oranını sabit tuttu"
-    },
-    {
-      "anahtar": "ac18bd1fafdffaab",
-      "ts": 1788348827148,
-      "baslik": "Putin saldırıların faturasını açıkladı: Dev maliyet GSYH'nin yüzde 1'i"
     }
   ]
 }
