@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "6ac40e772f047235",
+      "ts": 1788936581721,
+      "baslik": "TCMB, TRPOS Ödeme Kuruluşu AŞ’nin faaliyet iznini iptal etti"
+    },
+    {
+      "anahtar": "4c6df48104f22a65",
+      "ts": 1788934781717,
+      "baslik": "Savaşta yine kripto öne çıktı: İran’da önemli Bitcoin ve USDT adımları…"
+    },
+    {
       "anahtar": "013a8e2bfe0d8317",
       "ts": 1788872571604,
       "baslik": "UBS, Lockheed Martin için hedefini yükseltti, füze büyümesinde %26 artış görüyor"
@@ -244,46 +254,6 @@
       "anahtar": "77853d9aca3d6127",
       "ts": 1788336726893,
       "baslik": "Sterlin bugün: Fed’in sert duruşu dolara güç verdi, sterlin geriledi"
-    },
-    {
-      "anahtar": "4f4c5b2d2b252684",
-      "ts": 1788331275973,
-      "baslik": "Brent 96 doların üzerinde: Hürmüz krizi Türkiye’yi nasıl etkiler?"
-    },
-    {
-      "anahtar": "907ac10e44a128e9",
-      "ts": 1788330676009,
-      "baslik": "Altın düşerken Asya hisse senetleri geriledi, Sumitomo %11 kaybetti"
-    },
-    {
-      "anahtar": "36510a63c217ee63",
-      "ts": 1788328259879,
-      "baslik": "İran gerginliği petrol ve Fed faiz artışı endişelerini körüklerken Altın 3 haftanın en düşüğüne geriledi"
-    },
-    {
-      "anahtar": "850dc217ce318310",
-      "ts": 1788328259879,
-      "baslik": "Petrol, ABD-İran çatışmasının yeniden alevlenmesiyle 3. günde de yükseldi"
-    },
-    {
-      "anahtar": "d7f74498299186e1",
-      "ts": 1788327059749,
-      "baslik": "TCMB raporu: Deprem bölgesinde konut arzı arttı, kira enflasyonu yavaşladı"
-    },
-    {
-      "anahtar": "814efc7de7e82818",
-      "ts": 1788317383726,
-      "baslik": "RBNZ faiz oranını yüzde 2,75’e yükseltti, yeni artışlar sinyali verdi"
-    },
-    {
-      "anahtar": "20d9e1609e73afab",
-      "ts": 1788316783372,
-      "baslik": "Güney Kore TÜFE’si Ağustos’ta beklentinin altında arttı"
-    },
-    {
-      "anahtar": "19fe9b1b22e2c314",
-      "ts": 1788298661170,
-      "baslik": "Petrol piyasasında savaş alarmı: Brent 95 doların üzerine çıktı"
     }
   ]
 }
