@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8939076862a0d9da",
+      "ts": 1788944453653,
+      "baslik": "İran savaşı genişlerken Avrupa gazı 2023 zirvesine fırladı"
+    },
+    {
       "anahtar": "4299d731220d0b82",
       "ts": 1788940830760,
       "baslik": "ECB öncesi enerji fiyatları yükseldi, euro tahvillerde satış sürüyor"
@@ -269,21 +274,6 @@
       "anahtar": "ac18bd1fafdffaab",
       "ts": 1788348827148,
       "baslik": "Putin saldırıların faturasını açıkladı: Dev maliyet GSYH'nin yüzde 1'i"
-    },
-    {
-      "anahtar": "568a295491dbb4cf",
-      "ts": 1788336726893,
-      "baslik": "Enflasyon endişeleri getiriyi zirveye taşıdı, tahviller çakıldı"
-    },
-    {
-      "anahtar": "5aa0e3936ce05093",
-      "ts": 1788336726893,
-      "baslik": "Petrol fiyatlarındaki artış, Fed verisi ve %5 faiz: Piyasaları neler etkiliyor?"
-    },
-    {
-      "anahtar": "77853d9aca3d6127",
-      "ts": 1788336726893,
-      "baslik": "Sterlin bugün: Fed’in sert duruşu dolara güç verdi, sterlin geriledi"
     }
   ]
 }
