@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "bd82b25283ebffb0",
+      "ts": 1788970428209,
+      "baslik": "Avrupa gaz fiyatları Hürmüz gerginliği ile 80 avronun üzerine çıktı"
+    },
+    {
       "anahtar": "e2c29dedcedd9a45",
       "ts": 1788964388733,
       "baslik": "Polonya Merkez Bankası faiz oranlarını enflasyon riskleri nedeniyle sabit tuttu"
@@ -279,11 +284,6 @@
       "anahtar": "acf0c33cefa81994",
       "ts": 1788397793287,
       "baslik": "Altın, Trump ve Fed açıklamaları enflasyon endişelerini azalttıkça 4.400 dolar civarında tutuyor"
-    },
-    {
-      "anahtar": "b0c3e22a2c3e2efc",
-      "ts": 1788364542035,
-      "baslik": "SON DAKİKA | Gemi faciasıyla ilgili KKTC Ulaştırma Bakanı görevden alındı"
     }
   ]
 }
