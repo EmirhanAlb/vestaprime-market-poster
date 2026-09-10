@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "cd33951c8e2176c7",
+      "ts": 1789025985412,
+      "baslik": "FTSE 100: ECB faiz kararı öncesi hisseler yükseldi"
+    },
+    {
       "anahtar": "05720c4704c9fc38",
       "ts": 1789021761932,
       "baslik": "Norveç’te çekirdek TÜFE Ağustos’ta beklendiği gibi yükseldi"
@@ -279,16 +284,6 @@
       "anahtar": "8f7ba0fdb0385d1a",
       "ts": 1788423768609,
       "baslik": "İsviçre’de enflasyon Ağustos’ta artan enerji maliyetleriyle %0,8’e yükseldi"
-    },
-    {
-      "anahtar": "03cf5d3e48eedb58",
-      "ts": 1788420747186,
-      "baslik": "ABD 10 yıllık tahvil getirisi %4,81’e çıktı: Fed artışı %70 ihtimalle fiyatlanıyor"
-    },
-    {
-      "anahtar": "45ff881beaff0314",
-      "ts": 1788419530430,
-      "baslik": "Son dakika... Ağustos ayı enflasyon verileri açıklandı"
     }
   ]
 }
