@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b225641d524e28c0",
+      "ts": 1789038652218,
+      "baslik": "TCMB politika faizini yüzde 37’de sabit tuttu"
+    },
+    {
+      "anahtar": "54bcda65f7fb3be3",
+      "ts": 1789038652218,
+      "baslik": "Son dakika... Merkez Bankası yılın altıncı faiz kararını açıkladı"
+    },
+    {
       "anahtar": "cd33951c8e2176c7",
       "ts": 1789025985412,
       "baslik": "FTSE 100: ECB faiz kararı öncesi hisseler yükseldi"
@@ -264,26 +274,6 @@
       "anahtar": "b62654c5c65335c8",
       "ts": 1788435239948,
       "baslik": "UBS, Essity’yi zayıf büyüme ve hammadde enflasyonu gerekçesiyle düşürdü"
-    },
-    {
-      "anahtar": "13d96d3954d56a9f",
-      "ts": 1788433440036,
-      "baslik": "HSBC, Fed görünümüyle Hazine tahvili getiri tahminlerini yükseltti"
-    },
-    {
-      "anahtar": "c37c4f0929daac1b",
-      "ts": 1788426796868,
-      "baslik": "Avrupa doğal gazı savaş zirvelerini aştıktan sonra geriledi"
-    },
-    {
-      "anahtar": "02e9eebe4a0e06de",
-      "ts": 1788426796868,
-      "baslik": "Cumhurbaşkanı Yardımcısı Yılmaz: Yıllık enflasyon yüzde 31,51 seviyesine geriledi"
-    },
-    {
-      "anahtar": "8f7ba0fdb0385d1a",
-      "ts": 1788423768609,
-      "baslik": "İsviçre’de enflasyon Ağustos’ta artan enerji maliyetleriyle %0,8’e yükseldi"
     }
   ]
 }
