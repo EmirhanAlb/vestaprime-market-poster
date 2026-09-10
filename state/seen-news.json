@@ -1,6 +1,41 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5e58d300c4416e4f",
+      "ts": 1789045293496,
+      "baslik": "ECB faiz artışı ve sıcak ABD ÜFE verisi küresel tahvil getirilerini yükseltti"
+    },
+    {
+      "anahtar": "24346f8cdb5ff7b9",
+      "ts": 1789045293496,
+      "baslik": "Washington’un bakır ithalatına tarife planları askıda, primler düştü"
+    },
+    {
+      "anahtar": "095fcf289cc8f197",
+      "ts": 1789044697474,
+      "baslik": "ABD üretici enflasyonu Bitcoin ve altını düşürdü, tahviller ve petrol sert yükseldi"
+    },
+    {
+      "anahtar": "a4b07f1056818e15",
+      "ts": 1789044098505,
+      "baslik": "ECB, Ortadoğu çatışmasının enflasyon endişelerini artırması üzerine faiz oranlarını yükseltti"
+    },
+    {
+      "anahtar": "07cb9f827163fb64",
+      "ts": 1789044098505,
+      "baslik": "ABD'de ÜFE yıllık bazda yüzde 5,4 ile tahminlerin üzerinde arttı"
+    },
+    {
+      "anahtar": "6e7d0b8d2d959065",
+      "ts": 1789044098505,
+      "baslik": "Avrupa hisseleri, ECB’nin 2025’ten bu yana en yüksek faiz artışının ardından seans diplerine geriledi"
+    },
+    {
+      "anahtar": "ef7b3fc29ee79612",
+      "ts": 1789042897038,
+      "baslik": "Avrupa Merkez Bankası, piyasa beklentileri doğrultusunda 3 temel politika faizini 25'er baz puan artırdı"
+    },
+    {
       "anahtar": "8c9d2eb46b58ee17",
       "ts": 1789041074137,
       "baslik": "Merkez Bankası rezervleri azaldı"
@@ -264,11 +299,6 @@
       "anahtar": "1493773d51551dd8",
       "ts": 1788474511674,
       "baslik": "Citi, Hürmüz kapanışı nedeniyle 3Ç Brent tahminini 86 dolara yükseltti"
-    },
-    {
-      "anahtar": "e72b50251ccbad6e",
-      "ts": 1788439493704,
-      "baslik": "Fed’den kritik faiz mesajı geldi, Bitcoin 78 bin doların üzerine fırladı"
     }
   ]
 }
