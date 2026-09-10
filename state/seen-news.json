@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8c9d2eb46b58ee17",
+      "ts": 1789041074137,
+      "baslik": "Merkez Bankası rezervleri azaldı"
+    },
+    {
       "anahtar": "b225641d524e28c0",
       "ts": 1789038652218,
       "baslik": "TCMB politika faizini yüzde 37’de sabit tuttu"
@@ -264,16 +269,6 @@
       "anahtar": "e72b50251ccbad6e",
       "ts": 1788439493704,
       "baslik": "Fed’den kritik faiz mesajı geldi, Bitcoin 78 bin doların üzerine fırladı"
-    },
-    {
-      "anahtar": "2f17fd22967c66fe",
-      "ts": 1788435862311,
-      "baslik": "TCMB’nin rezervleri 300 milyon dolar geriledi"
-    },
-    {
-      "anahtar": "b62654c5c65335c8",
-      "ts": 1788435239948,
-      "baslik": "UBS, Essity’yi zayıf büyüme ve hammadde enflasyonu gerekçesiyle düşürdü"
     }
   ]
 }
