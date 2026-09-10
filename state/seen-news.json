@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "05720c4704c9fc38",
+      "ts": 1789021761932,
+      "baslik": "Norveç’te çekirdek TÜFE Ağustos’ta beklendiği gibi yükseldi"
+    },
+    {
       "anahtar": "dfce19e0b16a3a29",
       "ts": 1789019941905,
       "baslik": "Trump’ın uçağında beklenmedik kriz: Acil durum kaydırağı açıldı"
@@ -284,11 +289,6 @@
       "anahtar": "45ff881beaff0314",
       "ts": 1788419530430,
       "baslik": "Son dakika... Ağustos ayı enflasyon verileri açıklandı"
-    },
-    {
-      "anahtar": "3a68a81067611ce4",
-      "ts": 1788416507984,
-      "baslik": "Küresel piyasalarda jeopolitik tansiyonun kısmen hafiflemesiyle risk iştahı arttı"
     }
   ]
 }
