@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "dfce19e0b16a3a29",
+      "ts": 1789019941905,
+      "baslik": "Trump’ın uçağında beklenmedik kriz: Acil durum kaydırağı açıldı"
+    },
+    {
       "anahtar": "d798cca89ef2b5f2",
       "ts": 1788999998886,
       "baslik": "Petrol fiyatları ABD-İran çatışması kötüleşirken yükseldi"
@@ -284,11 +289,6 @@
       "anahtar": "3a68a81067611ce4",
       "ts": 1788416507984,
       "baslik": "Küresel piyasalarda jeopolitik tansiyonun kısmen hafiflemesiyle risk iştahı arttı"
-    },
-    {
-      "anahtar": "acf0c33cefa81994",
-      "ts": 1788397793287,
-      "baslik": "Altın, Trump ve Fed açıklamaları enflasyon endişelerini azalttıkça 4.400 dolar civarında tutuyor"
     }
   ]
 }
