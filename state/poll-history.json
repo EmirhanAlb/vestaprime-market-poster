@@ -70,6 +70,21 @@
       "oySayisi": 4,
       "gecersiz": 0,
       "kazananlar": []
+    },
+    {
+      "tarih": "10.09.2026",
+      "kanal": "C08AJ51934P",
+      "ts": "1789046110.404789",
+      "acilisFiyat": 4351.96,
+      "kapanisFiyat": 4366.19,
+      "degisim": 0.327,
+      "yon": "yukari",
+      "oySayisi": 3,
+      "gecersiz": 0,
+      "kazananlar": [
+        "U08AM2Y8XEJ",
+        "U08BGH62D6U"
+      ]
     }
   ]
 }
