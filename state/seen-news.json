@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "a73e4e7b133a80e8",
+      "ts": 1789151377153,
+      "baslik": "ABD bütçe açığı Ağustos’ta 167 milyar dolara geriledi"
+    },
+    {
       "anahtar": "e6340327346e0fa7",
       "ts": 1789138098308,
       "baslik": "Rusya Merkez Bankası faiz oranını %14’te sabit tuttu"
@@ -319,21 +324,6 @@
       "anahtar": "b954b9b4a4a0e792",
       "ts": 1788695025606,
       "baslik": "Hürmüz gerilimine rağmen Irak'ın petrol ihracat kapasitesi günlük 3 milyon varile çıktı"
-    },
-    {
-      "anahtar": "03abc85e2c3c8ff4",
-      "ts": 1788542289919,
-      "baslik": "Venezuela’nın Ağustos enflasyonu %8,9’a geriledi"
-    },
-    {
-      "anahtar": "85287fd405b38c82",
-      "ts": 1788539268948,
-      "baslik": "TCMB Ağustos Ayı Fiyat Gelişmeleri raporu: Enflasyonun ana eğilimi ağustosta sınırlı arttı"
-    },
-    {
-      "anahtar": "ee9b08a6a60b3473",
-      "ts": 1788538072615,
-      "baslik": "Zayıf istihdam verisi faiz indirimi umutlarını artırdı"
     }
   ]
 }
