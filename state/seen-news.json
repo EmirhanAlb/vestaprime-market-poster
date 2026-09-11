@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1b3d46faf53a66b4",
+      "ts": 1789130828058,
+      "baslik": "ABD enflasyon verileri açıklandı: Fed’in faiz artırma ihtimali yüzde 90’a yükseldi"
+    },
+    {
+      "anahtar": "961d8d7d313954b8",
+      "ts": 1789130828058,
+      "baslik": "ABD'de TÜFE ağustosta aylık yüzde 0,4, yıllık yüzde 3,4 ile beklentilere paralel arttı"
+    },
+    {
       "anahtar": "0ab2c4b4a92ce310",
       "ts": 1789127804293,
       "baslik": "Brent petrol %3,05 düşüşle 104,39 dolara geriledi: Hürmüz baskısı sürüyor"
@@ -324,16 +334,6 @@
       "anahtar": "2412774c687379d4",
       "ts": 1788526573719,
       "baslik": "Rekor NFP Raporu Sonrası ABD 10 Yıllık Tahvil Faizi Fırladı"
-    },
-    {
-      "anahtar": "e5010aeb52eaba64",
-      "ts": 1788525947318,
-      "baslik": "ABD tarım dışı istihdam verisi açıklandı"
-    },
-    {
-      "anahtar": "2871c7bd3736d650",
-      "ts": 1788524146771,
-      "baslik": "Merkez Bankası açıkladı: Türk Lirası'nın değeri ağustosta azaldı"
     }
   ]
 }
