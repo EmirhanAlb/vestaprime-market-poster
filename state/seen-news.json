@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "dfb8f10be670f5b0",
+      "ts": 1789125036310,
+      "baslik": "TCMB duyurdu: Yeni 5 ve 50 TL'ler dolaşıma girdi"
+    },
+    {
+      "anahtar": "30e63fa115532cbc",
+      "ts": 1789124436072,
+      "baslik": "ABD’de dizel fiyatı İran savaşıyla rekor kırdı: Galon başına 6,06 dolar"
+    },
+    {
       "anahtar": "4c3cec1175c46f9f",
       "ts": 1789114155282,
       "baslik": "Piyasanın enflasyon beklentisi hafif yükseldi"
@@ -329,11 +339,6 @@
       "anahtar": "ea2945fd711fa212",
       "ts": 1788520517074,
       "baslik": "Son dakika... Berhan Şimşek CHP MYK'dan istifa etti"
-    },
-    {
-      "anahtar": "0f740aae9e98ab18",
-      "ts": 1788516014139,
-      "baslik": "Avro Bölgesi perakende satışları gıda dışı talep zayıflarken düştü"
     }
   ]
 }
