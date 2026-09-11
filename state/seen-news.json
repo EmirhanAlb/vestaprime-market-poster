@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b4d2f8743df547b0",
+      "ts": 1789136877956,
+      "baslik": "Avrupa doğal gazında Hürmüz etkisi: Fiyatlar haftalık %13,2 arttı"
+    },
+    {
       "anahtar": "1b3d46faf53a66b4",
       "ts": 1789130828058,
       "baslik": "ABD enflasyon verileri açıklandı: Fed’in faiz artırma ihtimali yüzde 90’a yükseldi"
@@ -319,21 +324,6 @@
       "anahtar": "ee9b08a6a60b3473",
       "ts": 1788538072615,
       "baslik": "Zayıf istihdam verisi faiz indirimi umutlarını artırdı"
-    },
-    {
-      "anahtar": "9a30c4517f51d04c",
-      "ts": 1788530197575,
-      "baslik": "Mevsim etkilerinden arındırılmış TÜFE ağustosta yüzde 2,29 arttı"
-    },
-    {
-      "anahtar": "97d37c77f9ec7cab",
-      "ts": 1788528370726,
-      "baslik": "Altın madencileri ve bitcoin hisseleri güçlü istihdam verisiyle düştü"
-    },
-    {
-      "anahtar": "2412774c687379d4",
-      "ts": 1788526573719,
-      "baslik": "Rekor NFP Raporu Sonrası ABD 10 Yıllık Tahvil Faizi Fırladı"
     }
   ]
 }
