@@ -85,6 +85,20 @@
         "U08AM2Y8XEJ",
         "U08BGH62D6U"
       ]
+    },
+    {
+      "tarih": "11.09.2026",
+      "kanal": "C08AJ51934P",
+      "ts": "1789132147.743179",
+      "acilisFiyat": 4387.33,
+      "kapanisFiyat": 4379.33,
+      "degisim": -0.182,
+      "yon": "asagi",
+      "oySayisi": 3,
+      "gecersiz": 0,
+      "kazananlar": [
+        "U08AM2Y8XEJ"
+      ]
     }
   ]
 }
