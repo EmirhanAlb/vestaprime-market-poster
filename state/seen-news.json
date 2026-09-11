@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ef02a3bfecfd8a31",
+      "ts": 1789105104777,
+      "baslik": "Asya hisseleri petrol ve Fed beklentileriyle düştü"
+    },
+    {
       "anahtar": "5edf920338d7c3b6",
       "ts": 1789090006324,
       "baslik": "Altın sert düşüşün ardından sakinleşti, güçlü ÜFE Fed faiz artırım beklentilerini artırdı"
@@ -309,11 +314,6 @@
       "anahtar": "0f740aae9e98ab18",
       "ts": 1788516014139,
       "baslik": "Avro Bölgesi perakende satışları gıda dışı talep zayıflarken düştü"
-    },
-    {
-      "anahtar": "cd1740c02f6b0341",
-      "ts": 1788493156679,
-      "baslik": "Asya hisseleri Fed faiz artırım beklentilerinde düşüşle yükseldi"
     }
   ]
 }
