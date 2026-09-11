@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "acd9fea40336b448",
+      "ts": 1789087578572,
+      "baslik": "Japonya ÜFE enflasyonu Ağustos’ta beklentileri aştı"
+    },
+    {
       "anahtar": "4a1f7b1459918fdf",
       "ts": 1789061624089,
       "baslik": "Kanada 10 yıllık tahvil faizi petrol ve enflasyon endişesiyle fırladı"
@@ -304,11 +309,6 @@
       "anahtar": "cd1740c02f6b0341",
       "ts": 1788493156679,
       "baslik": "Asya hisseleri Fed faiz artırım beklentilerinde düşüşle yükseldi"
-    },
-    {
-      "anahtar": "1493773d51551dd8",
-      "ts": 1788474511674,
-      "baslik": "Citi, Hürmüz kapanışı nedeniyle 3Ç Brent tahminini 86 dolara yükseltti"
     }
   ]
 }
