@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0ab2c4b4a92ce310",
+      "ts": 1789127804293,
+      "baslik": "Brent petrol %3,05 düşüşle 104,39 dolara geriledi: Hürmüz baskısı sürüyor"
+    },
+    {
       "anahtar": "dfb8f10be670f5b0",
       "ts": 1789125036310,
       "baslik": "TCMB duyurdu: Yeni 5 ve 50 TL'ler dolaşıma girdi"
@@ -329,16 +334,6 @@
       "anahtar": "2871c7bd3736d650",
       "ts": 1788524146771,
       "baslik": "Merkez Bankası açıkladı: Türk Lirası'nın değeri ağustosta azaldı"
-    },
-    {
-      "anahtar": "664d5f0ccb54761b",
-      "ts": 1788521114445,
-      "baslik": "AB doğal gaz depoları kapasitenin %65’inde, yetkili açıkladı"
-    },
-    {
-      "anahtar": "ea2945fd711fa212",
-      "ts": 1788520517074,
-      "baslik": "Son dakika... Berhan Şimşek CHP MYK'dan istifa etti"
     }
   ]
 }
