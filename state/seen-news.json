@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "80e2c2288de50aec",
+      "ts": 1789370585184,
+      "baslik": "Avrupa hisseleri yapay zeka duraklaması ve Fed ile geriledi"
+    },
+    {
       "anahtar": "6420258051d082c4",
       "ts": 1789366340259,
       "baslik": "FleetPartners hisseleri devralma savaşıyla rekor kırdı"
@@ -359,16 +364,6 @@
       "anahtar": "cd4add997233daaa",
       "ts": 1788766875353,
       "baslik": "FTSE 100: ABD-İran Körfez çatışması tırmanırken hisseler düştü"
-    },
-    {
-      "anahtar": "f80dac8269ceb600",
-      "ts": 1788765075664,
-      "baslik": "Deutsche Bank'tan ECB tahmini: Zirve faiz yüzde 2,75’e yükseldi"
-    },
-    {
-      "anahtar": "554d05b29fc6ee6d",
-      "ts": 1788762055967,
-      "baslik": "Almanya’da sanayi üretimi Temmuz’da yüzde 1,1 düştü"
     }
   ]
 }
