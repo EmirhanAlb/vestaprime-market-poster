@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ef90a073cbbf6367",
+      "ts": 1789392931588,
+      "baslik": "Fed öncesi piyasa diken üstünde: Petrol yükseldi, altın ve gümüş düştü"
+    },
+    {
       "anahtar": "f406ad1006573d91",
       "ts": 1789382678193,
       "baslik": "Değerli ve baz metallerde fiyatlar Fed ve yapay zeka baskısıyla düştü"
@@ -344,11 +349,6 @@
       "anahtar": "47ca6f2e651cd4fd",
       "ts": 1788830880598,
       "baslik": "Dow vadeli işlemleri Fed faiz artırımı beklentileri ve yükselen petrol ile geriledi"
-    },
-    {
-      "anahtar": "4dd31c49ca9c1223",
-      "ts": 1788785016920,
-      "baslik": "TCMB rezervlerinde düşüş sürüyor: 4,4 milyar dolar azaldı"
     }
   ]
 }
