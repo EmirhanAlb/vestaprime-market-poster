@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "a1b79f3c39d76024",
+      "ts": 1789456406643,
+      "baslik": "USD/TRY 48,66’ya çıktı: Fed kararı ve 107 dolarlık petrol lirayı kıskaca alıyor"
+    },
+    {
       "anahtar": "a9eb47f282b968ef",
       "ts": 1789452190606,
       "baslik": "ABD 10 yıllık tahvil faizi %5’in üzerine çıktı, 2007’den beri rekor"
@@ -354,11 +359,6 @@
       "anahtar": "5463056e168b86dd",
       "ts": 1788861091873,
       "baslik": "Brent petrol Husilerden Aramco’ya saldırı ile 97 dolara çıktı"
-    },
-    {
-      "anahtar": "8a07a2b94dc5380d",
-      "ts": 1788850840152,
-      "baslik": "Bitcoin, Fed ve petrol baskısıyla 78 bin dolara geriledi"
     }
   ]
 }
