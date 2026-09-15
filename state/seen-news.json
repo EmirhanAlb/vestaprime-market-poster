@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "a9eb47f282b968ef",
+      "ts": 1789452190606,
+      "baslik": "ABD 10 yıllık tahvil faizi %5’in üzerine çıktı, 2007’den beri rekor"
+    },
+    {
       "anahtar": "5bfaa9c6334bb842",
       "ts": 1789439459114,
       "baslik": "Çin’de sanayi üretimi Ağustos’ta beklenenden fazla arttı"
@@ -354,16 +359,6 @@
       "anahtar": "8a07a2b94dc5380d",
       "ts": 1788850840152,
       "baslik": "Bitcoin, Fed ve petrol baskısıyla 78 bin dolara geriledi"
-    },
-    {
-      "anahtar": "00e124ac2a2866d6",
-      "ts": 1788842372277,
-      "baslik": "Çin merkez bankası altın rezervlerini 2023’ten beri en fazla artırdı"
-    },
-    {
-      "anahtar": "13e9e5148ee2478e",
-      "ts": 1788835728442,
-      "baslik": "Altın yen’deki sıçramayla yükseldi; petrol ve Fed beklentileri kazançları sınırladı"
     }
   ]
 }
