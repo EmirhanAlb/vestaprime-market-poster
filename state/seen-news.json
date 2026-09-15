@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0b95a2c3571d8dca",
+      "ts": 1789470299803,
+      "baslik": "Hindistan’da işsizlik oranı Ağustos’ta %5’e geriledi"
+    },
+    {
       "anahtar": "5ec1169f423fcbca",
       "ts": 1789465457412,
       "baslik": "Fed faiz artışı beklentisi %92’ye çıktı: Dolar yükseliyor, avro ve yen geriliyor"
@@ -374,16 +379,6 @@
       "anahtar": "aa0a16407c455c65",
       "ts": 1788872571604,
       "baslik": "Son dakika...İngiltere'den İsrail'e Batı Şeria yaptırımı! Dışişleri Bakanı Miliband duyurdu"
-    },
-    {
-      "anahtar": "28632ff873305da6",
-      "ts": 1788861712848,
-      "baslik": "Yen, BOJ faiz artışı beklentileri ve carry trade çözülmesiyle 7 ayın zirvesine ulaştı"
-    },
-    {
-      "anahtar": "5463056e168b86dd",
-      "ts": 1788861091873,
-      "baslik": "Brent petrol Husilerden Aramco’ya saldırı ile 97 dolara çıktı"
     }
   ]
 }
