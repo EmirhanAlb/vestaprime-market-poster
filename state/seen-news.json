@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5bfaa9c6334bb842",
+      "ts": 1789439459114,
+      "baslik": "Çin’de sanayi üretimi Ağustos’ta beklenenden fazla arttı"
+    },
+    {
       "anahtar": "61f84aeac4710d72",
       "ts": 1789434639917,
       "baslik": "Petrol fiyatları Husiler Suudi Arabistan’a saldırırken yükseldi"
@@ -359,16 +364,6 @@
       "anahtar": "13e9e5148ee2478e",
       "ts": 1788835728442,
       "baslik": "Altın yen’deki sıçramayla yükseldi; petrol ve Fed beklentileri kazançları sınırladı"
-    },
-    {
-      "anahtar": "b8d654d495713327",
-      "ts": 1788830880598,
-      "baslik": "Avustralya’da tüketici güveni Eylül’de %5,2 düştü - Westpac"
-    },
-    {
-      "anahtar": "47ca6f2e651cd4fd",
-      "ts": 1788830880598,
-      "baslik": "Dow vadeli işlemleri Fed faiz artırımı beklentileri ve yükselen petrol ile geriledi"
     }
   ]
 }
