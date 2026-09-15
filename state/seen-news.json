@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "cd6ff1f6a34c8d15",
+      "ts": 1789478157725,
+      "baslik": "Brezilya perakende satışları Temmuz’da %0,8 düştü, tahminleri karşılamadı"
+    },
+    {
       "anahtar": "0b95a2c3571d8dca",
       "ts": 1789470299803,
       "baslik": "Hindistan’da işsizlik oranı Ağustos’ta %5’e geriledi"
@@ -369,16 +374,6 @@
       "anahtar": "4c6df48104f22a65",
       "ts": 1788934781717,
       "baslik": "Savaşta yine kripto öne çıktı: İran’da önemli Bitcoin ve USDT adımları…"
-    },
-    {
-      "anahtar": "013a8e2bfe0d8317",
-      "ts": 1788872571604,
-      "baslik": "UBS, Lockheed Martin için hedefini yükseltti, füze büyümesinde %26 artış görüyor"
-    },
-    {
-      "anahtar": "aa0a16407c455c65",
-      "ts": 1788872571604,
-      "baslik": "Son dakika...İngiltere'den İsrail'e Batı Şeria yaptırımı! Dışişleri Bakanı Miliband duyurdu"
     }
   ]
 }
