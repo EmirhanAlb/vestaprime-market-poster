@@ -1,6 +1,26 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "3b5e9061ad361a99",
+      "ts": 1789582654175,
+      "baslik": "Fed, 2023'ten bu yana ilk kez faiz artırdı"
+    },
+    {
+      "anahtar": "fab855c4e2ae30b9",
+      "ts": 1789582057319,
+      "baslik": "Fed beklentiler doğrultusunda faiz oranını 25 baz puan artırdı"
+    },
+    {
+      "anahtar": "d55931ce2d44d0f7",
+      "ts": 1789582057319,
+      "baslik": "ABD Merkez Bankası, politika faizini 25 baz puan artışla yüzde 3,75-4 aralığına yükseltti"
+    },
+    {
+      "anahtar": "0e8e8f31877b6304",
+      "ts": 1789582057319,
+      "baslik": "Son Dakika... Fed merakla beklenen faiz kararını açıkladı"
+    },
+    {
       "anahtar": "dfcd869451942a9f",
       "ts": 1789567551752,
       "baslik": "ABD’de ithalat fiyatları yükseldi, perakende satışlar Ağustos’ta toparlandı"
@@ -364,16 +384,6 @@
       "anahtar": "d798cca89ef2b5f2",
       "ts": 1788999998886,
       "baslik": "Petrol fiyatları ABD-İran çatışması kötüleşirken yükseldi"
-    },
-    {
-      "anahtar": "bd82b25283ebffb0",
-      "ts": 1788970428209,
-      "baslik": "Avrupa gaz fiyatları Hürmüz gerginliği ile 80 avronun üzerine çıktı"
-    },
-    {
-      "anahtar": "e2c29dedcedd9a45",
-      "ts": 1788964388733,
-      "baslik": "Polonya Merkez Bankası faiz oranlarını enflasyon riskleri nedeniyle sabit tuttu"
     }
   ]
 }
