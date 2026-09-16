@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "88926709e3457aae",
+      "ts": 1789541563111,
+      "baslik": "Gazze'de İsrail saldırısında hasar gören bina çöktü! Can kaybı ve yaralılar var"
+    },
+    {
       "anahtar": "622566df5b75a887",
       "ts": 1789525267734,
       "baslik": "Altın Fed öncesi geriledi, petrol ve getiriler baskı yapıyor"
@@ -379,16 +384,6 @@
       "anahtar": "f69538b5674d8704",
       "ts": 1788937209495,
       "baslik": "Petrolde savaş ve arz endişesi: Benzin ve motorin fiyatlarında baskı arttı"
-    },
-    {
-      "anahtar": "6ac40e772f047235",
-      "ts": 1788936581721,
-      "baslik": "TCMB, TRPOS Ödeme Kuruluşu AŞ’nin faaliyet iznini iptal etti"
-    },
-    {
-      "anahtar": "4c6df48104f22a65",
-      "ts": 1788934781717,
-      "baslik": "Savaşta yine kripto öne çıktı: İran’da önemli Bitcoin ve USDT adımları…"
     }
   ]
 }
