@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "165263061deee72f",
+      "ts": 1789550036223,
+      "baslik": "Hürmüz Boğazı'ndaki kriz AB'nin fosil yakıt faturasını 90 milyar avro artırdı"
+    },
+    {
       "anahtar": "d4081f2ee8b40eb7",
       "ts": 1789547612367,
       "baslik": "AB gaz fiyatları düşük rezervler ve ECB faiz artışlarıyla yükseldi"
@@ -374,11 +379,6 @@
       "anahtar": "cd99645b6ab738f1",
       "ts": 1788958350998,
       "baslik": "Macaristan merkez bankası faizi Ağustos’ta %5,5’e indirdi"
-    },
-    {
-      "anahtar": "8939076862a0d9da",
-      "ts": 1788944453653,
-      "baslik": "İran savaşı genişlerken Avrupa gazı 2023 zirvesine fırladı"
     }
   ]
 }
