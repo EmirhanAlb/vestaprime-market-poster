@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "dfcd869451942a9f",
+      "ts": 1789567551752,
+      "baslik": "ABD’de ithalat fiyatları yükseldi, perakende satışlar Ağustos’ta toparlandı"
+    },
+    {
       "anahtar": "15750b6f16eede62",
       "ts": 1789556069530,
       "baslik": "Bitcoin, Clarity oylamasının ardından 76.000 dolara geriledi; Fed kararı odakta"
@@ -369,21 +374,6 @@
       "anahtar": "e2c29dedcedd9a45",
       "ts": 1788964388733,
       "baslik": "Polonya Merkez Bankası faiz oranlarını enflasyon riskleri nedeniyle sabit tuttu"
-    },
-    {
-      "anahtar": "6ebf8e2acb42f9be",
-      "ts": 1788959549443,
-      "baslik": "Meksika’da enflasyon Ağustos’ta geriledi, çekirdek fiyat artışı yavaşladı"
-    },
-    {
-      "anahtar": "4086ae43342c7fa0",
-      "ts": 1788959549443,
-      "baslik": "Kazakistan Kashagan petrol sahası operatörüne yaptırımları askıya aldı"
-    },
-    {
-      "anahtar": "cd99645b6ab738f1",
-      "ts": 1788958350998,
-      "baslik": "Macaristan merkez bankası faizi Ağustos’ta %5,5’e indirdi"
     }
   ]
 }
