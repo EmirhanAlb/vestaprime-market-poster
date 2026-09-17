@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1dc189a6e3a3c331",
+      "ts": 1789679365478,
+      "baslik": "Fed Trump'i takmadı, faizi artırdı"
+    },
+    {
       "anahtar": "0f12a1167fb9eba2",
       "ts": 1789651575020,
       "baslik": "GFL hisseleri özel sermaye ihale savaşı haberiyle fırladı"
@@ -389,16 +394,6 @@
       "anahtar": "acd9fea40336b448",
       "ts": 1789087578572,
       "baslik": "Japonya ÜFE enflasyonu Ağustos’ta beklentileri aştı"
-    },
-    {
-      "anahtar": "4a1f7b1459918fdf",
-      "ts": 1789061624089,
-      "baslik": "Kanada 10 yıllık tahvil faizi petrol ve enflasyon endişesiyle fırladı"
-    },
-    {
-      "anahtar": "3ba27a2ed770d261",
-      "ts": 1789051338018,
-      "baslik": "Merkez Bankası faizi sabit tuttu: Uzmanlardan yıl sonu tahmini"
     }
   ]
 }
