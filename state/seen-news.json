@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "33ab93bdb117f3e9",
+      "ts": 1789613473420,
+      "baslik": "Fed yeniden faiz artırdı - yapay zeka seçimi bir sigortacı kazanmaya devam ediyor"
+    },
+    {
       "anahtar": "7deab18c2b3ca8f7",
       "ts": 1789589927627,
       "baslik": "Fed faiz yükseltti, altın düşüşe geçti"
@@ -399,11 +404,6 @@
       "anahtar": "dfce19e0b16a3a29",
       "ts": 1789019941905,
       "baslik": "Trump’ın uçağında beklenmedik kriz: Acil durum kaydırağı açıldı"
-    },
-    {
-      "anahtar": "d798cca89ef2b5f2",
-      "ts": 1788999998886,
-      "baslik": "Petrol fiyatları ABD-İran çatışması kötüleşirken yükseldi"
     }
   ]
 }
