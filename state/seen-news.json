@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e16f02bfe19e00e4",
+      "ts": 1789647952991,
+      "baslik": "Merkez Bankası rezervleri 5 milyar 523 milyon dolar azaldı"
+    },
+    {
       "anahtar": "caa8c4a0892e80f5",
       "ts": 1789647328100,
       "baslik": "TSX vadeli işlemleri Fed’in enflasyonla mücadele taahhüdüyle yükseldi"
@@ -419,11 +424,6 @@
       "anahtar": "6e7d0b8d2d959065",
       "ts": 1789044098505,
       "baslik": "Avrupa hisseleri, ECB’nin 2025’ten bu yana en yüksek faiz artışının ardından seans diplerine geriledi"
-    },
-    {
-      "anahtar": "ef7b3fc29ee79612",
-      "ts": 1789042897038,
-      "baslik": "Avrupa Merkez Bankası, piyasa beklentileri doğrultusunda 3 temel politika faizini 25'er baz puan artırdı"
     }
   ]
 }
