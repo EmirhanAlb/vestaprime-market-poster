@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "caa8c4a0892e80f5",
+      "ts": 1789647328100,
+      "baslik": "TSX vadeli işlemleri Fed’in enflasyonla mücadele taahhüdüyle yükseldi"
+    },
+    {
+      "anahtar": "72f6462a3b2ffec4",
+      "ts": 1789646128541,
+      "baslik": "İngiltere Merkez Bankası faizi sabit tuttu, gelecekteki artışlara işaret etti"
+    },
+    {
+      "anahtar": "14a3344fc3e635dd",
+      "ts": 1789644928142,
+      "baslik": "FTSE 100 yükseldi: BoE faiz sabit tuttu, Fed artışı sindirildi"
+    },
+    {
       "anahtar": "523319f4ca8783e4",
       "ts": 1789638246944,
       "baslik": "Euro Bölgesi'nde yıllık enflasyon ağustosta yüzde 3,2'ye yükseldi"
@@ -409,21 +424,6 @@
       "anahtar": "ef7b3fc29ee79612",
       "ts": 1789042897038,
       "baslik": "Avrupa Merkez Bankası, piyasa beklentileri doğrultusunda 3 temel politika faizini 25'er baz puan artırdı"
-    },
-    {
-      "anahtar": "8c9d2eb46b58ee17",
-      "ts": 1789041074137,
-      "baslik": "Merkez Bankası rezervleri azaldı"
-    },
-    {
-      "anahtar": "b225641d524e28c0",
-      "ts": 1789038652218,
-      "baslik": "TCMB politika faizini yüzde 37’de sabit tuttu"
-    },
-    {
-      "anahtar": "54bcda65f7fb3be3",
-      "ts": 1789038652218,
-      "baslik": "Son dakika... Merkez Bankası yılın altıncı faiz kararını açıkladı"
     }
   ]
 }
