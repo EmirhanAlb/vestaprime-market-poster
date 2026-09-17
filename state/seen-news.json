@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "4d77633799ab8091",
+      "ts": 1789634622136,
+      "baslik": "TCMB repo musluğunu açtı: İhale 300 milyar TL'ye çıktı"
+    },
+    {
+      "anahtar": "8c3808bd826bee43",
+      "ts": 1789634021486,
+      "baslik": "Brezilya Merkez Bankası faiz indirdi: Selic yüzde 13,75’e çekildi"
+    },
+    {
       "anahtar": "b45df9b875883950",
       "ts": 1789630405264,
       "baslik": "Avrupa hisseleri Fed sonrası yükseldi, Ortadoğu barış sinyalleri"
@@ -399,11 +409,6 @@
       "anahtar": "54bcda65f7fb3be3",
       "ts": 1789038652218,
       "baslik": "Son dakika... Merkez Bankası yılın altıncı faiz kararını açıkladı"
-    },
-    {
-      "anahtar": "cd33951c8e2176c7",
-      "ts": 1789025985412,
-      "baslik": "FTSE 100: ECB faiz kararı öncesi hisseler yükseldi"
     }
   ]
 }
