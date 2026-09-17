@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0f12a1167fb9eba2",
+      "ts": 1789651575020,
+      "baslik": "GFL hisseleri özel sermaye ihale savaşı haberiyle fırladı"
+    },
+    {
       "anahtar": "e16f02bfe19e00e4",
       "ts": 1789647952991,
       "baslik": "Merkez Bankası rezervleri 5 milyar 523 milyon dolar azaldı"
@@ -394,36 +399,6 @@
       "anahtar": "3ba27a2ed770d261",
       "ts": 1789051338018,
       "baslik": "Merkez Bankası faizi sabit tuttu: Uzmanlardan yıl sonu tahmini"
-    },
-    {
-      "anahtar": "5e58d300c4416e4f",
-      "ts": 1789045293496,
-      "baslik": "ECB faiz artışı ve sıcak ABD ÜFE verisi küresel tahvil getirilerini yükseltti"
-    },
-    {
-      "anahtar": "24346f8cdb5ff7b9",
-      "ts": 1789045293496,
-      "baslik": "Washington’un bakır ithalatına tarife planları askıda, primler düştü"
-    },
-    {
-      "anahtar": "095fcf289cc8f197",
-      "ts": 1789044697474,
-      "baslik": "ABD üretici enflasyonu Bitcoin ve altını düşürdü, tahviller ve petrol sert yükseldi"
-    },
-    {
-      "anahtar": "a4b07f1056818e15",
-      "ts": 1789044098505,
-      "baslik": "ECB, Ortadoğu çatışmasının enflasyon endişelerini artırması üzerine faiz oranlarını yükseltti"
-    },
-    {
-      "anahtar": "07cb9f827163fb64",
-      "ts": 1789044098505,
-      "baslik": "ABD'de ÜFE yıllık bazda yüzde 5,4 ile tahminlerin üzerinde arttı"
-    },
-    {
-      "anahtar": "6e7d0b8d2d959065",
-      "ts": 1789044098505,
-      "baslik": "Avrupa hisseleri, ECB’nin 2025’ten bu yana en yüksek faiz artışının ardından seans diplerine geriledi"
     }
   ]
 }
