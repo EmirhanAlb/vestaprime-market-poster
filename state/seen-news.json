@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "bbe0da7c8d302090",
+      "ts": 1789713821321,
+      "baslik": "Ülkenin başbakanı duyurdu, Hürmüz için kritik karar! 'Bölgeye asker göndermeyeceğiz'"
+    },
+    {
       "anahtar": "bd4ff5113ce1324b",
       "ts": 1789709004327,
       "baslik": "Asya dövizleri karışık, BOJ faiz artışına rağmen yen düştü"
@@ -394,11 +399,6 @@
       "anahtar": "1ab0afd9661df9fd",
       "ts": 1789109940183,
       "baslik": "Bitcoin ABD-İran gerilimleri ve TÜFE endişesiyle 77,1 bin dolara düştü"
-    },
-    {
-      "anahtar": "ef02a3bfecfd8a31",
-      "ts": 1789105104777,
-      "baslik": "Asya hisseleri petrol ve Fed beklentileriyle düştü"
     }
   ]
 }
