@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "8a8e7999b6b46d85",
+      "ts": 1789719899588,
+      "baslik": "TCMB verileri açıklandı: Türkiye'nin yurt dışı varlıkları ne kadar?"
+    },
+    {
+      "anahtar": "0fbd56ee6deffb40",
+      "ts": 1789717499381,
+      "baslik": "FTSE 100: Hürmüz krizi hisse senetlerini düşürdü"
+    },
+    {
       "anahtar": "0dbb652a59acb56d",
       "ts": 1789715076458,
       "baslik": "Bitcoin %2 geriledi: Fed artışı ve Clarity Act çifte baskı yaratıyor"
@@ -389,21 +399,6 @@
       "anahtar": "30e63fa115532cbc",
       "ts": 1789124436072,
       "baslik": "ABD’de dizel fiyatı İran savaşıyla rekor kırdı: Galon başına 6,06 dolar"
-    },
-    {
-      "anahtar": "4c3cec1175c46f9f",
-      "ts": 1789114155282,
-      "baslik": "Piyasanın enflasyon beklentisi hafif yükseldi"
-    },
-    {
-      "anahtar": "f11c04424562550d",
-      "ts": 1789111737203,
-      "baslik": "Perakende satışlar temmuzda yüzde 10,4 arttı"
-    },
-    {
-      "anahtar": "16e1eb11d0c6aea5",
-      "ts": 1789111137443,
-      "baslik": "ECB'de faiz artışları sürebilir: Bankalar yeni tarihleri açıkladı"
     }
   ]
 }
