@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "91775e6b5a3c38a4",
+      "ts": 1789701733310,
+      "baslik": "Asya borsaları petrol gerilemesiyle yükseldi, BOJ odakta"
+    },
+    {
       "anahtar": "5cf7ef9d9f7a065f",
       "ts": 1789689635095,
       "baslik": "Japonya’da TÜFE Ağustos’ta sabit, çekirdek enflasyon düştü"
@@ -389,16 +394,6 @@
       "anahtar": "ef02a3bfecfd8a31",
       "ts": 1789105104777,
       "baslik": "Asya hisseleri petrol ve Fed beklentileriyle düştü"
-    },
-    {
-      "anahtar": "5edf920338d7c3b6",
-      "ts": 1789090006324,
-      "baslik": "Altın sert düşüşün ardından sakinleşti, güçlü ÜFE Fed faiz artırım beklentilerini artırdı"
-    },
-    {
-      "anahtar": "acd9fea40336b448",
-      "ts": 1789087578572,
-      "baslik": "Japonya ÜFE enflasyonu Ağustos’ta beklentileri aştı"
     }
   ]
 }
