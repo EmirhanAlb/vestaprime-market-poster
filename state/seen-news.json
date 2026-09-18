@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "f4a99ea6610e7c6a",
+      "ts": 1789738011929,
+      "baslik": "ABD'den 48 saat sonra Japonya'da faiz artırdı"
+    },
+    {
+      "anahtar": "2e866de2059394aa",
+      "ts": 1789736211678,
+      "baslik": "Hint tahvilleri Fed ve RBI hamleleriyle beşinci haftada da düştü"
+    },
+    {
       "anahtar": "0b24115e9686e76f",
       "ts": 1789723545951,
       "baslik": "Orta Doğu’daki petrol şoku Avro Bölgesi'nde enflasyon beklentilerini artırdı"
@@ -389,31 +399,6 @@
       "anahtar": "b4d2f8743df547b0",
       "ts": 1789136877956,
       "baslik": "Avrupa doğal gazında Hürmüz etkisi: Fiyatlar haftalık %13,2 arttı"
-    },
-    {
-      "anahtar": "1b3d46faf53a66b4",
-      "ts": 1789130828058,
-      "baslik": "ABD enflasyon verileri açıklandı: Fed’in faiz artırma ihtimali yüzde 90’a yükseldi"
-    },
-    {
-      "anahtar": "961d8d7d313954b8",
-      "ts": 1789130828058,
-      "baslik": "ABD'de TÜFE ağustosta aylık yüzde 0,4, yıllık yüzde 3,4 ile beklentilere paralel arttı"
-    },
-    {
-      "anahtar": "0ab2c4b4a92ce310",
-      "ts": 1789127804293,
-      "baslik": "Brent petrol %3,05 düşüşle 104,39 dolara geriledi: Hürmüz baskısı sürüyor"
-    },
-    {
-      "anahtar": "dfb8f10be670f5b0",
-      "ts": 1789125036310,
-      "baslik": "TCMB duyurdu: Yeni 5 ve 50 TL'ler dolaşıma girdi"
-    },
-    {
-      "anahtar": "30e63fa115532cbc",
-      "ts": 1789124436072,
-      "baslik": "ABD’de dizel fiyatı İran savaşıyla rekor kırdı: Galon başına 6,06 dolar"
     }
   ]
 }
