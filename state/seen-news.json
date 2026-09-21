@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ef19105d08b6c14b",
+      "ts": 1789975355459,
+      "baslik": "Yurt dışı ÜFE ağustosta aylık yüzde 3,61, yıllık yüzde 32,60 arttı"
+    },
+    {
       "anahtar": "b44df31ecacbe892",
       "ts": 1789899297197,
       "baslik": "Suudi Arabistan ve Körfez borsaları Husi saldırıları sonrası düştü"
@@ -339,41 +344,6 @@
       "anahtar": "80e2c2288de50aec",
       "ts": 1789370585184,
       "baslik": "Avrupa hisseleri yapay zeka duraklaması ve Fed ile geriledi"
-    },
-    {
-      "anahtar": "6420258051d082c4",
-      "ts": 1789366340259,
-      "baslik": "FleetPartners hisseleri devralma savaşıyla rekor kırdı"
-    },
-    {
-      "anahtar": "e60f7b225963d06a",
-      "ts": 1789365141130,
-      "baslik": "Savaşın tek kazananı oldu: 9 ayda yüzde 3780 yükseldi"
-    },
-    {
-      "anahtar": "1ce2603a3317f4d5",
-      "ts": 1789360301909,
-      "baslik": "Asya teknoloji ve çip hisseleri, Fed ve BOJ kararları öncesinde sert düştü"
-    },
-    {
-      "anahtar": "d2e8d4e54a4fc62d",
-      "ts": 1789353061853,
-      "baslik": "İran-BAE görüşmeleri Hürmüz’ü gündeme taşıdı; yapay zeka stratejisinin rafinerideki bahsi %40 yükseldi"
-    },
-    {
-      "anahtar": "aeb3cdb23518efd6",
-      "ts": 1789350646359,
-      "baslik": "Altın ABD enflasyonu ve Fed faiz artışı beklentisiyle geriledi"
-    },
-    {
-      "anahtar": "fb13c74d248d476c",
-      "ts": 1789344009753,
-      "baslik": "Petrol fiyatları Ortadoğu’daki gelişmeler ve Hürmüz görüşmesinin ertelenmesiyle %3’ün üzerinde sıçradı"
-    },
-    {
-      "anahtar": "2bb6a87aa717337f",
-      "ts": 1789299329394,
-      "baslik": "Ekimde elektriğe ve doğalgaza zam kapıda mı? Merkez Bankası eski kara kutusu açıkladı"
     }
   ]
 }
