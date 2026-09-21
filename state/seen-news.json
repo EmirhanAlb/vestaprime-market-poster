@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "f7e33f551f774c9b",
+      "ts": 1789977785401,
+      "baslik": "Craneware hisseleri siber saldırı sonrası %23 düştü"
+    },
+    {
       "anahtar": "ef19105d08b6c14b",
       "ts": 1789975355459,
       "baslik": "Yurt dışı ÜFE ağustosta aylık yüzde 3,61, yıllık yüzde 32,60 arttı"
@@ -339,11 +344,6 @@
       "anahtar": "f406ad1006573d91",
       "ts": 1789382678193,
       "baslik": "Değerli ve baz metallerde fiyatlar Fed ve yapay zeka baskısıyla düştü"
-    },
-    {
-      "anahtar": "80e2c2288de50aec",
-      "ts": 1789370585184,
-      "baslik": "Avrupa hisseleri yapay zeka duraklaması ve Fed ile geriledi"
     }
   ]
 }
