@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "6dc9596e44693efe",
+      "ts": 1790061117137,
+      "baslik": "Tüketici güveni eylülde arttı"
+    },
+    {
       "anahtar": "685a6ebde35aa44b",
       "ts": 1789983224705,
       "baslik": "Sterlin bugün: Petrol ve Fed faiz artırımı beklentileri dolara destek verirken sterlin geriledi"
@@ -314,46 +319,6 @@
       "anahtar": "a1b79f3c39d76024",
       "ts": 1789456406643,
       "baslik": "USD/TRY 48,66’ya çıktı: Fed kararı ve 107 dolarlık petrol lirayı kıskaca alıyor"
-    },
-    {
-      "anahtar": "a9eb47f282b968ef",
-      "ts": 1789452190606,
-      "baslik": "ABD 10 yıllık tahvil faizi %5’in üzerine çıktı, 2007’den beri rekor"
-    },
-    {
-      "anahtar": "5bfaa9c6334bb842",
-      "ts": 1789439459114,
-      "baslik": "Çin’de sanayi üretimi Ağustos’ta beklenenden fazla arttı"
-    },
-    {
-      "anahtar": "61f84aeac4710d72",
-      "ts": 1789434639917,
-      "baslik": "Petrol fiyatları Husiler Suudi Arabistan’a saldırırken yükseldi"
-    },
-    {
-      "anahtar": "821e7f43df5f63ce",
-      "ts": 1789423764149,
-      "baslik": "Kanada 10 yıllık tahvil getirisi enflasyon ve petrol ile yükseldi"
-    },
-    {
-      "anahtar": "a5c245e4c8e3aed3",
-      "ts": 1789416503239,
-      "baslik": "Karadeniz’deki gerilim azalma umutları buğday fiyatlarını düşürdü"
-    },
-    {
-      "anahtar": "9f46fade2c97faf3",
-      "ts": 1789400796063,
-      "baslik": "Kanada enflasyonu yüzde 3’te sabit kaldı, petrol fiyatları merkez bankası için risk oluşturuyor"
-    },
-    {
-      "anahtar": "ef90a073cbbf6367",
-      "ts": 1789392931588,
-      "baslik": "Fed öncesi piyasa diken üstünde: Petrol yükseldi, altın ve gümüş düştü"
-    },
-    {
-      "anahtar": "f406ad1006573d91",
-      "ts": 1789382678193,
-      "baslik": "Değerli ve baz metallerde fiyatlar Fed ve yapay zeka baskısıyla düştü"
     }
   ]
 }
