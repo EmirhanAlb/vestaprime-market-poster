@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e33e17bf588eb720",
+      "ts": 1790062942655,
+      "baslik": "Fed sonrası Ekim toplantısında faiz artışı olasılığı %62’ye çıktı"
+    },
+    {
       "anahtar": "6dc9596e44693efe",
       "ts": 1790061117137,
       "baslik": "Tüketici güveni eylülde arttı"
@@ -309,16 +314,6 @@
       "anahtar": "c8aac0f38e6bb60a",
       "ts": 1789458821814,
       "baslik": "İngiltere’de istihdam Ağustos’ta 26.000 azaldı, BOE kararı öncesi işgücü piyasası zayıflıyor"
-    },
-    {
-      "anahtar": "e5f8acfb89fd190b",
-      "ts": 1789457625596,
-      "baslik": "Fed toplantısı öncesi Avrupa hisseleri geriledi"
-    },
-    {
-      "anahtar": "a1b79f3c39d76024",
-      "ts": 1789456406643,
-      "baslik": "USD/TRY 48,66’ya çıktı: Fed kararı ve 107 dolarlık petrol lirayı kıskaca alıyor"
     }
   ]
 }
