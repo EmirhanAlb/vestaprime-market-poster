@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "f9c2bcdd11c16411",
+      "ts": 1790075039081,
+      "baslik": "ECB, stablecoin rezervleri için banka mevduat şartına karşı çıktı"
+    },
+    {
       "anahtar": "e33e17bf588eb720",
       "ts": 1790062942655,
       "baslik": "Fed sonrası Ekim toplantısında faiz artışı olasılığı %62’ye çıktı"
@@ -294,26 +299,6 @@
       "anahtar": "0b95a2c3571d8dca",
       "ts": 1789470299803,
       "baslik": "Hindistan’da işsizlik oranı Ağustos’ta %5’e geriledi"
-    },
-    {
-      "anahtar": "5ec1169f423fcbca",
-      "ts": 1789465457412,
-      "baslik": "Fed faiz artışı beklentisi %92’ye çıktı: Dolar yükseliyor, avro ve yen geriliyor"
-    },
-    {
-      "anahtar": "4cb0b875e00b63fa",
-      "ts": 1789464257268,
-      "baslik": "Morgan Stanley Fed ve ECB için faiz tahminlerini yükseltti"
-    },
-    {
-      "anahtar": "5efa0c60dd07e960",
-      "ts": 1789460022149,
-      "baslik": "Fransa’da enflasyon Ağustos’ta %2,6’ya yükseldi"
-    },
-    {
-      "anahtar": "c8aac0f38e6bb60a",
-      "ts": 1789458821814,
-      "baslik": "İngiltere’de istihdam Ağustos’ta 26.000 azaldı, BOE kararı öncesi işgücü piyasası zayıflıyor"
     }
   ]
 }
