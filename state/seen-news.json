@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5c808437a07c1ac6",
+      "ts": 1790101067421,
+      "baslik": "ABD Hazine tahvil faizleri faiz artırımı beklentileriyle yükseldi"
+    },
+    {
       "anahtar": "923ccded372c664d",
       "ts": 1790081084777,
       "baslik": "BofA jeopolitik gerilim nedeniyle Brent petrol tahminini yükseltti"
@@ -289,16 +294,6 @@
       "anahtar": "1f0ca66aabe104ee",
       "ts": 1789507744864,
       "baslik": "TCMB rezervleri 178,7 milyar dolara geriledi: 5,5 milyar dolarlık düşüş"
-    },
-    {
-      "anahtar": "ec0909b0bb815865",
-      "ts": 1789479381575,
-      "baslik": "Körfez borsaları Husi saldırısıyla gerilim tırmanınca düştü"
-    },
-    {
-      "anahtar": "cd6ff1f6a34c8d15",
-      "ts": 1789478157725,
-      "baslik": "Brezilya perakende satışları Temmuz’da %0,8 düştü, tahminleri karşılamadı"
     }
   ]
 }
