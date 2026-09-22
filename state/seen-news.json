@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "923ccded372c664d",
+      "ts": 1790081084777,
+      "baslik": "BofA jeopolitik gerilim nedeniyle Brent petrol tahminini yükseltti"
+    },
+    {
       "anahtar": "f9c2bcdd11c16411",
       "ts": 1790075039081,
       "baslik": "ECB, stablecoin rezervleri için banka mevduat şartına karşı çıktı"
@@ -294,11 +299,6 @@
       "anahtar": "cd6ff1f6a34c8d15",
       "ts": 1789478157725,
       "baslik": "Brezilya perakende satışları Temmuz’da %0,8 düştü, tahminleri karşılamadı"
-    },
-    {
-      "anahtar": "0b95a2c3571d8dca",
-      "ts": 1789470299803,
-      "baslik": "Hindistan’da işsizlik oranı Ağustos’ta %5’e geriledi"
     }
   ]
 }
