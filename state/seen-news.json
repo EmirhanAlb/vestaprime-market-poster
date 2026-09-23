@@ -1,6 +1,21 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "d22cd5b54c7f921d",
+      "ts": 1790153598326,
+      "baslik": "Endonezya Merkez Bankası faiz oranını üçüncü kez sabit tuttu"
+    },
+    {
+      "anahtar": "6d29ec6d88125ca1",
+      "ts": 1790153598326,
+      "baslik": "İngiltere’de iş büyümesi yavaşladı, enflasyon baskısı arttı"
+    },
+    {
+      "anahtar": "8eda803fcded6dcc",
+      "ts": 1790152998265,
+      "baslik": "TCMB açıkladı: Enflasyon beklentileri eylülde nasıl değişti?"
+    },
+    {
       "anahtar": "7d5fa30cd6dd5690",
       "ts": 1790148756688,
       "baslik": "Merkez Bankası duyurdu: Vatandaşın gözü kapalı aldığı yatırım aracı belli oldu"
@@ -284,26 +299,6 @@
       "anahtar": "165263061deee72f",
       "ts": 1789550036223,
       "baslik": "Hürmüz Boğazı'ndaki kriz AB'nin fosil yakıt faturasını 90 milyar avro artırdı"
-    },
-    {
-      "anahtar": "d4081f2ee8b40eb7",
-      "ts": 1789547612367,
-      "baslik": "AB gaz fiyatları düşük rezervler ve ECB faiz artışlarıyla yükseldi"
-    },
-    {
-      "anahtar": "1a4c2b421681be12",
-      "ts": 1789546411989,
-      "baslik": "TCMB Başkanı Fatih Karahan açıkladı: Enerji şoklarının enflasyona etkisi uzayabilir"
-    },
-    {
-      "anahtar": "09d5fc714f5123e6",
-      "ts": 1789545811771,
-      "baslik": "Yakıt maliyetleri İngiltere enflasyonunu %3,1’e taşıdı, İngiltere Merkez Bankası odakta"
-    },
-    {
-      "anahtar": "cd47fee3b2fd1aef",
-      "ts": 1789544588007,
-      "baslik": "ABD 10 yıllık tahvil faizi Fed toplantısı öncesi yüzde 5’in altına geriledi"
     }
   ]
 }
