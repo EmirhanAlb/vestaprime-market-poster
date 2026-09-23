@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "7d5fa30cd6dd5690",
+      "ts": 1790148756688,
+      "baslik": "Merkez Bankası duyurdu: Vatandaşın gözü kapalı aldığı yatırım aracı belli oldu"
+    },
+    {
+      "anahtar": "4fc3c9b3d272b87d",
+      "ts": 1790147557036,
+      "baslik": "İran savaşı petrol taşımacılığını vurdu: Süper tanker kiraları 40 kat arttı"
+    },
+    {
       "anahtar": "9a7ddc3afde30c2b",
       "ts": 1790141518804,
       "baslik": "Singapur TÜFE Ağustos’ta beklendiği gibi yükseldi, çekirdek enflasyon 2 yılın zirvesinde"
@@ -294,16 +304,6 @@
       "anahtar": "cd47fee3b2fd1aef",
       "ts": 1789544588007,
       "baslik": "ABD 10 yıllık tahvil faizi Fed toplantısı öncesi yüzde 5’in altına geriledi"
-    },
-    {
-      "anahtar": "0419d3ae3175ce42",
-      "ts": 1789543387046,
-      "baslik": "Fed kararı beklenirken Asya hisseleri yükseldi, petrol rallisi duraksadı"
-    },
-    {
-      "anahtar": "88926709e3457aae",
-      "ts": 1789541563111,
-      "baslik": "Gazze'de İsrail saldırısında hasar gören bina çöktü! Can kaybı ve yaralılar var"
     }
   ]
 }
