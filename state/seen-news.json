@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "09af6452e8474089",
+      "ts": 1790170523023,
+      "baslik": "Hürmüz'de gemi vuruldu: Petrol yeniden yükseldi"
+    },
+    {
       "anahtar": "5ca8752295b131cc",
       "ts": 1790159640280,
       "baslik": "Avro Bölgesi ekonomisindeki direnç ECB'ye yönelik faiz artışı beklentilerini artırdı"
@@ -299,11 +304,6 @@
       "anahtar": "dfcd869451942a9f",
       "ts": 1789567551752,
       "baslik": "ABD’de ithalat fiyatları yükseldi, perakende satışlar Ağustos’ta toparlandı"
-    },
-    {
-      "anahtar": "15750b6f16eede62",
-      "ts": 1789556069530,
-      "baslik": "Bitcoin, Clarity oylamasının ardından 76.000 dolara geriledi; Fed kararı odakta"
     }
   ]
 }
