@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5ca8752295b131cc",
+      "ts": 1790159640280,
+      "baslik": "Avro Bölgesi ekonomisindeki direnç ECB'ye yönelik faiz artışı beklentilerini artırdı"
+    },
+    {
+      "anahtar": "d6b7f2534260b76d",
+      "ts": 1790159640280,
+      "baslik": "Son dakika... Mansur Yavaş, CHP'den istifa etti"
+    },
+    {
       "anahtar": "d22cd5b54c7f921d",
       "ts": 1790153598326,
       "baslik": "Endonezya Merkez Bankası faiz oranını üçüncü kez sabit tuttu"
@@ -294,11 +304,6 @@
       "anahtar": "15750b6f16eede62",
       "ts": 1789556069530,
       "baslik": "Bitcoin, Clarity oylamasının ardından 76.000 dolara geriledi; Fed kararı odakta"
-    },
-    {
-      "anahtar": "165263061deee72f",
-      "ts": 1789550036223,
-      "baslik": "Hürmüz Boğazı'ndaki kriz AB'nin fosil yakıt faturasını 90 milyar avro artırdı"
     }
   ]
 }
