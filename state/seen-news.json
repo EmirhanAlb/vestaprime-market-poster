@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "0b477b4d23c50b19",
+      "ts": 1790248441771,
+      "baslik": "Dolar endeksi Fed beklentileriyle yükseldi: 2 ayın zirvesini gördü"
+    },
+    {
+      "anahtar": "66538ac8c4161013",
+      "ts": 1790246041807,
+      "baslik": "İngiltere Merkez Bankası’ndan Dhingra: İran savaşının enflasyon etkisi kışın netleşecek"
+    },
+    {
       "anahtar": "abcd811f7ba7dbb5",
       "ts": 1790240005688,
       "baslik": "Norveç merkez bankası faiz oranını %4,50’ye yükseltti"
@@ -229,21 +239,6 @@
       "anahtar": "14a3344fc3e635dd",
       "ts": 1789644928142,
       "baslik": "FTSE 100 yükseldi: BoE faiz sabit tuttu, Fed artışı sindirildi"
-    },
-    {
-      "anahtar": "523319f4ca8783e4",
-      "ts": 1789638246944,
-      "baslik": "Euro Bölgesi'nde yıllık enflasyon ağustosta yüzde 3,2'ye yükseldi"
-    },
-    {
-      "anahtar": "9bf1672f39946673",
-      "ts": 1789636447877,
-      "baslik": "Fed’in faiz artışına rağmen bu enerji hissesi Açılış Öncesi %34 yükseldi"
-    },
-    {
-      "anahtar": "bae3fd93206f75c4",
-      "ts": 1789636447877,
-      "baslik": "Raiffeisen hisseleri Rusya yaptırımları iddialarıyla çakıldı"
     }
   ]
 }
