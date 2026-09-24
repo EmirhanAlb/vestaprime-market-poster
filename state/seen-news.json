@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "abcd811f7ba7dbb5",
+      "ts": 1790240005688,
+      "baslik": "Norveç merkez bankası faiz oranını %4,50’ye yükseltti"
+    },
+    {
       "anahtar": "d64e596dad83beb4",
       "ts": 1790198929460,
       "baslik": "Karadeniz ateşkes umutları Chicago buğday fiyatlarını düşürdü"
@@ -239,31 +244,6 @@
       "anahtar": "bae3fd93206f75c4",
       "ts": 1789636447877,
       "baslik": "Raiffeisen hisseleri Rusya yaptırımları iddialarıyla çakıldı"
-    },
-    {
-      "anahtar": "4d77633799ab8091",
-      "ts": 1789634622136,
-      "baslik": "TCMB repo musluğunu açtı: İhale 300 milyar TL'ye çıktı"
-    },
-    {
-      "anahtar": "8c3808bd826bee43",
-      "ts": 1789634021486,
-      "baslik": "Brezilya Merkez Bankası faiz indirdi: Selic yüzde 13,75’e çekildi"
-    },
-    {
-      "anahtar": "b45df9b875883950",
-      "ts": 1789630405264,
-      "baslik": "Avrupa hisseleri Fed sonrası yükseldi, Ortadoğu barış sinyalleri"
-    },
-    {
-      "anahtar": "f71bb2a8adc82917",
-      "ts": 1789628588784,
-      "baslik": "TCMB'den TL likidite yönetimine ilişkin açıklama: Yeni adımları açıkladı"
-    },
-    {
-      "anahtar": "33ab93bdb117f3e9",
-      "ts": 1789613473420,
-      "baslik": "Fed yeniden faiz artırdı - yapay zeka seçimi bir sigortacı kazanmaya devam ediyor"
     }
   ]
 }
