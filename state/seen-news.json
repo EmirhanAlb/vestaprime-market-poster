@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "2e26f1d88e042537",
+      "ts": 1790255718353,
+      "baslik": "Kanada perakende satışları Temmuz’da düştü, tüketici gücüne dair endişeler arttı"
+    },
+    {
       "anahtar": "0b477b4d23c50b19",
       "ts": 1790248441771,
       "baslik": "Dolar endeksi Fed beklentileriyle yükseldi: 2 ayın zirvesini gördü"
@@ -219,26 +224,6 @@
       "anahtar": "0f12a1167fb9eba2",
       "ts": 1789651575020,
       "baslik": "GFL hisseleri özel sermaye ihale savaşı haberiyle fırladı"
-    },
-    {
-      "anahtar": "e16f02bfe19e00e4",
-      "ts": 1789647952991,
-      "baslik": "Merkez Bankası rezervleri 5 milyar 523 milyon dolar azaldı"
-    },
-    {
-      "anahtar": "caa8c4a0892e80f5",
-      "ts": 1789647328100,
-      "baslik": "TSX vadeli işlemleri Fed’in enflasyonla mücadele taahhüdüyle yükseldi"
-    },
-    {
-      "anahtar": "72f6462a3b2ffec4",
-      "ts": 1789646128541,
-      "baslik": "İngiltere Merkez Bankası faizi sabit tuttu, gelecekteki artışlara işaret etti"
-    },
-    {
-      "anahtar": "14a3344fc3e635dd",
-      "ts": 1789644928142,
-      "baslik": "FTSE 100 yükseldi: BoE faiz sabit tuttu, Fed artışı sindirildi"
     }
   ]
 }
