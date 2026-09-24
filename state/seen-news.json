@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "ac4f9ba6fc0a8632",
+      "ts": 1790258744257,
+      "baslik": "Brezilya merkez bankası enflasyonu hedefe yakın görüyor, büyüme tahminini düşürdü"
+    },
+    {
+      "anahtar": "f3c1ebac4cc3619b",
+      "ts": 1790258744257,
+      "baslik": "Meksika’da enflasyon Eylül başında yüzde 3,42’ye yükseldi"
+    },
+    {
       "anahtar": "2e26f1d88e042537",
       "ts": 1790255718353,
       "baslik": "Kanada perakende satışları Temmuz’da düştü, tüketici gücüne dair endişeler arttı"
@@ -219,11 +229,6 @@
       "anahtar": "1dc189a6e3a3c331",
       "ts": 1789679365478,
       "baslik": "Fed Trump'i takmadı, faizi artırdı"
-    },
-    {
-      "anahtar": "0f12a1167fb9eba2",
-      "ts": 1789651575020,
-      "baslik": "GFL hisseleri özel sermaye ihale savaşı haberiyle fırladı"
     }
   ]
 }
