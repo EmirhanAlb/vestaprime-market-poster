@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "3d4fcb4cdac6f057",
+      "ts": 1790311899841,
+      "baslik": "Petrol geriledi: Piyasalar ateşkes ihtimali ile saldırı riskini tartıyor"
+    },
+    {
       "anahtar": "5f91798c015121ac",
       "ts": 1790298023363,
       "baslik": "Petrol ABD-İran Hürmüz anlaşması haberleriyle düştü"
@@ -219,11 +224,6 @@
       "anahtar": "bd4ff5113ce1324b",
       "ts": 1789709004327,
       "baslik": "Asya dövizleri karışık, BOJ faiz artışına rağmen yen düştü"
-    },
-    {
-      "anahtar": "91775e6b5a3c38a4",
-      "ts": 1789701733310,
-      "baslik": "Asya borsaları petrol gerilemesiyle yükseldi, BOJ odakta"
     }
   ]
 }
