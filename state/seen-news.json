@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "da970243fbb6c900",
+      "ts": 1790320361588,
+      "baslik": "Almanya’da tüketici güveni enerji maliyetleri nedeniyle beklentiden fazla düştü"
+    },
+    {
       "anahtar": "3d4fcb4cdac6f057",
       "ts": 1790311899841,
       "baslik": "Petrol geriledi: Piyasalar ateşkes ihtimali ile saldırı riskini tartıyor"
@@ -204,26 +209,6 @@
       "anahtar": "0fbd56ee6deffb40",
       "ts": 1789717499381,
       "baslik": "FTSE 100: Hürmüz krizi hisse senetlerini düşürdü"
-    },
-    {
-      "anahtar": "0dbb652a59acb56d",
-      "ts": 1789715076458,
-      "baslik": "Bitcoin %2 geriledi: Fed artışı ve Clarity Act çifte baskı yaratıyor"
-    },
-    {
-      "anahtar": "a8c935aa14dd91c5",
-      "ts": 1789714476497,
-      "baslik": "Almanya'da ÜFE ağustosta %4,6 arttı"
-    },
-    {
-      "anahtar": "bbe0da7c8d302090",
-      "ts": 1789713821321,
-      "baslik": "Ülkenin başbakanı duyurdu, Hürmüz için kritik karar! 'Bölgeye asker göndermeyeceğiz'"
-    },
-    {
-      "anahtar": "bd4ff5113ce1324b",
-      "ts": 1789709004327,
-      "baslik": "Asya dövizleri karışık, BOJ faiz artışına rağmen yen düştü"
     }
   ]
 }
