@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5f91798c015121ac",
+      "ts": 1790298023363,
+      "baslik": "Petrol ABD-İran Hürmüz anlaşması haberleriyle düştü"
+    },
+    {
       "anahtar": "ac4f9ba6fc0a8632",
       "ts": 1790258744257,
       "baslik": "Brezilya merkez bankası enflasyonu hedefe yakın görüyor, büyüme tahminini düşürdü"
@@ -219,16 +224,6 @@
       "anahtar": "91775e6b5a3c38a4",
       "ts": 1789701733310,
       "baslik": "Asya borsaları petrol gerilemesiyle yükseldi, BOJ odakta"
-    },
-    {
-      "anahtar": "5cf7ef9d9f7a065f",
-      "ts": 1789689635095,
-      "baslik": "Japonya’da TÜFE Ağustos’ta sabit, çekirdek enflasyon düştü"
-    },
-    {
-      "anahtar": "1dc189a6e3a3c331",
-      "ts": 1789679365478,
-      "baslik": "Fed Trump'i takmadı, faizi artırdı"
     }
   ]
 }
