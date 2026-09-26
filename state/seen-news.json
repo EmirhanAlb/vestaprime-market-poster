@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e47db8249fac0713",
+      "ts": 1790450242083,
+      "baslik": "SON DAKİKA: Amine Cansu Çelik partisinden istifa etti"
+    },
+    {
       "anahtar": "69c75290c536745c",
       "ts": 1790410378758,
       "baslik": "Hürmüz krizinde petrol ve gaz arzı kesintisi yüzde 14'ü buldu"
@@ -179,11 +184,6 @@
       "anahtar": "55cdc9bfe79960c1",
       "ts": 1789892672254,
       "baslik": "Fed rüzgarı emtia piyasasını vurdu! Altın geriledi, petrol destek buldu"
-    },
-    {
-      "anahtar": "b87cbd7965926190",
-      "ts": 1789833486171,
-      "baslik": "Fed arz şokuna rağmen neden faiz artırdı?"
     }
   ]
 }
