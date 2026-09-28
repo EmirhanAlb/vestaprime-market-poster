@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "fe2aeb64fc72695f",
+      "ts": 1790584904155,
+      "baslik": "Alman tahvil faizleri durdu, yatırımcılar enerji enflasyonunu tarttı"
+    },
+    {
       "anahtar": "447dab2a03ce6b19",
       "ts": 1790560142535,
       "baslik": "Altın 4.300 doların altına geriledi: Petrol ve Fed baskısı sürüyor"
@@ -174,16 +179,6 @@
       "anahtar": "1a2928a12cfdfcac",
       "ts": 1789980794268,
       "baslik": "Avrupa gazı düştü; ECB enflasyona daha hızlı etki uyarısı yaptı"
-    },
-    {
-      "anahtar": "f7e33f551f774c9b",
-      "ts": 1789977785401,
-      "baslik": "Craneware hisseleri siber saldırı sonrası %23 düştü"
-    },
-    {
-      "anahtar": "ef19105d08b6c14b",
-      "ts": 1789975355459,
-      "baslik": "Yurt dışı ÜFE ağustosta aylık yüzde 3,61, yıllık yüzde 32,60 arttı"
     }
   ]
 }
