@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "d87e60c1595a7f37",
+      "ts": 1790594601270,
+      "baslik": "Avrupa doğal gazı Ortadoğu görüşmeleri çıkmaza girince %3 sıçradı"
+    },
+    {
+      "anahtar": "2798fe59a7c64760",
+      "ts": 1790593401718,
+      "baslik": "Petrol fiyatları sıçradı: Bitcoin için savaş baskısı artıyor"
+    },
+    {
       "anahtar": "fe2aeb64fc72695f",
       "ts": 1790584904155,
       "baslik": "Alman tahvil faizleri durdu, yatırımcılar enerji enflasyonunu tarttı"
@@ -169,16 +179,6 @@
       "anahtar": "6dc9596e44693efe",
       "ts": 1790061117137,
       "baslik": "Tüketici güveni eylülde arttı"
-    },
-    {
-      "anahtar": "685a6ebde35aa44b",
-      "ts": 1789983224705,
-      "baslik": "Sterlin bugün: Petrol ve Fed faiz artırımı beklentileri dolara destek verirken sterlin geriledi"
-    },
-    {
-      "anahtar": "1a2928a12cfdfcac",
-      "ts": 1789980794268,
-      "baslik": "Avrupa gazı düştü; ECB enflasyona daha hızlı etki uyarısı yaptı"
     }
   ]
 }
