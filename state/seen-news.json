@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "447dab2a03ce6b19",
+      "ts": 1790560142535,
+      "baslik": "Altın 4.300 doların altına geriledi: Petrol ve Fed baskısı sürüyor"
+    },
+    {
+      "anahtar": "5e17e246be5fe69d",
+      "ts": 1790560142535,
+      "baslik": "İran ve ABD Hürmüz konusunda anlaşamadı, petrol yükseldi"
+    },
+    {
       "anahtar": "e47db8249fac0713",
       "ts": 1790450242083,
       "baslik": "SON DAKİKA: Amine Cansu Çelik partisinden istifa etti"
@@ -174,16 +184,6 @@
       "anahtar": "ef19105d08b6c14b",
       "ts": 1789975355459,
       "baslik": "Yurt dışı ÜFE ağustosta aylık yüzde 3,61, yıllık yüzde 32,60 arttı"
-    },
-    {
-      "anahtar": "b44df31ecacbe892",
-      "ts": 1789899297197,
-      "baslik": "Suudi Arabistan ve Körfez borsaları Husi saldırıları sonrası düştü"
-    },
-    {
-      "anahtar": "55cdc9bfe79960c1",
-      "ts": 1789892672254,
-      "baslik": "Fed rüzgarı emtia piyasasını vurdu! Altın geriledi, petrol destek buldu"
     }
   ]
 }
