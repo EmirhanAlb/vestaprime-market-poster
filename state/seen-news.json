@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c0f652ab6b402f7f",
+      "ts": 1790710681989,
+      "baslik": "Mısır Cumhurbaşkanı Sisi, Süveyş'teki zararın boyutunu açıkladı"
+    },
+    {
       "anahtar": "d0c6ec09b85de888",
       "ts": 1790687063983,
       "baslik": "İngiltere'de akaryakıt krizi alarmı: Petrol stoku 43 güne düştü, kotalı satış dönemi kapıda"
@@ -214,11 +219,6 @@
       "anahtar": "bcb2d0cc72c478e8",
       "ts": 1790112525941,
       "baslik": "TCMB bir ödeme kuruluşunun faaliyet iznini iptal etti"
-    },
-    {
-      "anahtar": "5c808437a07c1ac6",
-      "ts": 1790101067421,
-      "baslik": "ABD Hazine tahvil faizleri faiz artırımı beklentileriyle yükseldi"
     }
   ]
 }
