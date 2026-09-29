@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "b4765ec16b589160",
+      "ts": 1790681034788,
+      "baslik": "Petrol geriledi, piyasalar nefes aldı: Gözler ABD istihdam verisinde"
+    },
+    {
       "anahtar": "76e6ddfdb9ac2ec8",
       "ts": 1790675593916,
       "baslik": "İngiltere Merkez Bankası verileri açıkladı: Bireysel kredi kullanımı fırladı, ipotek talebi düştü"
@@ -209,11 +214,6 @@
       "anahtar": "923ccded372c664d",
       "ts": 1790081084777,
       "baslik": "BofA jeopolitik gerilim nedeniyle Brent petrol tahminini yükseltti"
-    },
-    {
-      "anahtar": "f9c2bcdd11c16411",
-      "ts": 1790075039081,
-      "baslik": "ECB, stablecoin rezervleri için banka mevduat şartına karşı çıktı"
     }
   ]
 }
