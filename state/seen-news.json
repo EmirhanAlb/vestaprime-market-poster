@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "d0c6ec09b85de888",
+      "ts": 1790687063983,
+      "baslik": "İngiltere'de akaryakıt krizi alarmı: Petrol stoku 43 güne düştü, kotalı satış dönemi kapıda"
+    },
+    {
       "anahtar": "63a54e73bd9186e2",
       "ts": 1790685845559,
       "baslik": "Brezilya’da kredi temerrütleri Ağustos’ta rekor kırdı"
@@ -214,11 +219,6 @@
       "anahtar": "5c808437a07c1ac6",
       "ts": 1790101067421,
       "baslik": "ABD Hazine tahvil faizleri faiz artırımı beklentileriyle yükseldi"
-    },
-    {
-      "anahtar": "923ccded372c664d",
-      "ts": 1790081084777,
-      "baslik": "BofA jeopolitik gerilim nedeniyle Brent petrol tahminini yükseltti"
     }
   ]
 }
