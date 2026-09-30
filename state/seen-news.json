@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "019891b19f43db8c",
+      "ts": 1790776548625,
+      "baslik": "Fed stres testi değişikliklerini şeffaflık için onayladı"
+    },
+    {
+      "anahtar": "9dab93b16b48d796",
+      "ts": 1790775347656,
+      "baslik": "ABD’den gelen enflasyon verisi Bitcoin’i yukarı taşıdı: BTC 85 bin dolara fırladı"
+    },
+    {
       "anahtar": "4f566872a052be17",
       "ts": 1790763871308,
       "baslik": "Yunanistan’da perakende satış hacmi Temmuz’da %5,2 arttı"
@@ -214,21 +224,6 @@
       "anahtar": "d64e596dad83beb4",
       "ts": 1790198929460,
       "baslik": "Karadeniz ateşkes umutları Chicago buğday fiyatlarını düşürdü"
-    },
-    {
-      "anahtar": "09af6452e8474089",
-      "ts": 1790170523023,
-      "baslik": "Hürmüz'de gemi vuruldu: Petrol yeniden yükseldi"
-    },
-    {
-      "anahtar": "5ca8752295b131cc",
-      "ts": 1790159640280,
-      "baslik": "Avro Bölgesi ekonomisindeki direnç ECB'ye yönelik faiz artışı beklentilerini artırdı"
-    },
-    {
-      "anahtar": "d6b7f2534260b76d",
-      "ts": 1790159640280,
-      "baslik": "Son dakika... Mansur Yavaş, CHP'den istifa etti"
     }
   ]
 }
