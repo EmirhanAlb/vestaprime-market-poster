@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "6f7a8fb3ae13504f",
+      "ts": 1790762049897,
+      "baslik": "Polonya’da enflasyon Eylül’de %4,0’a yükseldi"
+    },
+    {
+      "anahtar": "405f0b71add9b649",
+      "ts": 1790759653956,
+      "baslik": "İtalya’da tüketici güveni Eylül’de düştü, iş dünyası morali zayıfladı"
+    },
+    {
       "anahtar": "436d712e512ae31f",
       "ts": 1790756636004,
       "baslik": "Fon krizinin Borsa İstanbul’a faturası: İşlem hacmi yüzde 29 düştü"
@@ -214,21 +224,6 @@
       "anahtar": "d6b7f2534260b76d",
       "ts": 1790159640280,
       "baslik": "Son dakika... Mansur Yavaş, CHP'den istifa etti"
-    },
-    {
-      "anahtar": "d22cd5b54c7f921d",
-      "ts": 1790153598326,
-      "baslik": "Endonezya Merkez Bankası faiz oranını üçüncü kez sabit tuttu"
-    },
-    {
-      "anahtar": "6d29ec6d88125ca1",
-      "ts": 1790153598326,
-      "baslik": "İngiltere’de iş büyümesi yavaşladı, enflasyon baskısı arttı"
-    },
-    {
-      "anahtar": "8eda803fcded6dcc",
-      "ts": 1790152998265,
-      "baslik": "TCMB açıkladı: Enflasyon beklentileri eylülde nasıl değişti?"
     }
   ]
 }
