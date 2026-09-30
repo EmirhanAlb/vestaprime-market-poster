@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "c7427b0885c93ebf",
+      "ts": 1790736081190,
+      "baslik": "Piyasalar dolar baskısıyla geriledi - ancak bu güneş enerjisi hissesi bugün %10,84 sıçradı"
+    },
+    {
       "anahtar": "c0f652ab6b402f7f",
       "ts": 1790710681989,
       "baslik": "Mısır Cumhurbaşkanı Sisi, Süveyş'teki zararın boyutunu açıkladı"
@@ -214,11 +219,6 @@
       "anahtar": "ffad21a7bc931e37",
       "ts": 1790133061595,
       "baslik": "Petrol düşüşü Fed faiz artışı endişelerini azaltırken altın yükseldi, İran görüşmeleri odakta"
-    },
-    {
-      "anahtar": "bcb2d0cc72c478e8",
-      "ts": 1790112525941,
-      "baslik": "TCMB bir ödeme kuruluşunun faaliyet iznini iptal etti"
     }
   ]
 }
