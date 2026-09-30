@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "85a56db5d84e256d",
+      "ts": 1790738504781,
+      "baslik": "Avustralya’da TÜFE enflasyonu Ağustos’ta %4’e yükseldi, tahminlerin altında kaldı"
+    },
+    {
       "anahtar": "c7427b0885c93ebf",
       "ts": 1790736081190,
       "baslik": "Piyasalar dolar baskısıyla geriledi - ancak bu güneş enerjisi hissesi bugün %10,84 sıçradı"
@@ -214,11 +219,6 @@
       "anahtar": "7e649d26b57f7939",
       "ts": 1790139100080,
       "baslik": "Yapay zeka seçimi bu madencilik hissesi 120 milyon dolarlık bakır anlaşmasıyla %14,5 sıçradı"
-    },
-    {
-      "anahtar": "ffad21a7bc931e37",
-      "ts": 1790133061595,
-      "baslik": "Petrol düşüşü Fed faiz artışı endişelerini azaltırken altın yükseldi, İran görüşmeleri odakta"
     }
   ]
 }
