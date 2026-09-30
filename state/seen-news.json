@@ -1,6 +1,16 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "75009f2709b065b0",
+      "ts": 1790752983916,
+      "baslik": "Dış ticaret açığı ağustosta yüzde 22,3 arttı"
+    },
+    {
+      "anahtar": "e0f1cf471c16bd42",
+      "ts": 1790752983916,
+      "baslik": "Türkiye'de işsizlik oranı ağustosta bir önceki aya göre 0,3 puan azaldı"
+    },
+    {
       "anahtar": "f20075dd5176efa1",
       "ts": 1790749958035,
       "baslik": "Asya hisseleri ABD PCE enflasyon verisi öncesinde yükseldi"
@@ -214,11 +224,6 @@
       "anahtar": "7d5fa30cd6dd5690",
       "ts": 1790148756688,
       "baslik": "Merkez Bankası duyurdu: Vatandaşın gözü kapalı aldığı yatırım aracı belli oldu"
-    },
-    {
-      "anahtar": "4fc3c9b3d272b87d",
-      "ts": 1790147557036,
-      "baslik": "İran savaşı petrol taşımacılığını vurdu: Süper tanker kiraları 40 kat arttı"
     }
   ]
 }
