@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "e730cadc742a2d06",
+      "ts": 1790827916804,
+      "baslik": "Asya para birimleri karışık seyretti, yen BOJ sinyalleriyle geriledi"
+    },
+    {
       "anahtar": "7a3a8bb6ecebb594",
       "ts": 1790798308132,
       "baslik": "Kolombiya merkez bankası faiz oranını %12,25’e yükseltti"
@@ -234,11 +239,6 @@
       "anahtar": "abcd811f7ba7dbb5",
       "ts": 1790240005688,
       "baslik": "Norveç merkez bankası faiz oranını %4,50’ye yükseltti"
-    },
-    {
-      "anahtar": "d64e596dad83beb4",
-      "ts": 1790198929460,
-      "baslik": "Karadeniz ateşkes umutları Chicago buğday fiyatlarını düşürdü"
     }
   ]
 }
