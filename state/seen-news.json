@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "076f0b8815f89aed",
+      "ts": 1790846055670,
+      "baslik": "Kalıcı oturma izninde sıkılaştırma kararı: Başvuru harcı 20 kat arttı!"
+    },
+    {
       "anahtar": "dbbe2bbd038da81a",
       "ts": 1790843629256,
       "baslik": "İtalya’da işsizlik oranı Ağustos’ta %6,2’ye yükseldi"
@@ -254,11 +259,6 @@
       "anahtar": "66538ac8c4161013",
       "ts": 1790246041807,
       "baslik": "İngiltere Merkez Bankası’ndan Dhingra: İran savaşının enflasyon etkisi kışın netleşecek"
-    },
-    {
-      "anahtar": "abcd811f7ba7dbb5",
-      "ts": 1790240005688,
-      "baslik": "Norveç merkez bankası faiz oranını %4,50’ye yükseltti"
     }
   ]
 }
