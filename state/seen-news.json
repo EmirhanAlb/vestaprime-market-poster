@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "63f6508776868577",
+      "ts": 1790922160596,
+      "baslik": "ABD imalat PMI yükseldi: Fed’in faiz patikası nasıl şekillenecek?"
+    },
+    {
       "anahtar": "0efacf47b714221e",
       "ts": 1790898625139,
       "baslik": "Güney Kore’de TÜFE enflasyonu Eylül’de hafif geriledi"
@@ -244,16 +249,6 @@
       "anahtar": "da970243fbb6c900",
       "ts": 1790320361588,
       "baslik": "Almanya’da tüketici güveni enerji maliyetleri nedeniyle beklentiden fazla düştü"
-    },
-    {
-      "anahtar": "3d4fcb4cdac6f057",
-      "ts": 1790311899841,
-      "baslik": "Petrol geriledi: Piyasalar ateşkes ihtimali ile saldırı riskini tartıyor"
-    },
-    {
-      "anahtar": "5f91798c015121ac",
-      "ts": 1790298023363,
-      "baslik": "Petrol ABD-İran Hürmüz anlaşması haberleriyle düştü"
     }
   ]
 }
