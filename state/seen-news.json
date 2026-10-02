@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "1cf17aad1f282004",
+      "ts": 1790934236754,
+      "baslik": "Euro Bölgesi'nde yıllık enflasyon eylülde yüzde 3,8'e yükseldi"
+    },
+    {
       "anahtar": "63f6508776868577",
       "ts": 1790922160596,
       "baslik": "ABD imalat PMI yükseldi: Fed’in faiz patikası nasıl şekillenecek?"
@@ -239,16 +244,6 @@
       "anahtar": "f30803a02ae34bb5",
       "ts": 1790405532512,
       "baslik": "Brezilya'da ara dönem enflasyonu %4.47'ye yükseldi, real 5.18 bandında dengelendi"
-    },
-    {
-      "anahtar": "5497957fc8be8e6c",
-      "ts": 1790321587865,
-      "baslik": "FTSE 100 yükseldi: ABD-İran ateşkes görüşmeleri endişeleri azalttı"
-    },
-    {
-      "anahtar": "da970243fbb6c900",
-      "ts": 1790320361588,
-      "baslik": "Almanya’da tüketici güveni enerji maliyetleri nedeniyle beklentiden fazla düştü"
     }
   ]
 }
