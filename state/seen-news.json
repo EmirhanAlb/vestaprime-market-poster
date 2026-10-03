@@ -1,6 +1,11 @@
 {
   "gonderilenler": [
     {
+      "anahtar": "5c324da6fc910d71",
+      "ts": 1791016394942,
+      "baslik": "Dolar endeksi yılın 9 ayında Fed'e ilişkin beklentiler ve jeopolitik gelişmelerle yükseldi"
+    },
+    {
       "anahtar": "9d8bdca77934aeac",
       "ts": 1790948133497,
       "baslik": "Brezilya sanayi üretimi Ağustos’ta yüzde 0,6 düştü"
@@ -254,16 +259,6 @@
       "anahtar": "e47db8249fac0713",
       "ts": 1790450242083,
       "baslik": "SON DAKİKA: Amine Cansu Çelik partisinden istifa etti"
-    },
-    {
-      "anahtar": "69c75290c536745c",
-      "ts": 1790410378758,
-      "baslik": "Hürmüz krizinde petrol ve gaz arzı kesintisi yüzde 14'ü buldu"
-    },
-    {
-      "anahtar": "f30803a02ae34bb5",
-      "ts": 1790405532512,
-      "baslik": "Brezilya'da ara dönem enflasyonu %4.47'ye yükseldi, real 5.18 bandında dengelendi"
     }
   ]
 }
